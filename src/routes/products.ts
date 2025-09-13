@@ -14,7 +14,7 @@ const getProductsSchema = z.object({
  * GET /v1/products
  * Get all products from a Shopify store
  */
-router.get('/products', async (req: Request, res: Response) => {
+router.get('/products', async (req: Request, res: Response): Promise<void> => {
   try {
     const { storeDomain, limit } = getProductsSchema.parse({
       storeDomain: req.query.storeDomain as string,
@@ -24,10 +24,11 @@ router.get('/products', async (req: Request, res: Response) => {
     // Get token for the store
     const token = getStorefrontToken('SF_TOKEN_A');
     if (!token) {
-      return res.status(500).json({
+      res.status(500).json({
         error: 'Configuration Error',
         message: 'Storefront token not configured'
       });
+      return;
     }
 
     // Get all products

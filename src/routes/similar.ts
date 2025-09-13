@@ -9,7 +9,7 @@ const router = Router();
  * POST /v1/similar
  * Get similar products across multiple Shopify stores
  */
-router.post('/similar', async (req: Request, res: Response) => {
+router.post('/similar', async (req: Request, res: Response): Promise<void> => {
   try {
     // Validate request body
     const validatedRequest = similarRequestSchema.parse(req.body);
