@@ -1,48 +1,8 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 752
+    size: 714
     values:
-      - Cloth Simulation Coat.lspkg
-      - Cloth Simulation Coat.lspkg/Body Assets
-      - Cloth Simulation Coat.lspkg/Body Assets/Body Tracking Asset.bodyTracking3D
-      - Cloth Simulation Coat.lspkg/Cloth Simulation Coat__PUT_UNDER_MAIN_CAM.prefab
-      - Cloth Simulation Coat.lspkg/Materials
-      - Cloth Simulation Coat.lspkg/Materials/Coat_Buttons.mat
-      - Cloth Simulation Coat.lspkg/Materials/Coat_Fabric.mat
-      - Cloth Simulation Coat.lspkg/Materials/Collider Occluder.mat
-      - Cloth Simulation Coat.lspkg/Materials/Occluder_ Back.mat
-      - Cloth Simulation Coat.lspkg/Meshes
-      - Cloth Simulation Coat.lspkg/Meshes/Coat
-      - Cloth Simulation Coat.lspkg/Meshes/Coat/middle_coat.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Coat/middle_coat_button.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Coat/trench_coat_buttons.bodyMesh
-      - Cloth Simulation Coat.lspkg/Meshes/Coat/trench_coat_middle.bodyMesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_arm_r.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_foot_L.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_foot_r.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_forearm_r.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_hand_r.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_head.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_hips.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_legtop_r.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_neck.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_spine.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_spine1.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Collider Guides/Meshes/guide_spine2.mesh
-      - Cloth Simulation Coat.lspkg/Meshes/Full Body Mesh.bodyMesh
-      - Cloth Simulation Coat.lspkg/Scripts
-      - Cloth Simulation Coat.lspkg/Scripts/ClothReset.js
-      - Cloth Simulation Coat.lspkg/Scripts/ColliderSettingForChildObjects.js
-      - Cloth Simulation Coat.lspkg/Shaders
-      - Cloth Simulation Coat.lspkg/Shaders/Coat_Buttons.ss_graph
-      - Cloth Simulation Coat.lspkg/Shaders/Collider Occluder.ss_graph
-      - Cloth Simulation Coat.lspkg/Shaders/Occluder_ Back.ss_graph
-      - Cloth Simulation Coat.lspkg/Textures
-      - Cloth Simulation Coat.lspkg/Textures/trench_coat_AO.jpg
-      - Cloth Simulation Coat.lspkg/package.native
       - LSTween.lspkg
       - LSTween.lspkg/Examples
       - LSTween.lspkg/Examples/Assets
@@ -68,6 +28,7 @@ CollapsedEntities:
       - LSTween.lspkg/TweenJS/Version.ts
       - LSTween.lspkg/TweenJS/mainGroup.ts
       - LSTween.lspkg/package.native
+      - Prefabs
       - Prefabs/Snap3DInteractable.prefab
       - Remote Service Gateway.lspkg/Helpers
       - Remote Service Gateway.lspkg/Helpers/AudioProcessor.ts
@@ -129,6 +90,7 @@ CollapsedEntities:
       - Remote Service Gateway.lspkg/Utils/Event.ts
       - Remote Service Gateway.lspkg/Utils/Promisfy.ts
       - Remote Service Gateway.lspkg/package.native
+      - Render
       - Scene.scene
       - Scripts
       - Scripts/AIAssistantUIBridge.ts

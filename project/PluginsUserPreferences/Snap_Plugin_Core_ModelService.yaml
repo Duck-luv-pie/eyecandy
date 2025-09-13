@@ -1,5 +1,5 @@
 ExternalSources:
   type: "std::map<class Es::Uuid,class Es::Path,struct std::less<class Es::Uuid>,class std::allocator<struct std::pair<class Es::Uuid const ,class Es::Path> > >"
   value:
-    - caeda82c-03d4-47d6-b25b-a0555fbdd3f9: "C:/Users/natee/AppData/Local/Temp/LensStudio_VuhvBI/Cloth Simulation Coat.lspkg"
+    []
   options: 4
