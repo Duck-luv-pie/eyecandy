@@ -27,20 +27,19 @@ metaInfo:
     []
   tags:
     []
-  lensName: Untitled
+  lensName: AI Playground
   lensDescriptors:
     []
   lensApplicability:
     - Front
     - Back
   lensClientCompatibilities:
-    - Mobile
-    - Web
+    - Spectacles
   platformBundlesEnabled: false
   iconHash: ""
   videoPreviewHash: ""
-  fromTemplateName: Default
-  fromTemplateUrl: Lens Studio 5.12.1.25080420
+  fromTemplateName: Spectacles
+  fromTemplateUrl: Lens Studio 5.10.0.25052803
   activationCamera: Front
   sourceMapEnabled: false
   usingMinClientVersions: false
@@ -54,5 +53,5 @@ metaInfo:
     minor: 0
     patch: 0
     build: 0
-  documentId: d535af76-857e-4ff7-8cf4-1d6da341a614
-  originalDocumentId: d535af76-857e-4ff7-8cf4-1d6da341a614
+  documentId: 06f5023e-e1cc-46db-8f35-84a93f0af2f0
+  originalDocumentId: 3656964e-342b-48e3-ac46-9b611808b314
