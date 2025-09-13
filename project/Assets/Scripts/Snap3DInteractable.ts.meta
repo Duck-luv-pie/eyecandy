@@ -34,6 +34,7 @@
     modelParent: false
     promptDisplay: false
     spinner: false
+    trenchCoat: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -46,6 +47,7 @@
       mat: !<reference.Material> 00000000-0000-0000-0000-000000000000
       displayPlate: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       colliderObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      trenchCoat: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -57,3 +59,4 @@
     - // @input Asset.Material mat
     - // @input SceneObject displayPlate
     - // @input SceneObject colliderObj
+    - // @input SceneObject trenchCoat

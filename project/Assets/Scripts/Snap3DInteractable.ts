@@ -15,6 +15,9 @@ export class Snap3DInteractable extends BaseScriptComponent {
   private displayPlate: SceneObject;
   @input
   private colliderObj: SceneObject;
+  @input
+  private trenchCoat: SceneObject;
+
   private tempModel: SceneObject = null;
   private finalModel: SceneObject = null;
   private size: number = 20;
@@ -53,6 +56,10 @@ export class Snap3DInteractable extends BaseScriptComponent {
       this.spinner.enabled = false;
       this.finalModel = model.tryInstantiate(this.modelParent, this.mat);
       this.finalModel.getTransform().setLocalScale(this.sizeVec);
+      const newModelMesh = this.finalModel.getComponent("Component.MeshVisual").mesh;
+      const material = this.finalModel.getComponent("Component.MeshVisual").mainMaterial.clone();
+      this.trenchCoat.getComponent("Component.MeshVisual").mesh = newModelMesh;
+      this.trenchCoat.getComponent("Component.MeshVisual").mainMaterial = material;
     } else {
       this.tempModel = model.tryInstantiate(this.modelParent, this.mat);
       this.tempModel.getTransform().setLocalScale(this.sizeVec);

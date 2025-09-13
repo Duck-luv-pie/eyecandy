@@ -1,0 +1,66 @@
+- !<AssetImportMetadata/05174b0e-983e-4912-9c51-9e70a63efd28>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> b8daeb7f-dda2-43bb-b41b-d619802bb1b5
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> b8daeb7f-dda2-43bb-b41b-d619802bb1b5
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 74ac46ac-4a6b-4457-89d6-e252b577c69b
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/74ac46ac-4a6b-4457-89d6-e252b577c69b>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 4d4c33e0-eb08-48f8-b2a5-02dc116259a2
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    additionalPrompt: false
+    delaySeconds: false
+    enableAutoGeneration: false
+    refineMesh: false
+    snap3DFactory: false
+    sourceImage: false
+    useVertexColor: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - sourceImage: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      additionalPrompt: High quality 3D model
+      delaySeconds: !<float> 3.000000
+      enableAutoGeneration: true
+      refineMesh: true
+      useVertexColor: false
+      snap3DFactory: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Auto Generation Settings"}'
+    - // @input Asset.Texture sourceImage
+    - '// @ui {"widget":"label", "label":"Source Image for 3D Generation"}'
+    - '// @input string additionalPrompt = "High quality 3D model" {"widget":"text_area"}'
+    - '// @ui {"widget":"label", "label":"Optional Text Prompt (will be combined with image)"}'
+    - // @input float delaySeconds = 3
+    - '// @ui {"widget":"label", "label":"Delay before generation (seconds)"}'
+    - // @input bool enableAutoGeneration = true
+    - // @input bool refineMesh = true
+    - // @input bool useVertexColor
+    - '// @ui {"widget":"group_end"}'
+    - // @input AssignableType snap3DFactory
+    - '// @ui {"widget":"label", "label":"Reference to Snap3D Factory"}'
