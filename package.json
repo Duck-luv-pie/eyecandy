@@ -1,0 +1,35 @@
+{
+  "name": "shopify-backend",
+  "version": "1.0.0",
+  "description": "Minimal TypeScript Node/Express backend for Shopify Storefront GraphQL API",
+  "main": "dist/app.js",
+  "scripts": {
+    "dev": "tsx watch src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "test": "vitest",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "zod": "^3.22.4",
+    "undici": "^5.28.4",
+    "lru-cache": "^10.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "@types/node": "^20.10.5",
+    "@types/supertest": "^6.0.2",
+    "typescript": "^5.3.3",
+    "tsx": "^4.6.2",
+    "vitest": "^1.1.0",
+    "@vitest/ui": "^1.1.0",
+    "supertest": "^6.3.3"
+  },
+  "keywords": ["shopify", "graphql", "express", "typescript"],
+  "author": "",
+  "license": "MIT"
+}
