@@ -9,7 +9,7 @@ export const STORES_BY_CATEGORY: Record<string, StoreEntry[]> = {
     { storeDomain: "shirtsfordemos.myshopify.com", storefrontTokenEnvVar: "SF_TOKEN_A" },
     { storeDomain: "shirtsfordemos.myshopify.com", storefrontTokenEnvVar: "SF_TOKEN_B" },
   ],
-  "outerwear": [
+  "sweaters": [
     { storeDomain: "shirtsfordemos.myshopify.com", storefrontTokenEnvVar: "SF_TOKEN_A" },
     { storeDomain: "shirtsfordemos.myshopify.com", storefrontTokenEnvVar: "SF_TOKEN_C" },
   ],
