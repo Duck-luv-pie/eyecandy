@@ -106,7 +106,7 @@ export class Snap3DInteractable extends BaseScriptComponent {
           
           // Apply Y offset in world space (move up 3 units)
           const currentWorldPos = newTransform.getWorldPosition();
-          const offsetPosition = currentWorldPos.add(new vec3(-7, -10, 0));
+          const offsetPosition = currentWorldPos.add(new vec3(-7, -10, -2));
           newTransform.setWorldPosition(offsetPosition);
           
           // Reset local rotation only (keep the position with offset)
@@ -115,8 +115,8 @@ export class Snap3DInteractable extends BaseScriptComponent {
           // Apply 3x scaling in addition to other scaling
           const currentScale = newTransform.getLocalScale();
             const enlargedScaleVec = new vec3(
-            currentScale.x * this.sizeVec.x * 4.5,
-            currentScale.y * this.sizeVec.y * 3.5,
+            currentScale.x * this.sizeVec.x * 4.2,
+            currentScale.y * this.sizeVec.y * 3.6,
             currentScale.z * this.sizeVec.z * 3.8
             );
           newTransform.setLocalScale(enlargedScaleVec);
