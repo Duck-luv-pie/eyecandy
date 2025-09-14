@@ -27,16 +27,26 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    {}
+    autoDescribeOnAwake: false
+    imageDescriptionGenerator: false
+    internetModule: false
+    targetImage: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
   DefaultScriptInputs:
-    -
-      {}
+    - targetImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      imageDescriptionGenerator: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      internetModule: !<reference.InternetModule> 00000000-0000-0000-0000-000000000000
+      autoDescribeOnAwake: true
   ScriptTypes:
     -
       {}
   InputLines:
-    []
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Automatic Image Description on Awake"}'
+    - // @input Component.Image targetImage
+    - // @input AssignableType imageDescriptionGenerator
+    - // @input Asset.InternetModule internetModule
+    - // @input bool autoDescribeOnAwake = true

@@ -27,7 +27,6 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    asrQueryController: false
     snap3DFactory: false
     targetPosition: false
   ScriptTypesHidden:
@@ -36,7 +35,6 @@
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
   DefaultScriptInputs:
     - snap3DFactory: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
-      asrQueryController: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
       targetPosition: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
@@ -46,5 +44,4 @@
     - '// @ui {"widget":"label", "label":"Example of using generative 3D with Snap3D"}'
     - // @input AssignableType snap3DFactory
     - '// @ui {"widget":"separator"}'
-    - // @input AssignableType_1 asrQueryController
     - // @input SceneObject targetPosition

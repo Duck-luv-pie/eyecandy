@@ -29,14 +29,12 @@
   ScriptInputsHidden:
     internetModule: false
     loadingSpinner: false
-    targetImage: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
   DefaultScriptInputs:
-    - targetImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
-      loadingSpinner: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+    - loadingSpinner: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       internetModule: !<reference.InternetModule> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
@@ -44,6 +42,5 @@
   InputLines:
     - '// @ui {"widget":"separator"}'
     - '// @ui {"widget":"label", "label":"Image Description using Gemini API"}'
-    - // @input Component.Image targetImage
     - // @input SceneObject loadingSpinner
     - // @input Asset.InternetModule internetModule

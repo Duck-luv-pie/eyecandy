@@ -1,7 +1,7 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 759
+    size: 771
     values:
       - Cloth Simulation Coat.lspkg/Body Assets
       - Cloth Simulation Coat.lspkg/Body Assets/Body Tracking Asset.bodyTracking3D
@@ -40,6 +40,9 @@ CollapsedEntities:
       - Cloth Simulation Coat.lspkg/Textures
       - Cloth Simulation Coat.lspkg/Textures/trench_coat_AO.jpg
       - Cloth Simulation Coat.lspkg/package.native
+      - Color Correction.mat
+      - Empty.png
+      - Internet Module.internetModule
       - LSTween.lspkg
       - LSTween.lspkg/Examples
       - LSTween.lspkg/Examples/Assets
@@ -65,6 +68,7 @@ CollapsedEntities:
       - LSTween.lspkg/TweenJS/Version.ts
       - LSTween.lspkg/TweenJS/mainGroup.ts
       - LSTween.lspkg/package.native
+      - Prefabs/ImageMaterial.mat
       - Prefabs/Snap3DInteractable.prefab
       - Prefabs/shopping.png
       - Prefabs/t-shirt_low_poly
@@ -136,11 +140,14 @@ CollapsedEntities:
       - Remote Service Gateway.lspkg/Utils/Promisfy.ts
       - Remote Service Gateway.lspkg/package.native
       - Scene.scene
-      - Scripts
+      - ScreenTexture.screenTexture
       - Scripts/AIAssistantUIBridge.ts
       - Scripts/APIKeyHint.ts
       - Scripts/ASRQueryController.ts
       - Scripts/AutoSnap3DGenerator.ts
+      - Scripts/ImageDescriptionCaller.ts
+      - Scripts/ImageDescriptionGenerator.ts
+      - Scripts/ImageDescription_Usage_Guide.md
       - Scripts/ImageGenerator.ts
       - Scripts/InteractableImageGenerator.ts
       - Scripts/InteractableSnap3DGenerator.ts
@@ -149,6 +156,9 @@ CollapsedEntities:
       - Scripts/Snap3DInteractable.ts
       - Scripts/Snap3DInteractableFactory.ts
       - Scripts/SphereController.ts
+      - Scripts/VoiceOutputListener.ts
+      - Scripts/config.template.txt
+      - Scripts/config.ts
       - SpectaclesInteractionKit.lspkg
       - SpectaclesInteractionKit.lspkg/Assets
       - SpectaclesInteractionKit.lspkg/Assets/Audio
@@ -733,6 +743,7 @@ CollapsedEntities:
       - SpectaclesInteractionKitExamples.lspkg/Examples/SIK Examples.prefab
       - SpectaclesInteractionKitExamples.lspkg/package.native
       - SpectaclesInteractionKitExamples.lspkg/package_dependencies.json
+      - Untitled TypeScript.ts
       - Visuals
       - Visuals/AI Visual
       - Visuals/AI Visual/Animations
@@ -762,4 +773,5 @@ CollapsedEntities:
       - Visuals/Textures/NoInternetAlert.png
       - Visuals/Textures/NoInternetWarning.mat
       - Visuals/image_unlit.ss_graph
+      - color_correction.ss_graph
   options: 4

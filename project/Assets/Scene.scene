@@ -7,6 +7,8 @@
     - !<own> 867a6806-8d0e-4a93-8b86-ef91522c708d
     - !<own> e98b2a4f-f300-4094-a125-464834a4be87
     - !<own> 362d712d-3aa2-470c-8b9d-9b6467c32954
+    - !<own> 3d48c674-2b21-41be-a113-46558757b53b
+    - !<own> fc0d95ce-e4cc-4322-9b51-7b456ca0b6a4
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -33,6 +35,7 @@
     - !<own> 00000000-0000-0065-0000-000000000065
     - !<own> e5553c8a-0b7e-4ef4-92d9-3e1318fb82c1
     - !<own> 0fa2278c-2e5a-40d0-956b-1acbb889e7d9
+    - !<own> 07772c22-d42a-4991-97af-af3db415ece9
 - !<Camera/00000000-0000-0065-0000-000000000065>
   PrefabRemaps:
     []
@@ -287,6 +290,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/07772c22-d42a-4991-97af-af3db415ece9>
+  PrefabRemaps:
+    []
+  Name: VoiceOutputListener
+  Enabled: true
+  ScriptAsset: !<reference> 4220cd3e-a96a-439e-84b8-3a14cb553ea8
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      asrQueryController: !<MappingBased.AssignableType> 7ec1d7e9-b3fd-4730-a0a0-6055f2089442
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/0a2639b1-7e5c-49c9-a60c-df50ce761994>
   PrefabRemaps:
     []
@@ -430,7 +449,6 @@
   Enabled: true
   ScriptAsset: !<reference> b8daeb7f-dda2-43bb-b41b-d619802bb1b5
   ScriptInputsDefault:
-    predefinedPrompt: true
     delaySeconds: true
     enableAutoGeneration: true
     refineMesh: true
@@ -439,7 +457,7 @@
     {}
   ScriptInputs:
     "":
-      predefinedPrompt: A green sweater with a mountain landscape design
+      predefinedPrompt: a white tshirt with a canadian goose graphic
       delaySeconds: !<float> 3.000000
       enableAutoGeneration: true
       refineMesh: true
@@ -559,7 +577,6 @@
   ScriptInputs:
     "":
       snap3DFactory: !<MappingBased.AssignableType> 4aa30a81-2a3a-4c2d-a9fa-30d11d91584f
-      asrQueryController: !<MappingBased.AssignableType_1> 7ec1d7e9-b3fd-4730-a0a0-6055f2089442
       targetPosition: !<reference.SceneObject> 4b0c6bb9-d6b0-47e9-8a85-4943fc8c3a2a
   ScriptTypes:
     "":
@@ -1954,6 +1971,22 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/3d48c674-2b21-41be-a113-46558757b53b>
+  PrefabRemaps:
+    []
+  Name: ImageDescriptionGenerator
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 6b26da5d-18b3-4a98-aae6-31b25b3721a6
+    - !<own> 8288b2bd-008c-410f-8920-81a0fea1a863
 - !<SceneObject/3d7828ee-2891-4454-9f06-7d3aa618c06b>
   PrefabRemaps:
     []
@@ -3306,6 +3339,25 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<Image/608b0417-8796-4ee5-aa3a-89886cf9d5fc>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> bddca82b-f24a-4629-aae4-51e3df753a92
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Text/6292bd0e-7e99-40cb-b7f5-cfe1aacb65c6>
   PrefabRemaps:
     []
@@ -3542,6 +3594,23 @@
   BlendNormals: false
   BlendShapes:
     Pinch: 0.000000
+- !<ScriptComponent/6b26da5d-18b3-4a98-aae6-31b25b3721a6>
+  PrefabRemaps:
+    []
+  Name: ImageDescriptionGenerator
+  Enabled: true
+  ScriptAsset: !<reference> fd3bde82-8e9b-477c-bf82-30cbf7c19e48
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      loadingSpinner: !<reference.SceneObject> 85365650-4860-4e4b-9561-da197d9e1c40
+      internetModule: !<reference.InternetModule> 715bf346-7cd0-4529-a46e-983c072373c3
+  ScriptTypes:
+    "":
+      {}
 - !<ColliderComponent/6b97dc11-b3d2-4bff-aee0-a87b4f1e1015>
   PrefabRemaps:
     []
@@ -4133,6 +4202,25 @@
       customFunctionForOnButtonPinched: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       onButtonPinchedFunctionNames: !<string[]>
         []
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/8288b2bd-008c-410f-8920-81a0fea1a863>
+  PrefabRemaps:
+    []
+  Name: ImageDescriptionCaller
+  Enabled: true
+  ScriptAsset: !<reference> 40aed14e-e06b-4f09-9f6f-59b5d0e2c011
+  ScriptInputsDefault:
+    autoDescribeOnAwake: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      targetImage: !<reference.Image> 608b0417-8796-4ee5-aa3a-89886cf9d5fc
+      imageDescriptionGenerator: !<MappingBased.AssignableType> 6b26da5d-18b3-4a98-aae6-31b25b3721a6
+      internetModule: !<reference.InternetModule> 715bf346-7cd0-4529-a46e-983c072373c3
+      autoDescribeOnAwake: true
   ScriptTypes:
     "":
       {}
@@ -7117,7 +7205,6 @@
       modelProvider: OpenAI
       image: !<reference.Image> 4f15c769-914c-4dfb-97d4-0901ec89d78a
       textDisplay: !<reference.Text> 1823ef19-acfa-42a6-a55a-8e3282dccb5c
-      asrQueryController: !<MappingBased.AssignableType> 05b2200d-d356-4b4a-9b42-94932fb2ab3b
       spinner: !<reference.SceneObject> 85365650-4860-4e4b-9561-da197d9e1c40
   ScriptTypes:
     "":
@@ -7764,6 +7851,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/fc0d95ce-e4cc-4322-9b51-7b456ca0b6a4>
+  PrefabRemaps:
+    []
+  Name: shopping
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 608b0417-8796-4ee5-aa3a-89886cf9d5fc
 - !<SceneObject/fc530e67-51dc-4b55-8306-a92acdd025f6>
   PrefabRemaps:
     []

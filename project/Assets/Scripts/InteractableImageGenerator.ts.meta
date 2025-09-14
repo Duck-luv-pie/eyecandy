@@ -27,7 +27,6 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    asrQueryController: false
     image: false
     modelProvider: false
     spinner: false
@@ -40,7 +39,6 @@
     - modelProvider: OpenAI
       image: !<reference.Image> 00000000-0000-0000-0000-000000000000
       textDisplay: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      asrQueryController: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       spinner: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
@@ -52,5 +50,4 @@
     - '// @ui {"widget":"separator"}'
     - // @input Component.Image image
     - // @input Component.Text textDisplay
-    - // @input AssignableType asrQueryController
     - // @input SceneObject spinner
