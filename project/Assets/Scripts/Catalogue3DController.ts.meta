@@ -35,13 +35,13 @@
     itemSpacing: false
     itemsContainer: false
     itemsPerRow: false
+    manualShopifySearch: false
     pageIndicatorText: false
     panelDistance: false
     rowSpacing: false
     rowsPerPage: false
     scrollDownButton: false
     scrollUpButton: false
-    shopifySearch: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -62,7 +62,7 @@
       panelDistance: !<float> 50.000000
       catalogueItems: !<MappingBased.AssignableType[]>
         []
-      shopifySearch: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      manualShopifySearch: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -94,5 +94,7 @@
     - // @input float panelDistance = 50
     - '// @ui {"widget":"group_start", "label":"Pre-made Items"}'
     - "// @input AssignableType[] catalogueItems = {}"
-    - // @input AssignableType_1 shopifySearch
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Optional Shopify Integration"}'
+    - // @input AssignableType_1 manualShopifySearch
     - '// @ui {"widget":"group_end"}'

@@ -4,6 +4,13 @@ interface Product {
     imageUrl: string | null;
 }
 
+interface ProductResult {
+    name: string;
+    imageTexture: Texture | null;
+    imageUrl: string | null;
+    id?: string;
+}
+
 interface SearchResponse {
     keyword: string;
     matchedCategories: string[];
@@ -14,17 +21,22 @@ interface SearchResponse {
     }>;
 }
 
+import Event from "SpectaclesInteractionKit.lspkg/Utils/Event";
+
 @component
 export class SimpleProductSearch extends BaseScriptComponent {
     private internetModule: InternetModule = require("LensStudio:InternetModule");
     private baseUrl = "https://spectacles-vxd1.onrender.com/";
+
+    // Event for when products are received
+    public onProductsReceived: Event<ProductResult[]> = new Event<ProductResult[]>();
 
     onAwake() {
         print("[SimpleSearch] Component initialized successfully!");
         this.testSweaterSearch();
     }
 
-    public searchProducts(keyword: string) {
+    public searchProducts(keyword: string, callback?: (products: ProductResult[]) => void) {
         print(`[SimpleSearch] Searching for products with keyword: "${keyword}"`);
 
         // Step 1: Update backend keyword
@@ -41,12 +53,16 @@ export class SimpleProductSearch extends BaseScriptComponent {
                 print(`[SimpleSearch] ✅ Backend keyword updated successfully`);
 
                 // Step 2: Search for similar products
-                this.searchSimilarProducts(keyword.trim());
+                this.searchSimilarProducts(keyword.trim(), callback);
             })
-            .catch(failAsync);
+            .catch((error) => {
+                print(`[SimpleSearch] ❌ Error updating keyword: ${error}`);
+                if (callback) callback([]);
+                this.onProductsReceived.invoke([]);
+            });
     }
 
-    private searchSimilarProducts(keyword: string) {
+    private searchSimilarProducts(keyword: string, callback?: (products: ProductResult[]) => void) {
         // Use direct products endpoint instead of recommendations
         this.internetModule
             .fetch(this.baseUrl + "v1/products", {
@@ -70,17 +86,35 @@ export class SimpleProductSearch extends BaseScriptComponent {
                 print(`[SimpleSearch] Found ${filteredProducts.length} products matching "${keyword}"`);
                 print(`[SimpleSearch] Total products available: ${allProducts.length}`);
 
+                // Convert to ProductResult format
+                const productResults: ProductResult[] = filteredProducts.map(product => ({
+                    name: product.title || "Unknown Product",
+                    imageTexture: null, // Will be loaded separately if needed
+                    imageUrl: product.imageUrl || null,
+                    id: product.id
+                }));
+
                 // Log each product
-                filteredProducts.forEach((product, index) => {
-                    const title = product.title || "none";
+                productResults.forEach((product, index) => {
+                    const title = product.name || "none";
                     const imageUrl = product.imageUrl || "none";
                     print(`[SimpleSearch] Product ${index + 1}: ${title}`);
                     print(`[SimpleSearch] Image: ${imageUrl}`);
                 });
 
-                // Products received - logged above
+                // Call callback if provided
+                if (callback) {
+                    callback(productResults);
+                }
+
+                // Fire event
+                this.onProductsReceived.invoke(productResults);
             })
-            .catch(failAsync);
+            .catch((error) => {
+                print(`[SimpleSearch] ❌ Error fetching products: ${error}`);
+                if (callback) callback([]);
+                this.onProductsReceived.invoke([]);
+            });
     }
 
     private getProductHandleForKeyword(keyword: string): string {

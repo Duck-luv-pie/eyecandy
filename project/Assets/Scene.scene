@@ -5990,7 +5990,7 @@
   PrefabRemaps:
     []
   Name: ShopifyAPIManager
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7996,6 +7996,7 @@
     - !<own> 76056f09-c75b-42ae-838b-57d2cd199fbd
   Components:
     - !<own> f98f0c87-8860-4a59-960d-569867172d3d
+    - !<own> 9f17ec63-4a8d-4b90-bb43-4425111f3275
     - !<own> bc6ef924-7a67-429b-8668-413213b24265
     - !<own> 401c99ae-e5e9-4e7a-a967-4f2ed003a5b3
 - !<SceneObject/9a14c486-688a-4af4-a99a-084652f3efa1>
@@ -8281,6 +8282,22 @@
   BlendShapes:
     Pinch: 0.000000
     Z depth: 0.000000
+- !<ScriptComponent/9f17ec63-4a8d-4b90-bb43-4425111f3275>
+  PrefabRemaps:
+    []
+  Name: SimpleProductSearch
+  Enabled: true
+  ScriptAsset: !<reference> 1c5ef129-e86b-480b-a4b2-593560a99137
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/9f215c8a-38c0-487c-9151-182963c1411e>
   PrefabRemaps:
     []
@@ -13169,6 +13186,7 @@
     rowSpacing: true
     followHand: true
     panelDistance: true
+    catalogueItems: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -13186,6 +13204,8 @@
       rowSpacing: !<float> 12.000000
       followHand: true
       panelDistance: !<float> 50.000000
+      catalogueItems: !<MappingBased.AssignableType[]>
+        []
   ScriptTypes:
     "":
       {}

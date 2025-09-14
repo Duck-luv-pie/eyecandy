@@ -8,6 +8,14 @@ import Event from "SpectaclesInteractionKit.lspkg/Utils/Event";
 import { CatalogueItem3D } from "./CatalogueItem3D";
 import { SimpleProductSearch } from "./SimpleProductSearch";
 
+// Define ProductResult interface to match SimpleProductSearch
+interface ProductResult {
+    name: string;
+    imageTexture: Texture | null;
+    imageUrl: string | null;
+    id?: string;
+}
+
 
 
 @component
@@ -68,10 +76,15 @@ export class Catalogue3DController extends BaseScriptComponent {
     @ui.group_start("Pre-made Items")
     @input
     private catalogueItems: CatalogueItem3D[] = []; // Array of pre-made CatalogueItem3D components
-
-    @input
-    private shopifySearch: SimpleProductSearch | null = null; // Make it optional/nullable
     @ui.group_end
+
+    @ui.group_start("Optional Shopify Integration")
+    @input
+    private manualShopifySearch: SimpleProductSearch | null = null; // Manual assignment option
+    @ui.group_end
+
+    // Optional Shopify integration (not an Inspector input to avoid required field error)
+    private shopifySearch: SimpleProductSearch | null = null;
 
     // Sample catalogue data with more items for scrolling
     private catalogueData = [
@@ -192,6 +205,15 @@ export class Catalogue3DController extends BaseScriptComponent {
     // Simplify onAwake to only use pre-made items:
 
     onAwake() {
+        // Check manual assignment first
+        if (this.manualShopifySearch) {
+            print("Using manually assigned SimpleProductSearch component");
+            this.shopifySearch = this.manualShopifySearch;
+        } else {
+            // Try to find SimpleProductSearch component if not manually assigned
+            this.findShopifySearchComponent();
+        }
+
         this.setupInteractionComponents();
         this.validateCatalogueItems();
 
@@ -201,9 +223,111 @@ export class Catalogue3DController extends BaseScriptComponent {
 
         print(`3D Catalogue initialized with ${this.catalogueItems.length} pre-made items`);
 
-        // // Load Shopify products automatically
-        // this.loadShopifyProducts("sweater");
+        // Search and fill catalogue with default topic - delay slightly to allow components to initialize
+        print("🚀 Starting automatic catalogue search on awake...");
+
+        if (this.shopifySearch) {
+            // Component found, search immediately
+            print("ShopifySearch component available, searching for products...");
+            this.searchAndFillCatalogue("shirt");
+        } else {
+            // Component not found, try again after a short delay
+            print("SimpleProductSearch not found, trying again in 1 second...");
+            const delayedEvent = this.createEvent("DelayedCallbackEvent");
+            delayedEvent.bind(() => {
+                this.findShopifySearchComponent();
+                this.searchAndFillCatalogue("shirt");
+            });
+            delayedEvent.reset(1.0); // 1 second delay
+        }
     }
+
+    private findShopifySearchComponent(): void {
+        if (this.shopifySearch) {
+            print("SimpleProductSearch already assigned");
+            return;
+        }
+
+        print("Searching for SimpleProductSearch component in scene...");
+
+        try {
+            // Search in the current scene object and its children
+            const searchComponent = this.getSceneObject().getComponent(SimpleProductSearch.getTypeName()) as SimpleProductSearch;
+            if (searchComponent) {
+                this.shopifySearch = searchComponent;
+                print("Found SimpleProductSearch component on same object");
+                
+                // Verify the component has the required method
+                if (this.shopifySearch.searchProducts && typeof this.shopifySearch.searchProducts === 'function') {
+                    print("✅ SimpleProductSearch component is valid and has searchProducts method");
+                } else {
+                    print("⚠️ SimpleProductSearch component found but searchProducts method is not available");
+                    this.shopifySearch = null;
+                }
+                return;
+            }
+
+            // Search in parent objects
+            let parent = this.getSceneObject().getParent();
+            while (parent) {
+                const parentSearchComponent = parent.getComponent(SimpleProductSearch.getTypeName()) as SimpleProductSearch;
+                if (parentSearchComponent) {
+                    this.shopifySearch = parentSearchComponent;
+                    print("Found SimpleProductSearch component on parent object");
+                    
+                    // Verify the component has the required method
+                    if (this.shopifySearch.searchProducts && typeof this.shopifySearch.searchProducts === 'function') {
+                        print("✅ SimpleProductSearch component is valid and has searchProducts method");
+                    } else {
+                        print("⚠️ SimpleProductSearch component found but searchProducts method is not available");
+                        this.shopifySearch = null;
+                    }
+                    return;
+                }
+                parent = parent.getParent();
+            }
+
+            // Search in scene root and its children recursively
+            this.searchInSceneRecursively(this.getSceneObject().getParent() || this.getSceneObject());
+
+        } catch (error) {
+            print(`Error searching for SimpleProductSearch component: ${error}`);
+            print("SimpleProductSearch component may not be initialized yet - will use sample data");
+        }
+
+        if (this.shopifySearch) {
+            print("Found SimpleProductSearch component in scene");
+        } else {
+            print("SimpleProductSearch component not found in scene - will use sample data");
+        }
+    }
+
+    private searchInSceneRecursively(obj: SceneObject): void {
+        if (this.shopifySearch) return; // Already found
+
+        try {
+            const searchComponent = obj.getComponent(SimpleProductSearch.getTypeName()) as SimpleProductSearch;
+            if (searchComponent) {
+                // Verify the component has the required method
+                if (searchComponent.searchProducts && typeof searchComponent.searchProducts === 'function') {
+                    this.shopifySearch = searchComponent;
+                    print("✅ Found valid SimpleProductSearch component in scene recursively");
+                    return;
+                } else {
+                    print("⚠️ Found SimpleProductSearch component but searchProducts method is not available");
+                }
+            }
+        } catch (error) {
+            // Component type not available yet, skip this object
+        }
+
+        // Search children
+        for (let i = 0; i < obj.getChildrenCount(); i++) {
+            this.searchInSceneRecursively(obj.getChild(i));
+            if (this.shopifySearch) return;
+        }
+    }
+
     private validateCatalogueItems() {
         print(`=== Validating ${this.catalogueItems.length} catalogue items ===`);
 
@@ -219,7 +343,7 @@ export class Catalogue3DController extends BaseScriptComponent {
 
     // Add convenience methods:
     public switchToShopifyProducts(keyword: string) {
-        this.loadShopifyProducts(keyword);
+        this.searchAndFillCatalogue(keyword);
     }
 
     public switchToSampleData() {
@@ -227,47 +351,181 @@ export class Catalogue3DController extends BaseScriptComponent {
     }
 
     public refreshCatalogue() {
-        // Re-load current content
-        this.loadShopifyProducts("sweater");
+        // Re-search with sweater as default
+        this.searchAndFillCatalogue("sweater");
+    }
+
+    /**
+     * Public method to search for a specific topic and update catalogue
+     * @param topic The search topic (e.g., "shoes", "jacket", "dress")
+     */
+    public searchForTopic(topic: string): void {
+        print(`🔍 User requested search for: "${topic}"`);
+        this.searchAndFillCatalogue(topic);
     }
 
     // Update the setupCatalogueItem method to work with pre-made items:
     private setupCatalogueItem(itemObject: SceneObject, itemData: any): void {
         // This method is now replaced by direct CatalogueItem3D.setItemData() calls
         // Keep for backward compatibility if needed
-        const catalogueItemComponent = itemObject.getComponent(CatalogueItem3D.getTypeName()) as CatalogueItem3D;
-        if (catalogueItemComponent) {
-            catalogueItemComponent.setItemData(itemData);
+        try {
+            const catalogueItemComponent = itemObject.getComponent(CatalogueItem3D.getTypeName()) as CatalogueItem3D;
+            if (catalogueItemComponent) {
+                catalogueItemComponent.setItemData(itemData);
+            }
+        } catch (error) {
+            print(`Error setting up catalogue item: ${error}`);
         }
+    }
+
+    /**
+     * Search for products by topic and fill the catalogue items array
+     * @param topic The search topic/keyword (e.g., "sweater", "shoes", "jacket")
+     */
+    public searchAndFillCatalogue(topic: string): void {
+        print(`=== Searching and filling catalogue with topic: "${topic}" ===`);
+
+        if (!this.shopifySearch) {
+            print("No ShopifySearch component available - using sample data");
+            this.fillWithSampleData();
+            return;
+        }
+
+        print(`Initiating search for: ${topic}`);
+        print(`ShopifySearch component type: ${typeof this.shopifySearch}`);
+        print(`ShopifySearch searchProducts method: ${typeof this.shopifySearch.searchProducts}`);
+
+        // Check if searchProducts method exists
+        if (!this.shopifySearch.searchProducts || typeof this.shopifySearch.searchProducts !== 'function') {
+            print("ERROR: searchProducts method is not available on ShopifySearch component");
+            print("Available methods on shopifySearch:");
+            for (const prop in this.shopifySearch) {
+                print(`  - ${prop}: ${typeof this.shopifySearch[prop]}`);
+            }
+            print("Falling back to sample data");
+            this.fillWithSampleData();
+            return;
+        }
+
+        try {
+            // Search for products and fill catalogue items
+            this.shopifySearch.searchProducts(topic, (products: ProductResult[]) => {
+                print(`Received ${products.length} products for topic "${topic}"`);
+
+                if (products && products.length > 0) {
+                    // Fill catalogue with received products
+                    this.fillCatalogueItemsWithProducts(products, topic);
+                } else {
+                    print(`No products found for "${topic}" - using sample data as fallback`);
+                    this.fillWithSampleData();
+                }
+            });
+        } catch (error) {
+            print(`ERROR calling searchProducts: ${error}`);
+            print("Falling back to sample data");
+            this.fillWithSampleData();
+        }
+    }
+
+    /**
+     * Fill catalogue items with products, ensuring all array elements are handled
+     * @param products Array of ProductResult from Shopify search
+     * @param topic The search topic for logging purposes
+     */
+    private fillCatalogueItemsWithProducts(products: ProductResult[], topic: string): void {
+        print(`Filling catalogue with ${products.length} products for topic "${topic}"`);
+
+        const availableSlots = this.catalogueItems.length;
+        const maxProductsToShow = Math.min(products.length, availableSlots);
+
+        print(`Available slots: ${availableSlots}, Products to show: ${maxProductsToShow}`);
+
+        // Fill or deactivate each catalogue item slot
+        for (let i = 0; i < availableSlots; i++) {
+            const catalogueItem = this.catalogueItems[i];
+
+            if (!catalogueItem) {
+                print(`Warning: catalogueItems[${i}] is null - skipping`);
+                continue;
+            }
+
+            if (i < maxProductsToShow) {
+                // We have a product for this slot - activate and fill it
+                const product = products[i];
+
+                const itemData = {
+                    id: i + 2000, // Use high IDs to avoid conflicts
+                    name: product.name || "Unknown Product",
+                    description: `${topic} from Shopify`,
+                    category: topic.charAt(0).toUpperCase() + topic.slice(1) // Capitalize topic
+                };
+
+                // Activate the catalogue item
+                catalogueItem.getSceneObject().enabled = true;
+
+                // Set the item data
+                catalogueItem.setItemData(itemData);
+
+                // Set product image if available, otherwise use placeholder
+                if (product.imageTexture) {
+                    catalogueItem.setItemTexture(product.imageTexture);
+                    print(`Set real image for: ${product.name}`);
+                } else {
+                    catalogueItem.setPlaceholderImage();
+                    print(`Set placeholder image for: ${product.name}`);
+                }
+
+                print(`✅ Filled slot ${i}: ${product.name}`);
+
+            } else {
+                // No product for this slot - deactivate it
+                catalogueItem.getSceneObject().enabled = false;
+                print(`❌ Deactivated slot ${i} (no product available)`);
+            }
+        }
+
+        print(`🎯 Catalogue filling completed for "${topic}": ${maxProductsToShow} items shown, ${availableSlots - maxProductsToShow} items hidden`);
     }
 
     // Replace the loadShopifyProducts method with this simplified version:
 
     public loadShopifyProducts(keyword: string = "sweater") {
         if (!this.shopifySearch) {
-            print("ShopifySearch component not assigned!");
+            print("ShopifySearch component not assigned - using sample data");
             this.fillWithSampleData();
             return;
         }
 
         print(`Loading Shopify products for keyword: "${keyword}"`);
 
-        // Trigger the search (without callback for now)
+        // Search for products with callback
         try {
-            this.shopifySearch.searchProducts(keyword);
-            print("Shopify search initiated...");
+            this.shopifySearch.searchProducts(keyword, (products) => {
+                print(`Received ${products.length} products from Shopify callback`);
+                if (products && products.length > 0) {
+                    this.fillCatalogueItems(products);
+                } else {
+                    print("No products received, using sample data");
+                    this.fillWithSampleData();
+                }
+            });
+
+            // Also listen to the event (as backup)
+            this.shopifySearch.onProductsReceived.add((products) => {
+                print(`Received ${products.length} products from Shopify event`);
+                if (products && products.length > 0) {
+                    this.fillCatalogueItems(products);
+                }
+            });
+
+            print("Shopify search initiated with callback...");
         } catch (error) {
             print(`Error calling Shopify search: ${error}`);
+            this.fillWithSampleData();
         }
-
-        // Use sample data as fallback while Shopify loads
-        print("Displaying sample data while Shopify products load...");
-        this.fillWithSampleData();
     }
 
-    // Remove the event listener line completely:
-    // this.shopifySearch.onProductsReceived.add(...) // DELETE THIS LINE
-    private fillCatalogueItems(shopifyProducts: any[]) {
+    private fillCatalogueItems(shopifyProducts: ProductResult[]) {
         print(`Filling catalogue with ${shopifyProducts.length} Shopify products`);
 
         // Get the number of available catalogue item slots
@@ -409,23 +667,27 @@ export class Catalogue3DController extends BaseScriptComponent {
         // Setup close button
         if (this.closeButton) {
             print("Close button found, looking for PinchButton component...");
-            // Use the correct getComponent syntax with getTypeName()
-            this.closeButtonComponent = this.closeButton.getComponent(PinchButton.getTypeName()) as PinchButton;
+            try {
+                // Use the correct getComponent syntax with getTypeName()
+                this.closeButtonComponent = this.closeButton.getComponent(PinchButton.getTypeName()) as PinchButton;
 
-            if (this.closeButtonComponent && this.closeButtonComponent.onButtonPinched) {
-                this.closeButtonComponent.onButtonPinched.add(() => {
-                    this.hideCatalogue();
-                });
-                print("Close button interaction setup complete");
-            } else {
-                print("Warning: CloseButton object exists but has no PinchButton component");
-                print("Available components on close button:");
-                // Debug: list all components on the close button
-                const componentCount = this.closeButton.getComponentCount("Component");
-                for (let i = 0; i < componentCount; i++) {
-                    const comp = this.closeButton.getComponentByIndex("Component", i);
-                    print(`  - ${comp.getTypeName()}`);
+                if (this.closeButtonComponent && this.closeButtonComponent.onButtonPinched) {
+                    this.closeButtonComponent.onButtonPinched.add(() => {
+                        this.hideCatalogue();
+                    });
+                    print("Close button interaction setup complete");
+                } else {
+                    print("Warning: CloseButton object exists but has no PinchButton component");
+                    print("Available components on close button:");
+                    // Debug: list all components on the close button
+                    const componentCount = this.closeButton.getComponentCount("Component");
+                    for (let i = 0; i < componentCount; i++) {
+                        const comp = this.closeButton.getComponentByIndex("Component", i);
+                        print(`  - ${comp.getTypeName()}`);
+                    }
                 }
+            } catch (error) {
+                print(`Error setting up close button: ${error}`);
             }
         } else {
             print("Warning: CloseButton object is not assigned");
@@ -434,15 +696,19 @@ export class Catalogue3DController extends BaseScriptComponent {
         // Setup scroll buttons with same pattern
         if (this.scrollUpButton) {
             print("Scroll up button found, looking for PinchButton component...");
-            this.scrollUpComponent = this.scrollUpButton.getComponent(PinchButton.getTypeName()) as PinchButton;
+            try {
+                this.scrollUpComponent = this.scrollUpButton.getComponent(PinchButton.getTypeName()) as PinchButton;
 
-            if (this.scrollUpComponent && this.scrollUpComponent.onButtonPinched) {
-                this.scrollUpComponent.onButtonPinched.add(() => {
-                    this.scrollUp();
-                });
-                print("Scroll up button interaction setup complete");
-            } else {
-                print("Warning: ScrollUpButton object exists but has no PinchButton component");
+                if (this.scrollUpComponent && this.scrollUpComponent.onButtonPinched) {
+                    this.scrollUpComponent.onButtonPinched.add(() => {
+                        this.scrollUp();
+                    });
+                    print("Scroll up button interaction setup complete");
+                } else {
+                    print("Warning: ScrollUpButton object exists but has no PinchButton component");
+                }
+            } catch (error) {
+                print(`Error setting up scroll up button: ${error}`);
             }
         } else {
             print("Warning: ScrollUpButton object is not assigned");
@@ -450,15 +716,19 @@ export class Catalogue3DController extends BaseScriptComponent {
 
         if (this.scrollDownButton) {
             print("Scroll down button found, looking for PinchButton component...");
-            this.scrollDownComponent = this.scrollDownButton.getComponent(PinchButton.getTypeName()) as PinchButton;
+            try {
+                this.scrollDownComponent = this.scrollDownButton.getComponent(PinchButton.getTypeName()) as PinchButton;
 
-            if (this.scrollDownComponent && this.scrollDownComponent.onButtonPinched) {
-                this.scrollDownComponent.onButtonPinched.add(() => {
-                    this.scrollDown();
-                });
-                print("Scroll down button interaction setup complete");
-            } else {
-                print("Warning: ScrollDownButton object exists but has no PinchButton component");
+                if (this.scrollDownComponent && this.scrollDownComponent.onButtonPinched) {
+                    this.scrollDownComponent.onButtonPinched.add(() => {
+                        this.scrollDown();
+                    });
+                    print("Scroll down button interaction setup complete");
+                } else {
+                    print("Warning: ScrollDownButton object exists but has no PinchButton component");
+                }
+            } catch (error) {
+                print(`Error setting up scroll down button: ${error}`);
             }
         } else {
             print("Warning: ScrollDownButton object is not assigned");
@@ -680,13 +950,13 @@ export class Catalogue3DController extends BaseScriptComponent {
     // Update the scroll methods to work with pre-made items:
 
     private scrollUp(): void {
-        print("Scroll up - switching to sample data for demo");
-        this.fillWithSampleData();
+        print("🔼 Scroll up - searching for shoes");
+        this.searchAndFillCatalogue("shoes");
     }
 
     private scrollDown(): void {
-        print("Scroll down - refreshing Shopify products");
-        this.loadShopifyProducts("sweater");
+        print("🔽 Scroll down - searching for jacket");
+        this.searchAndFillCatalogue("jacket");
     }
 
     private updatePageIndicator(): void {
