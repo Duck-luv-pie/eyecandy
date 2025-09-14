@@ -1,10 +1,11 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 734
+    size: 735
     values:
       - CatalogueItemPrefab.prefab
       - Empty.ss_graph
+      - GetHttpImage.ts
       - Image 2.mat
       - Image 3.mat
       - Image.mat

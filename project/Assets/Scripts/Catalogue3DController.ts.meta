@@ -30,12 +30,12 @@
     catalogueItems: false
     cataloguePanel: false
     closeButton: false
+    debugTest: false
     followHand: false
     itemPrefab: false
     itemSpacing: false
     itemsContainer: false
     itemsPerRow: false
-    manualShopifySearch: false
     pageIndicatorText: false
     panelDistance: false
     rowSpacing: false
@@ -47,7 +47,8 @@
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
   DefaultScriptInputs:
-    - cataloguePanel: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+    - debugTest: true
+      cataloguePanel: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       itemsContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       closeButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       scrollUpButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
@@ -62,14 +63,16 @@
       panelDistance: !<float> 50.000000
       catalogueItems: !<MappingBased.AssignableType[]>
         []
-      manualShopifySearch: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - '// @ui {"widget":"separator"}'
-    - '// @ui {"widget":"label", "label":"3D Catalogue Panel for Spectacles"}'
+    - '// @ui {"widget":"label", "label":"3D Catalogue Panel for Spectacles - Inspector Fields"}'
     - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Debug Test"}'
+    - // @input bool debugTest = true
+    - '// @ui {"widget":"group_end"}'
     - '// @ui {"widget":"group_start", "label":"Main Panel Setup"}'
     - // @input SceneObject cataloguePanel
     - // @input SceneObject itemsContainer
@@ -94,7 +97,4 @@
     - // @input float panelDistance = 50
     - '// @ui {"widget":"group_start", "label":"Pre-made Items"}'
     - "// @input AssignableType[] catalogueItems = {}"
-    - '// @ui {"widget":"group_end"}'
-    - '// @ui {"widget":"group_start", "label":"Optional Shopify Integration"}'
-    - // @input AssignableType_1 manualShopifySearch
     - '// @ui {"widget":"group_end"}'

@@ -70,7 +70,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -370,9 +370,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -0.000000, y: 0.002782, z: 0.000000}
+    Position: {x: 0.000302, y: 0.002782, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 0.120000, y: 0.050000, z: 1.000000}
+    Scale: {x: 0.170000, y: 0.056667, z: 1.133333}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -1860,7 +1860,7 @@
   PrefabRemaps:
     []
   Name: Image
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Fit
   VerticalAlignment: Center
@@ -2658,7 +2658,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -5432,6 +5432,22 @@
   ForceCompound: false
   Intangible: false
   ShowCollider: true
+- !<ScriptComponent/5c84ca7c-670e-485d-8f22-1f9a5d28e56b>
+  PrefabRemaps:
+    []
+  Name: GetHttpImage
+  Enabled: true
+  ScriptAsset: !<reference> f9435451-572c-4669-9154-781860619702
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/5d032f8e-d320-4a15-ba21-2bf2e267fb3e>
   PrefabRemaps:
     []
@@ -5990,7 +6006,7 @@
   PrefabRemaps:
     []
   Name: ShopifyAPIManager
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -6005,7 +6021,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -6696,7 +6712,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -7478,7 +7494,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -7996,9 +8012,10 @@
     - !<own> 76056f09-c75b-42ae-838b-57d2cd199fbd
   Components:
     - !<own> f98f0c87-8860-4a59-960d-569867172d3d
-    - !<own> 9f17ec63-4a8d-4b90-bb43-4425111f3275
     - !<own> bc6ef924-7a67-429b-8668-413213b24265
     - !<own> 401c99ae-e5e9-4e7a-a967-4f2ed003a5b3
+    - !<own> 9f17ec63-4a8d-4b90-bb43-4425111f3275
+    - !<own> 5c84ca7c-670e-485d-8f22-1f9a5d28e56b
 - !<SceneObject/9a14c486-688a-4af4-a99a-084652f3efa1>
   PrefabRemaps:
     []
@@ -9487,7 +9504,7 @@
   PrefabRemaps:
     []
   Name: Image
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Fit
   VerticalAlignment: Center
@@ -11169,7 +11186,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -12189,7 +12206,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -13180,6 +13197,7 @@
   Enabled: true
   ScriptAsset: !<reference> 62d7b20d-c5ee-42ea-a1c4-b209d9ace726
   ScriptInputsDefault:
+    debugTest: true
     itemsPerRow: true
     rowsPerPage: true
     itemSpacing: true
@@ -13191,6 +13209,7 @@
     {}
   ScriptInputs:
     "":
+      debugTest: true
       cataloguePanel: !<reference.SceneObject> 988523cb-1782-42e7-9801-e79299b3bda2
       itemsContainer: !<reference.SceneObject> c98a933a-b3ca-4b1d-8744-2aad7cb63528
       closeButton: !<reference.SceneObject> f445cf16-9a22-4801-916f-33a31bcadc34
@@ -13412,7 +13431,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}

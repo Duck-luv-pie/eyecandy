@@ -39,7 +39,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}

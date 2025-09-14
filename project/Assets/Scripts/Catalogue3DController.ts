@@ -7,6 +7,7 @@ import WorldCameraFinderProvider from "SpectaclesInteractionKit.lspkg/Providers/
 import Event from "SpectaclesInteractionKit.lspkg/Utils/Event";
 import { CatalogueItem3D } from "./CatalogueItem3D";
 import { SimpleProductSearch } from "./SimpleProductSearch";
+import { GetHttpImage } from "../GetHttpImage";
 
 // Define ProductResult interface to match SimpleProductSearch
 interface ProductResult {
@@ -21,8 +22,13 @@ interface ProductResult {
 @component
 export class Catalogue3DController extends BaseScriptComponent {
     @ui.separator
-    @ui.label("3D Catalogue Panel for Spectacles")
+    @ui.label("3D Catalogue Panel for Spectacles - Inspector Fields")
     @ui.separator
+
+    @ui.group_start("Debug Test")
+    @input
+    private debugTest: boolean = true;
+    @ui.group_end
 
     @ui.group_start("Main Panel Setup")
     @input
@@ -75,16 +81,15 @@ export class Catalogue3DController extends BaseScriptComponent {
 
     @ui.group_start("Pre-made Items")
     @input
-    private catalogueItems: CatalogueItem3D[] = []; // Array of pre-made CatalogueItem3D components
-    @ui.group_end
-
-    @ui.group_start("Optional Shopify Integration")
-    @input
-    private manualShopifySearch: SimpleProductSearch | null = null; // Manual assignment option
-    @ui.group_end
-
-    // Optional Shopify integration (not an Inspector input to avoid required field error)
+    public catalogueItems: CatalogueItem3D[] = []; // Will be populated automatically from scene objects
+    @ui.group_end    // Optional Shopify integration (not an Inspector input to avoid required field error)
     private shopifySearch: SimpleProductSearch | null = null;
+
+    // Optional manual assignment for Shopify search (not required)
+    private manualShopifySearch: SimpleProductSearch | null = null;
+
+    // HTTP Image loader component
+    private httpImageLoader: GetHttpImage | null = null;
 
     // Sample catalogue data with more items for scrolling
     private catalogueData = [
@@ -205,14 +210,14 @@ export class Catalogue3DController extends BaseScriptComponent {
     // Simplify onAwake to only use pre-made items:
 
     onAwake() {
-        // Check manual assignment first
-        if (this.manualShopifySearch) {
-            print("Using manually assigned SimpleProductSearch component");
-            this.shopifySearch = this.manualShopifySearch;
-        } else {
-            // Try to find SimpleProductSearch component if not manually assigned
-            this.findShopifySearchComponent();
-        }
+        // Hardcode the catalogueItems by finding CatalogueItem3D components in scene
+        this.findAndAssignCatalogueItems();
+
+        // Try to find SimpleProductSearch component automatically
+        this.findShopifySearchComponent();
+
+        // Try to find GetHttpImage component automatically
+        this.findHttpImageComponent();
 
         this.setupInteractionComponents();
         this.validateCatalogueItems();
@@ -236,9 +241,149 @@ export class Catalogue3DController extends BaseScriptComponent {
             const delayedEvent = this.createEvent("DelayedCallbackEvent");
             delayedEvent.bind(() => {
                 this.findShopifySearchComponent();
-                this.searchAndFillCatalogue("shirt");
+                this.searchAndFillCatalogue("sweater");
             });
             delayedEvent.reset(1.0); // 1 second delay
+        }
+    }
+
+    private findAndAssignCatalogueItems(): void {
+        print("=== Finding and assigning CatalogueItem3D components from scene ===");
+
+        // Clear the array first
+        this.catalogueItems = [];
+
+        // Define the prefab names we're looking for
+        const prefabNames = [
+            "CatalogueItemPrefab",
+            "CatalogueItemPrefab 1",
+            "CatalogueItemPrefab 2",
+            "CatalogueItemPrefab 4",
+            "CatalogueItemPrefab 5",
+            "CatalogueItemPrefab 3",
+            "CatalogueItemPrefab 8",
+            "CatalogueItemPrefab 7",
+            "CatalogueItemPrefab 6"
+        ];
+
+        // Search for each prefab in the scene
+        for (const prefabName of prefabNames) {
+            const foundObject = this.findSceneObjectByName(prefabName);
+            if (foundObject) {
+                try {
+                    const catalogueItemComponent = foundObject.getComponent(CatalogueItem3D.getTypeName()) as CatalogueItem3D;
+                    if (catalogueItemComponent) {
+                        this.catalogueItems.push(catalogueItemComponent);
+                        print(`✅ Found and added: ${prefabName}`);
+                    } else {
+                        print(`⚠️ ${prefabName} found but has no CatalogueItem3D component`);
+                    }
+                } catch (error) {
+                    print(`❌ Error getting CatalogueItem3D component from ${prefabName}: ${error}`);
+                }
+            } else {
+                print(`❌ Could not find object: ${prefabName}`);
+            }
+        }
+
+        print(`🎯 Total CatalogueItem3D components found: ${this.catalogueItems.length}`);
+
+        // Fill remaining slots with null if we need exactly 12
+        while (this.catalogueItems.length < 12) {
+            this.catalogueItems.push(null as any);
+        }
+    }
+
+    private findSceneObjectByName(name: string): SceneObject | null {
+        // Search recursively starting from scene root
+        return this.searchForObjectRecursively(this.getSceneObject().getParent() || this.getSceneObject(), name);
+    }
+
+    private searchForObjectRecursively(obj: SceneObject, targetName: string): SceneObject | null {
+        // Check current object
+        if (obj.name === targetName) {
+            return obj;
+        }
+
+        // Search children
+        for (let i = 0; i < obj.getChildrenCount(); i++) {
+            const child = obj.getChild(i);
+            if (child.name === targetName) {
+                return child;
+            }
+
+            // Recursively search in child
+            const found = this.searchForObjectRecursively(child, targetName);
+            if (found) {
+                return found;
+            }
+        }
+
+        return null;
+    }
+
+    private findHttpImageComponent(): void {
+        if (this.httpImageLoader) {
+            print("GetHttpImage already assigned");
+            return;
+        }
+
+        print("Searching for GetHttpImage component in scene...");
+
+        try {
+            // Search in the current scene object and its children
+            const httpImageComponent = this.getSceneObject().getComponent(GetHttpImage.getTypeName()) as GetHttpImage;
+            if (httpImageComponent) {
+                this.httpImageLoader = httpImageComponent;
+                print("✅ Found GetHttpImage component on same object");
+                return;
+            }
+
+            // Search in parent objects
+            let parent = this.getSceneObject().getParent();
+            while (parent) {
+                const parentHttpImageComponent = parent.getComponent(GetHttpImage.getTypeName()) as GetHttpImage;
+                if (parentHttpImageComponent) {
+                    this.httpImageLoader = parentHttpImageComponent;
+                    print("✅ Found GetHttpImage component on parent object");
+                    return;
+                }
+                parent = parent.getParent();
+            }
+
+            // Search in scene root and its children recursively
+            this.searchForHttpImageRecursively(this.getSceneObject().getParent() || this.getSceneObject());
+
+        } catch (error) {
+            print(`Error searching for GetHttpImage component: ${error}`);
+            print("GetHttpImage component may not be initialized yet - image loading will be disabled");
+        }
+
+        if (this.httpImageLoader) {
+            print("Found GetHttpImage component in scene");
+        } else {
+            print("GetHttpImage component not found in scene - image loading will be disabled");
+        }
+    }
+
+    private searchForHttpImageRecursively(obj: SceneObject): void {
+        if (this.httpImageLoader) return; // Already found
+
+        try {
+            const httpImageComponent = obj.getComponent(GetHttpImage.getTypeName()) as GetHttpImage;
+            if (httpImageComponent) {
+                this.httpImageLoader = httpImageComponent;
+                print("✅ Found GetHttpImage component in scene recursively");
+                return;
+            }
+        } catch (error) {
+            // Component type not available yet, skip this object
+        }
+
+        // Search children
+        for (let i = 0; i < obj.getChildrenCount(); i++) {
+            this.searchForHttpImageRecursively(obj.getChild(i));
+            if (this.httpImageLoader) return;
         }
     }
 
@@ -256,7 +401,7 @@ export class Catalogue3DController extends BaseScriptComponent {
             if (searchComponent) {
                 this.shopifySearch = searchComponent;
                 print("Found SimpleProductSearch component on same object");
-                
+
                 // Verify the component has the required method
                 if (this.shopifySearch.searchProducts && typeof this.shopifySearch.searchProducts === 'function') {
                     print("✅ SimpleProductSearch component is valid and has searchProducts method");
@@ -274,7 +419,7 @@ export class Catalogue3DController extends BaseScriptComponent {
                 if (parentSearchComponent) {
                     this.shopifySearch = parentSearchComponent;
                     print("Found SimpleProductSearch component on parent object");
-                    
+
                     // Verify the component has the required method
                     if (this.shopifySearch.searchProducts && typeof this.shopifySearch.searchProducts === 'function') {
                         print("✅ SimpleProductSearch component is valid and has searchProducts method");
@@ -395,7 +540,7 @@ export class Catalogue3DController extends BaseScriptComponent {
         print(`ShopifySearch component type: ${typeof this.shopifySearch}`);
         print(`ShopifySearch searchProducts method: ${typeof this.shopifySearch.searchProducts}`);
 
-        // Check if searchProducts method exists
+        // Check if searchProducts methosd exists
         if (!this.shopifySearch.searchProducts || typeof this.shopifySearch.searchProducts !== 'function') {
             print("ERROR: searchProducts method is not available on ShopifySearch component");
             print("Available methods on shopifySearch:");
@@ -466,14 +611,8 @@ export class Catalogue3DController extends BaseScriptComponent {
                 // Set the item data
                 catalogueItem.setItemData(itemData);
 
-                // Set product image if available, otherwise use placeholder
-                if (product.imageTexture) {
-                    catalogueItem.setItemTexture(product.imageTexture);
-                    print(`Set real image for: ${product.name}`);
-                } else {
-                    catalogueItem.setPlaceholderImage();
-                    print(`Set placeholder image for: ${product.name}`);
-                }
+                // Load product image using GetHttpImage component
+                this.loadProductImage(product, catalogueItem, i);
 
                 print(`✅ Filled slot ${i}: ${product.name}`);
 
@@ -485,6 +624,48 @@ export class Catalogue3DController extends BaseScriptComponent {
         }
 
         print(`🎯 Catalogue filling completed for "${topic}": ${maxProductsToShow} items shown, ${availableSlots - maxProductsToShow} items hidden`);
+    }
+
+    /**
+     * Load product image using GetHttpImage component
+     * @param product The product with image data
+     * @param catalogueItem The catalogue item component to update
+     * @param index The index for logging purposes
+     */
+    private loadProductImage(product: ProductResult, catalogueItem: CatalogueItem3D, index: number): void {
+        // If product already has a texture, use it directly
+        if (product.imageTexture) {
+            catalogueItem.setItemTexture(product.imageTexture);
+            print(`Set pre-loaded texture for slot ${index}: ${product.name}`);
+            return;
+        }
+
+        // If we have an image URL and the HTTP image loader component, fetch the image
+        if (product.imageUrl && this.httpImageLoader) {
+            print(`🌐 Loading image from URL for slot ${index}: ${product.imageUrl}`);
+
+            this.httpImageLoader.loadImageFromUrl(
+                product.imageUrl,
+                (texture: Texture) => {
+                    // Success: Set the loaded texture
+                    catalogueItem.setItemTexture(texture);
+                    print(`✅ Successfully loaded image for slot ${index}: ${product.name}`);
+                },
+                (error: string) => {
+                    // Error: Use placeholder
+                    print(`⚠️ Failed to load image for slot ${index}: ${error}`);
+                    catalogueItem.setPlaceholderImage();
+                }
+            );
+        } else {
+            // No URL or no HTTP loader available - use placeholder
+            if (!product.imageUrl) {
+                print(`No image URL available for slot ${index}: ${product.name}`);
+            } else if (!this.httpImageLoader) {
+                print(`GetHttpImage component not available for slot ${index}: ${product.name}`);
+            }
+            catalogueItem.setPlaceholderImage();
+        }
     }
 
     // Replace the loadShopifyProducts method with this simplified version:
@@ -556,12 +737,8 @@ export class Catalogue3DController extends BaseScriptComponent {
                 catalogueItem.getSceneObject().enabled = true;
                 catalogueItem.setItemData(itemData);
 
-                // Set product image if available
-                if (product.imageTexture) {
-                    catalogueItem.setItemTexture(product.imageTexture);
-                } else {
-                    catalogueItem.setPlaceholderImage();
-                }
+                // Load product image using GetHttpImage component
+                this.loadProductImage(product, catalogueItem, i);
 
                 print(`Filled slot ${i}: ${product.name}`);
 
