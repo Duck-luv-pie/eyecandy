@@ -34,6 +34,7 @@
     modelParent: false
     promptDisplay: false
     spinner: false
+    targetObject: false
     trenchCoat: false
   ScriptTypesHidden:
     {}
@@ -48,6 +49,7 @@
       displayPlate: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       colliderObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       trenchCoat: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      targetObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -60,3 +62,4 @@
     - // @input SceneObject displayPlate
     - // @input SceneObject colliderObj
     - // @input SceneObject trenchCoat
+    - // @input SceneObject targetObject

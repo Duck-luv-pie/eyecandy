@@ -72,8 +72,6 @@ export class AutoSnap3DGenerator extends BaseScriptComponent {
             })
             .catch((error) => {
                 print("Auto generation failed: " + error);
-                // Allow retry on failure
-                this.hasGenerated = false;
             });
     }
     

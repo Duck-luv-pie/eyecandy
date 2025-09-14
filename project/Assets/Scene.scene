@@ -32,6 +32,7 @@
   Components:
     - !<own> 00000000-0000-0065-0000-000000000065
     - !<own> e5553c8a-0b7e-4ef4-92d9-3e1318fb82c1
+    - !<own> 0fa2278c-2e5a-40d0-956b-1acbb889e7d9
 - !<Camera/00000000-0000-0065-0000-000000000065>
   PrefabRemaps:
     []
@@ -419,6 +420,31 @@
       persistentPinchedState: false
       defaultIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
       onIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/0fa2278c-2e5a-40d0-956b-1acbb889e7d9>
+  PrefabRemaps:
+    []
+  Name: AutoSnap3DGenerator
+  Enabled: true
+  ScriptAsset: !<reference> b8daeb7f-dda2-43bb-b41b-d619802bb1b5
+  ScriptInputsDefault:
+    predefinedPrompt: true
+    delaySeconds: true
+    enableAutoGeneration: true
+    refineMesh: true
+    useVertexColor: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      predefinedPrompt: A green sweater with a mountain landscape design
+      delaySeconds: !<float> 3.000000
+      enableAutoGeneration: true
+      refineMesh: true
+      useVertexColor: false
+      snap3DFactory: !<MappingBased.AssignableType> 4aa30a81-2a3a-4c2d-a9fa-30d11d91584f
   ScriptTypes:
     "":
       {}
@@ -1962,7 +1988,7 @@
   PrefabRemaps:
     []
   Name: Cloth
-  Enabled: true
+  Enabled: false
   RenderOrder: 1
   StretchMode: Stretch
   VerticalAlignment: Center
@@ -2373,6 +2399,8 @@
       refineMesh: false
       useVertexColor: false
       runOnTap: false
+      clothing: !<reference.ClothVisual> 3eb8e55a-fba7-432f-82d6-467de85185a1
+      targetObject: !<reference.SceneObject> f2a23c34-596f-4fa2-9ba5-b0908590b0f2
       snap3DInteractablePrefab: !<reference.ObjectPrefab> db10c49c-d024-4b0e-8649-a551ad0864ad
   ScriptTypes:
     "":
@@ -6007,7 +6035,7 @@
   PrefabRemaps:
     []
   Name: Mesh Visual 1
-  Enabled: true
+  Enabled: false
   RenderOrder: 2
   StretchMode: Stretch
   VerticalAlignment: Center
@@ -6972,7 +7000,7 @@
   PrefabRemaps:
     []
   Name: Render Mesh Visual
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Stretch
   VerticalAlignment: Center

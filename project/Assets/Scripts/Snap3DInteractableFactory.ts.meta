@@ -27,10 +27,12 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
+    clothing: false
     prompt: false
     refineMesh: false
     runOnTap: false
     snap3DInteractablePrefab: false
+    targetObject: false
     useVertexColor: false
   ScriptTypesHidden:
     {}
@@ -41,6 +43,8 @@
       refineMesh: true
       useVertexColor: false
       runOnTap: false
+      clothing: !<reference.ClothVisual> 00000000-0000-0000-0000-000000000000
+      targetObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       snap3DInteractablePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
@@ -53,4 +57,6 @@
     - // @input bool useVertexColor
     - '// @ui {"widget":"group_end"}'
     - // @input bool runOnTap
+    - // @input Component.ClothVisual clothing
+    - // @input SceneObject targetObject
     - // @input Asset.ObjectPrefab snap3DInteractablePrefab

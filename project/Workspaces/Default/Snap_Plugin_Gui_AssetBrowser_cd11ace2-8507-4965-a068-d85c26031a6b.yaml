@@ -1,9 +1,8 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 752
+    size: 759
     values:
-      - Cloth Simulation Coat.lspkg
       - Cloth Simulation Coat.lspkg/Body Assets
       - Cloth Simulation Coat.lspkg/Body Assets/Body Tracking Asset.bodyTracking3D
       - Cloth Simulation Coat.lspkg/Cloth Simulation Coat__PUT_UNDER_MAIN_CAM.prefab
@@ -12,8 +11,6 @@ CollapsedEntities:
       - Cloth Simulation Coat.lspkg/Materials/Coat_Fabric.mat
       - Cloth Simulation Coat.lspkg/Materials/Collider Occluder.mat
       - Cloth Simulation Coat.lspkg/Materials/Occluder_ Back.mat
-      - Cloth Simulation Coat.lspkg/Meshes
-      - Cloth Simulation Coat.lspkg/Meshes/Coat
       - Cloth Simulation Coat.lspkg/Meshes/Coat/middle_coat.mesh
       - Cloth Simulation Coat.lspkg/Meshes/Coat/middle_coat_button.mesh
       - Cloth Simulation Coat.lspkg/Meshes/Coat/trench_coat_buttons.bodyMesh
@@ -69,6 +66,15 @@ CollapsedEntities:
       - LSTween.lspkg/TweenJS/mainGroup.ts
       - LSTween.lspkg/package.native
       - Prefabs/Snap3DInteractable.prefab
+      - Prefabs/shopping.png
+      - Prefabs/t-shirt_low_poly
+      - Prefabs/t-shirt_low_poly/scene.gltf/.hidden/Material
+      - Prefabs/t-shirt_low_poly/scene.gltf/Materials/Material
+      - Prefabs/t-shirt_low_poly/scene.gltf/Meshes/T-Shirt_Material_0
+      - Prefabs/t-shirt_low_poly/scene.gltf/Textures/Material_baseColor
+      - Prefabs/t-shirt_low_poly/scene.gltf/Textures/Material_metallicRoughness
+      - Prefabs/t-shirt_low_poly/scene.gltf/scene
+      - Prefabs/t-shirt_low_poly/textures
       - Remote Service Gateway.lspkg/Helpers
       - Remote Service Gateway.lspkg/Helpers/AudioProcessor.ts
       - Remote Service Gateway.lspkg/Helpers/DynamicAudioOutput.ts
@@ -134,6 +140,7 @@ CollapsedEntities:
       - Scripts/AIAssistantUIBridge.ts
       - Scripts/APIKeyHint.ts
       - Scripts/ASRQueryController.ts
+      - Scripts/AutoSnap3DGenerator.ts
       - Scripts/ImageGenerator.ts
       - Scripts/InteractableImageGenerator.ts
       - Scripts/InteractableSnap3DGenerator.ts

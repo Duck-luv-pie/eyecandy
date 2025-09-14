@@ -334,6 +334,8 @@
       mat: !<reference.Material> 291ef087-954d-4ddd-9224-bb63f0d59386
       displayPlate: !<reference.SceneObject> a9ef1081-3fa6-473f-a4a9-821d4392a72b
       colliderObj: !<reference.SceneObject> 19471fe2-22ed-4b22-bdaa-2ac0d266843e
+      trenchCoat: !<reference.SceneObject> 9c1cb0b7-c673-4d71-b6c7-48f2c9612323
+      targetObject: !<reference.SceneObject> f2a23c34-596f-4fa2-9ba5-b0908590b0f2
   ScriptTypes:
     "":
       {}

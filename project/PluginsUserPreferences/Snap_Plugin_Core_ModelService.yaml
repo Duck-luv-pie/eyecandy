@@ -1,5 +1,7 @@
 ExternalSources:
   type: "std::map<class Es::Uuid,class Es::Path,struct std::less<class Es::Uuid>,class std::allocator<struct std::pair<class Es::Uuid const ,class Es::Path> > >"
   value:
+    - 4497bf12-922a-4690-931d-e6a4ec9bd385: "C:/Users/natee/Downloads/shopping.png"
+    - 59003777-c3a7-4813-bda9-a6cdd5d1050a: "C:/Users/natee/Downloads/t-shirt_low_poly/scene.gltf"
     - 653f26bb-c760-46a7-b900-52c274be78b5: "C:/Users/natee/AppData/Local/Temp/LensStudio_uvwHmo/Cloth Simulation Coat.lspkg"
   options: 4

@@ -1,0 +1,227 @@
+- !<AssetImportMetadata/59003777-c3a7-4813-bda9-a6cdd5d1050a>
+  ImportedAssetIds:
+    .hidden/Material: !<reference> b739ac6c-2197-4eb3-af03-560474283f82
+    3aa17f7525afb34c: !<reference> 035fcb40-6311-46e9-a4d8-c35f8a19da22
+    6219d73ae8e2a78e: !<reference> 17579b55-82c1-4690-8fa9-7d9ad8c1889e
+    624f6792bd6e379e: !<reference> fe383319-ded8-4605-b9f8-ae2251f0851b
+    68a67410fc8b7513: !<reference> 2b1464ef-fbbf-4b7e-881c-7a553715a4b2
+    7a0dd5cd69df73fa: !<reference> 399993c6-a6a0-426c-b962-ae717a7c720b
+    808c3948ad7cbe5c: !<reference> 6a33d5a6-a14b-4daa-92ce-b06e0a64948c
+    83437620bbb97154: !<reference> 48cf41f1-7b27-42fe-9f44-ea60704bf438
+    836554558f1ca498: !<reference> ded86a58-2b27-4a8d-9a41-a7904740c296
+    8d7f6cc6ba6149cc: !<reference> d476c28a-2b66-4734-b7df-8130377b0d9e
+    Materials/Material: !<reference> de245ba9-6bfd-4752-b93b-215d28737e83
+    Materials/Material|Material|GraphPassInfo: !<reference> 389f468d-7fd6-4325-8095-a713517c0aaa
+    Meshes/T-Shirt_Material_0: !<reference> 27e654f1-df9f-444b-b506-8347d26baf99
+    Scene: !<reference> 9dafbece-5a5c-42ab-af15-6bcc16599bdb
+    Textures/Material_baseColor: !<reference> 40de4844-1fd2-452e-b9a8-2f866906f3f2
+    Textures/Material_metallicRoughness: !<reference> 8a935cde-2944-4f57-bc1f-c3b2cc68113f
+    c19d9d5b4804c45e: !<reference> 82319e3c-93c2-4f59-b61b-4e0a426264ef
+  ImporterName: GltfImporter
+  PrimaryAsset: !<reference> 9dafbece-5a5c-42ab-af15-6bcc16599bdb
+  PackageType: LegacyPackage
+  PackagePolicy: CanBeUnpackedTransparent
+  ExtraData:
+    {}
+  AssetDataMap:
+    Scene: !<own> d6bd2c83-1d77-45a4-8fd0-3db03d6b4408
+  DependentFiles:
+    - scene.bin
+    - textures/Material_baseColor.png
+    - textures/Material_metallicRoughness.png
+  ImporterSettings: !<GltfImporterSettings>
+    UseLegacyImporter: false
+    WithMaterials: true
+    NamingConvention: ByCategorySanitizeV2
+    PersistentIdGenerationAlgorithm: DescriptorBased
+    AnimationCurveOptimization: true
+    CustomAnimationSamplingRate: 30.000000
+    ImportVertexColor: true
+    ImportTangents: true
+    ImportMorphTargetAnimation: true
+    ConvertMetersToCentimeters: true
+    RegenerateTangents: false
+  CompressionSettings: !<ComplexCompressionSettings>
+    Presets:
+      None Compression: !<SingleCompressionSettings>
+        CompressorName: None
+        CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+      Performance Compression: !<SingleCompressionSettings>
+        CompressorName: Performance
+        CompressionSettings: !<TextureCompressionMipmapSettings>
+          Level: Medium
+          Mipmap: false
+    ExtensionMappings:
+      mesh: None Compression
+      png: Performance Compression
+    Overrides:
+      {}
+- !<RenderMeshVisual/26cec114-84e2-4ba2-b3d7-91e94acf07c2>
+  PrefabRemaps:
+    []
+  Name: T-Shirt_Material_0
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> de245ba9-6bfd-4752-b93b-215d28737e83
+  Mesh: !<reference> 27e654f1-df9f-444b-b506-8347d26baf99
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/2e43925e-2e96-42aa-9d96-84092394b4f0>
+  PrefabRemaps:
+    []
+  Name: scene
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 100.000000, y: 100.000000, z: 100.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 4ff2e5ea-3a6e-4c51-aed8-1970f621859a
+  Components:
+    []
+- !<SceneObject/4a62034b-0abb-4085-b067-149a0ef4e6dd>
+  PrefabRemaps:
+    []
+  Name: Sketchfab_Scene
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 70c96f3e-e382-4025-90ae-d8bcbe40909f
+  Components:
+    - !<own> 8555507c-147f-47bb-98ed-19d394a98f89
+- !<SceneObject/4ff2e5ea-3a6e-4c51-aed8-1970f621859a>
+  PrefabRemaps:
+    []
+  Name: Scenes
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 4a62034b-0abb-4085-b067-149a0ef4e6dd
+  Components:
+    []
+- !<SceneObject/5e030c48-dfeb-498b-b400-31b7a0875b8a>
+  PrefabRemaps:
+    []
+  Name: RootNode
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> b41cd362-2ce3-47bc-b27b-0327a8f06312
+  Components:
+    []
+- !<SceneObject/5e9eb1a5-8a1e-4ceb-b5e3-0faa2dc93c56>
+  PrefabRemaps:
+    []
+  Name: e141c374ac5e4a90baea5d8c92e1e0b9.fbx
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 90.000000, y: -0.000000, z: 0.000000}
+    Scale: {x: 0.010000, y: 0.010000, z: 0.010000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 5e030c48-dfeb-498b-b400-31b7a0875b8a
+  Components:
+    []
+- !<SceneObject/70c96f3e-e382-4025-90ae-d8bcbe40909f>
+  PrefabRemaps:
+    []
+  Name: Sketchfab_model
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: -90.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 5e9eb1a5-8a1e-4ceb-b5e3-0faa2dc93c56
+  Components:
+    []
+- !<ObjectPrefab/754a2d73-491a-4765-aaca-4ffb62534375>
+  PackagePath: ""
+  objects:
+    - !<own> 2e43925e-2e96-42aa-9d96-84092394b4f0
+  LazyLoading: false
+  RetainAssets: true
+- !<AnimationPlayer/8555507c-147f-47bb-98ed-19d394a98f89>
+  PrefabRemaps:
+    []
+  Name: component_1
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Frames
+  AnimationClips:
+    []
+- !<SceneObject/9354bccc-858a-4a3b-9066-9db1b8d29a96>
+  PrefabRemaps:
+    []
+  Name: T-Shirt_Material_0
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 26cec114-84e2-4ba2-b3d7-91e94acf07c2
+- !<SceneObject/b41cd362-2ce3-47bc-b27b-0327a8f06312>
+  PrefabRemaps:
+    []
+  Name: T-Shirt
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.877833, y: 1.703060, z: 1.510417}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 2.691899, y: 2.691899, z: 2.691899}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 9354bccc-858a-4a3b-9066-9db1b8d29a96
+  Components:
+    []
+- !<ObjectPrefabAssetData/d6bd2c83-1d77-45a4-8fd0-3db03d6b4408>
+  SourceRemaps:
+    - 035fcb40-6311-46e9-a4d8-c35f8a19da22: 5e030c48-dfeb-498b-b400-31b7a0875b8a
+    - 17579b55-82c1-4690-8fa9-7d9ad8c1889e: 4a62034b-0abb-4085-b067-149a0ef4e6dd
+    - 2b1464ef-fbbf-4b7e-881c-7a553715a4b2: b41cd362-2ce3-47bc-b27b-0327a8f06312
+    - 399993c6-a6a0-426c-b962-ae717a7c720b: 2e43925e-2e96-42aa-9d96-84092394b4f0
+    - 48cf41f1-7b27-42fe-9f44-ea60704bf438: 70c96f3e-e382-4025-90ae-d8bcbe40909f
+    - 6a33d5a6-a14b-4daa-92ce-b06e0a64948c: 26cec114-84e2-4ba2-b3d7-91e94acf07c2
+    - 82319e3c-93c2-4f59-b61b-4e0a426264ef: 9354bccc-858a-4a3b-9066-9db1b8d29a96
+    - 9dafbece-5a5c-42ab-af15-6bcc16599bdb: 754a2d73-491a-4765-aaca-4ffb62534375
+    - d476c28a-2b66-4734-b7df-8130377b0d9e: 5e9eb1a5-8a1e-4ceb-b5e3-0faa2dc93c56
+    - ded86a58-2b27-4a8d-9a41-a7904740c296: 8555507c-147f-47bb-98ed-19d394a98f89
+    - fe383319-ded8-4605-b9f8-ae2251f0851b: 4ff2e5ea-3a6e-4c51-aed8-1970f621859a
+  SourceState: !<own> 754a2d73-491a-4765-aaca-4ffb62534375

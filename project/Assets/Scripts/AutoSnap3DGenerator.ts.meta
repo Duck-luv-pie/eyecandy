@@ -27,20 +27,18 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    additionalPrompt: false
     delaySeconds: false
     enableAutoGeneration: false
+    predefinedPrompt: false
     refineMesh: false
     snap3DFactory: false
-    sourceImage: false
     useVertexColor: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
   DefaultScriptInputs:
-    - sourceImage: !<reference.Texture> 00000000-0000-0000-0000-000000000000
-      additionalPrompt: High quality 3D model
+    - predefinedPrompt: A green sweater with a mountain landscape design
       delaySeconds: !<float> 3.000000
       enableAutoGeneration: true
       refineMesh: true
@@ -52,10 +50,7 @@
   InputLines:
     - '// @ui {"widget":"separator"}'
     - '// @ui {"widget":"group_start", "label":"Auto Generation Settings"}'
-    - // @input Asset.Texture sourceImage
-    - '// @ui {"widget":"label", "label":"Source Image for 3D Generation"}'
-    - '// @input string additionalPrompt = "High quality 3D model" {"widget":"text_area"}'
-    - '// @ui {"widget":"label", "label":"Optional Text Prompt (will be combined with image)"}'
+    - '// @input string predefinedPrompt = "A green sweater with a mountain landscape design" {"widget":"text_area"}'
     - // @input float delaySeconds = 3
     - '// @ui {"widget":"label", "label":"Delay before generation (seconds)"}'
     - // @input bool enableAutoGeneration = true

@@ -18,6 +18,10 @@ export class Snap3DInteractableFactory extends BaseScriptComponent {
   @ui.group_end
   @input
   runOnTap: boolean = false;
+  @input
+  public clothing: ClothVisual;
+  @input
+  public targetObject: SceneObject; // Target object to position generated models at
 
   @input
   snap3DInteractablePrefab: ObjectPrefab;
@@ -74,15 +78,15 @@ export class Snap3DInteractableFactory extends BaseScriptComponent {
             } else if (value === "base_mesh") {
               assetOrError = assetOrError as Snap3DTypes.GltfAssetData;
               if (!this.refineMesh) {
-                snap3DInteractable.setModel(assetOrError.gltfAsset, true);
+                snap3DInteractable.setModel(assetOrError.gltfAsset, true, this.clothing, this.targetObject);
                 this.avaliableToRequest = true;
                 resolve("Successfully created mesh with prompt: " + input);
               } else {
-                snap3DInteractable.setModel(assetOrError.gltfAsset, false);
+                snap3DInteractable.setModel(assetOrError.gltfAsset, false, this.clothing, this.targetObject);
               }
             } else if (value === "refined_mesh") {
               assetOrError = assetOrError as Snap3DTypes.GltfAssetData;
-              snap3DInteractable.setModel(assetOrError.gltfAsset, true);
+              snap3DInteractable.setModel(assetOrError.gltfAsset, true, this.clothing, this.targetObject);
               this.avaliableToRequest = true;
               resolve("Successfully created mesh with prompt: " + input);
             } else if (value === "failed") {
