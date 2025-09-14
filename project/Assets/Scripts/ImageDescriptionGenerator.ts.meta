@@ -27,6 +27,7 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
+    autoSnap3DGenerator: false
     internetModule: false
     loadingSpinner: false
   ScriptTypesHidden:
@@ -36,6 +37,7 @@
   DefaultScriptInputs:
     - loadingSpinner: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       internetModule: !<reference.InternetModule> 00000000-0000-0000-0000-000000000000
+      autoSnap3DGenerator: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -44,3 +46,4 @@
     - '// @ui {"widget":"label", "label":"Image Description using Gemini API"}'
     - // @input SceneObject loadingSpinner
     - // @input Asset.InternetModule internetModule
+    - // @input AssignableType autoSnap3DGenerator

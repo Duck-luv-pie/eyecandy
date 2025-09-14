@@ -29,6 +29,7 @@
   ScriptInputsHidden:
     delaySeconds: false
     enableAutoGeneration: false
+    imageDescriptionGenerator: false
     predefinedPrompt: false
     refineMesh: false
     snap3DFactory: false
@@ -44,6 +45,7 @@
       refineMesh: true
       useVertexColor: false
       snap3DFactory: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      imageDescriptionGenerator: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -59,3 +61,5 @@
     - '// @ui {"widget":"group_end"}'
     - // @input AssignableType snap3DFactory
     - '// @ui {"widget":"label", "label":"Reference to Snap3D Factory"}'
+    - // @input AssignableType_1 imageDescriptionGenerator
+    - '// @ui {"widget":"label", "label":"Reference to ImageDescriptionGenerator"}'

@@ -1,10 +1,10 @@
 ExternalSources:
   type: "std::map<class Es::Uuid,class Es::Path,struct std::less<class Es::Uuid>,class std::allocator<struct std::pair<class Es::Uuid const ,class Es::Path> > >"
   value:
-    - 4497bf12-922a-4690-931d-e6a4ec9bd385: "C:/Users/natee/Downloads/shopping.png"
     - 59003777-c3a7-4813-bda9-a6cdd5d1050a: "C:/Users/natee/Downloads/t-shirt_low_poly/scene.gltf"
     - 653f26bb-c760-46a7-b900-52c274be78b5: "C:/Users/natee/AppData/Local/Temp/LensStudio_uvwHmo/Cloth Simulation Coat.lspkg"
     - 7ce03847-2d66-4bb6-a6ae-127e4f66661a: "C:/Program Files/Snap Inc/Lens Studio/JsPlugins/PresetsRegistry/Assets/ColorCorrectionMaterial/Resources/color_correction.ss_graph"
     - 91f05b50-a8e3-4e6f-a921-c6be91a66350: "C:/Program Files/Snap Inc/Lens Studio/JsPlugins/PresetsRegistry/Assets/ColorCorrectionMaterial/Resources/Empty.png"
+    - eae0eda3-9383-4712-a72f-51d05512c5ff: "C:/Users/natee/Downloads/UIBlock.png"
     - fbf9e959-b4f8-41b7-981b-5337d69bc113: "C:/Program Files/Snap Inc/Lens Studio/JsPlugins/PresetsRegistry/Assets/TypeScript/Resources/Untitled TypeScript.ts"
   options: 4

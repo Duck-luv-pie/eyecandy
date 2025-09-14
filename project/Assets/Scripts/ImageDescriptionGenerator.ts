@@ -1,6 +1,7 @@
 // @input Asset.InternetModule internetModule
 
 import { Config } from "./config";
+import { AutoSnap3DGenerator } from "./AutoSnap3DGenerator";
 
 @component
 export class ImageDescriptionGenerator extends BaseScriptComponent {
@@ -10,6 +11,8 @@ export class ImageDescriptionGenerator extends BaseScriptComponent {
   private loadingSpinner: SceneObject;
   @input
   private internetModule: InternetModule;
+  @input
+  private autoSnap3DGenerator: AutoSnap3DGenerator;
   
   private geminiApiKey: string = Config.GEMINI_API_KEY;
   private geminiEndpoint: string = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent";
@@ -35,6 +38,10 @@ export class ImageDescriptionGenerator extends BaseScriptComponent {
       this.analyzeImageWithGemini(texture)
         .then((description) => {
           print("ImageDescriptionGenerator: " + description);
+          if (this.autoSnap3DGenerator) {
+            print("ImageDescriptionGenerator: Passing description to AutoSnap3DGenerator.manualGenerate...");
+            this.autoSnap3DGenerator.manualGenerate(description);
+          }
           resolve(description);
         })
         .catch((error) => {

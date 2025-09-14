@@ -1,7 +1,7 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 771
+    size: 783
     values:
       - Cloth Simulation Coat.lspkg/Body Assets
       - Cloth Simulation Coat.lspkg/Body Assets/Body Tracking Asset.bodyTracking3D
@@ -68,9 +68,9 @@ CollapsedEntities:
       - LSTween.lspkg/TweenJS/Version.ts
       - LSTween.lspkg/TweenJS/mainGroup.ts
       - LSTween.lspkg/package.native
+      - Prefabs
       - Prefabs/ImageMaterial.mat
       - Prefabs/Snap3DInteractable.prefab
-      - Prefabs/shopping.png
       - Prefabs/t-shirt_low_poly
       - Prefabs/t-shirt_low_poly/scene.gltf/.hidden/Material
       - Prefabs/t-shirt_low_poly/scene.gltf/Materials/Material
@@ -139,8 +139,10 @@ CollapsedEntities:
       - Remote Service Gateway.lspkg/Utils/Event.ts
       - Remote Service Gateway.lspkg/Utils/Promisfy.ts
       - Remote Service Gateway.lspkg/package.native
+      - Render
       - Scene.scene
       - ScreenTexture.screenTexture
+      - Scripts
       - Scripts/AIAssistantUIBridge.ts
       - Scripts/APIKeyHint.ts
       - Scripts/ASRQueryController.ts
@@ -743,6 +745,16 @@ CollapsedEntities:
       - SpectaclesInteractionKitExamples.lspkg/Examples/SIK Examples.prefab
       - SpectaclesInteractionKitExamples.lspkg/package.native
       - SpectaclesInteractionKitExamples.lspkg/package_dependencies.json
+      - UI/LSTween.lspkg
+      - UI/LSTween.lspkg/package.native
+      - UI/Prefabs
+      - UI/Scripts
+      - UI/SpectaclesInteractionKit.lspkg
+      - UI/SpectaclesInteractionKit.lspkg/package.native
+      - UI/Visuals
+      - UI2/LSTween.lspkg/package.native
+      - UI2/Remote Service Gateway.lspkg/package.native
+      - UI2/SpectaclesInteractionKit.lspkg/package.native
       - Untitled TypeScript.ts
       - Visuals
       - Visuals/AI Visual

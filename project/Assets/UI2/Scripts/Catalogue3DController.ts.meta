@@ -1,0 +1,100 @@
+- !<AssetImportMetadata/70061f60-0b5b-98e5-1d38-64f89ec5e0f0>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 62d7b20d-c5ee-42ea-a1c4-b209d9ace726
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 62d7b20d-c5ee-42ea-a1c4-b209d9ace726
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 8a20892d-d34a-4131-9e56-bf19d5be091e
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/8a20892d-d34a-4131-9e56-bf19d5be091e>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: d52b6ddc-3738-440b-9a19-c8c6389b8b51
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    catalogueItems: false
+    cataloguePanel: false
+    closeButton: false
+    debugTest: false
+    followHand: false
+    itemPrefab: false
+    itemSpacing: false
+    itemsContainer: false
+    itemsPerRow: false
+    pageIndicatorText: false
+    panelDistance: false
+    rowSpacing: false
+    rowsPerPage: false
+    scrollDownButton: false
+    scrollUpButton: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - debugTest: true
+      cataloguePanel: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      itemsContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      closeButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      scrollUpButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      scrollDownButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      pageIndicatorText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      itemPrefab: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      itemsPerRow: !<float> 3.000000
+      rowsPerPage: !<float> 4.000000
+      itemSpacing: !<float> 15.000000
+      rowSpacing: !<float> 12.000000
+      followHand: true
+      panelDistance: !<float> 50.000000
+      catalogueItems: !<MappingBased.AssignableType[]>
+        []
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"3D Catalogue Panel for Spectacles - Inspector Fields"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Debug Test"}'
+    - // @input bool debugTest = true
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Main Panel Setup"}'
+    - // @input SceneObject cataloguePanel
+    - // @input SceneObject itemsContainer
+    - // @input SceneObject closeButton
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Navigation Controls"}'
+    - // @input SceneObject scrollUpButton
+    - // @input SceneObject scrollDownButton
+    - // @input Component.Text pageIndicatorText
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Item Prefab"}'
+    - // @input SceneObject itemPrefab
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Layout Settings"}'
+    - // @input float itemsPerRow = 3
+    - // @input float rowsPerPage = 4
+    - // @input float itemSpacing = 15
+    - // @input float rowSpacing = 12
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Panel Positioning"}'
+    - // @input bool followHand = true
+    - // @input float panelDistance = 50
+    - '// @ui {"widget":"group_start", "label":"Pre-made Items"}'
+    - "// @input AssignableType[] catalogueItems = {}"
+    - '// @ui {"widget":"group_end"}'
