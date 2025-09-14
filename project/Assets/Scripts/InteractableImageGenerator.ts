@@ -1,5 +1,4 @@
 import { ImageGenerator } from "./ImageGenerator";
-import { ASRQueryController } from "./ASRQueryController";
 
 @component
 export class InteractableImageGenerator extends BaseScriptComponent {
@@ -19,8 +18,6 @@ export class InteractableImageGenerator extends BaseScriptComponent {
   @input
   private textDisplay: Text;
   @input
-  private asrQueryController: ASRQueryController;
-  @input
   private spinner: SceneObject;
   private imageGenerator: ImageGenerator = null;
 
@@ -31,9 +28,7 @@ export class InteractableImageGenerator extends BaseScriptComponent {
     this.image.mainMaterial = imgMat;
     this.createEvent("OnStartEvent").bind(() => {
       this.spinner.enabled = false;
-      this.asrQueryController.onQueryEvent.add((query) => {
-        this.createImage(query);
-      });
+      // ASR listener removed - handled by VoiceOutputListener script
     });
   }
 

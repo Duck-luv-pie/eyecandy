@@ -1,0 +1,13 @@
+Configuration template - copy to config.ts and add your actual keys
+This shows the structure without exposing real API keys
+
+// Copy this content to config.ts and replace with your actual API keys:
+
+export class Config {
+  // Get your Gemini API key from: https://makersuite.google.com/app/apikey
+  public static readonly GEMINI_API_KEY = "paste-your-gemini-api-key-here";
+  
+  // Add other API keys or sensitive configuration here
+  // public static readonly OPENAI_API_KEY = "your-openai-key";
+  // public static readonly CUSTOM_ENDPOINT = "your-custom-endpoint";
+}

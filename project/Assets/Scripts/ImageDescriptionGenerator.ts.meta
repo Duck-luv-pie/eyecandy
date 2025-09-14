@@ -1,0 +1,49 @@
+- !<AssetImportMetadata/6928c466-df40-49de-ae93-a172a51eefad>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> fd3bde82-8e9b-477c-bf82-30cbf7c19e48
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> fd3bde82-8e9b-477c-bf82-30cbf7c19e48
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> a952d549-e115-4e55-8dbb-a75c1116f17b
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/a952d549-e115-4e55-8dbb-a75c1116f17b>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: af5b597d-4233-4158-b719-b009a5d7bfef
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    internetModule: false
+    loadingSpinner: false
+    targetImage: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - targetImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      loadingSpinner: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      internetModule: !<reference.InternetModule> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"Image Description using Gemini API"}'
+    - // @input Component.Image targetImage
+    - // @input SceneObject loadingSpinner
+    - // @input Asset.InternetModule internetModule

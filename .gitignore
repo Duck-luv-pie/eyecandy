@@ -1,1 +1,9 @@
 project/project.esproj.lock
+
+# API Keys and sensitive configuration
+project/Assets/Scripts/config.ts
+project/Assets/Scripts/config.ts.meta
+
+# Environment variables
+.env
+.env.local
