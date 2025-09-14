@@ -321,7 +321,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 6.000000, y: 6.000000, z: 6.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -477,7 +477,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 10
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -485,7 +485,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Text: |
-    Hey wahts up
+    Dog
 
   Editable: false
   ShowEditingPreview: true
@@ -1063,7 +1063,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -1280,7 +1280,7 @@
   PrefabRemaps:
     []
   Name: ItemDescription
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -2101,7 +2101,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000002, y: 4.141721, z: -0.000002}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -2287,7 +2287,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 2
   StretchMode: Fit
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -3237,7 +3237,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000002, y: -3.794876, z: -0.000002}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -5528,7 +5528,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 10
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -6109,7 +6109,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 9999
+  RenderOrder: 0
   StretchMode: Fit
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -6615,18 +6615,22 @@
     - 4132e98f-28ff-4a4a-87b7-ea33917c5e6e: 6c4bfb3a-5eed-4109-8d0a-b821727723ff
     - 445f6826-d2a2-445f-86cb-f64ab4bb9929: 8728eefd-708f-4338-ae57-af9aa4277934
     - 45a42cc1-b690-4b53-b747-28a686838906: 0104b093-e17a-483a-a5f0-f62c1a072786
+    - 4d32d38f-3bff-45d1-a805-0f027b9bc032: c53e7c64-299a-4538-a127-2070a12742b8
     - 58b55232-c100-4bfb-8ac8-b6cdd694f46c: c30231a9-90d2-4e0d-b36d-d95dc87f1600
+    - 9691a587-bb97-4f3d-93db-7b451ee44a7c: b60660fe-1491-41e4-bda8-1bcb8970c82e
     - b162b964-0595-4cdf-afb4-7643507fedd9: e425f095-9fc8-44f6-ac6e-bdaec10b0bef
+    - c5c62877-d6c6-49f8-8458-59b73f6f8d14: 95479ab5-61f0-4f43-af05-02a6334f7df6
     - c715db01-5b73-4a7e-a161-1d83abfbbd01: 615aaac9-0a06-4229-84c3-b4248346f2d6
     - dd0022c2-b0d9-4ab3-ab03-81ec584ec800: 949fc44a-d4da-420a-b706-cce6eeb0f132
     - e7b3b047-eaa4-44e4-ae7c-5c76e718b243: 94d8521e-3430-4b28-99d3-cedf8af36242
+    - f586277f-323f-42b9-b5aa-73f902d6b18a: d83c0a5e-1efa-4122-8806-9aec236edae4
   Name: CatalogueItemPrefab
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: -0.024461, y: 0.025479, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 0.001000, y: 0.001000, z: 0.000000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 1fad7c0f-2133-4c28-a933-b2a0095b8a61
@@ -6726,7 +6730,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 0.014286, y: 0.014286, z: 1.000000}
+    Scale: {x: 15.000000, y: 15.000000, z: 1049.979004}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> c715db01-5b73-4a7e-a161-1d83abfbbd01
@@ -7640,7 +7644,7 @@
     []
   Name: Text
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 10
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -7773,7 +7777,7 @@
     {}
   ScriptInputs:
     "":
-      apiToken: 95585f0f-5fd8-449d-a65a-92660281c129
+      apiToken: 69c39f7a-a509-4225-8133-e5e1f188dea1
   ScriptTypes:
     "":
       {}
@@ -8215,7 +8219,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 1
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -8224,12 +8228,12 @@
   ShadowDensity: 1.000000
   Materials:
     - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
-  Mesh: !<reference> f15bc11b-f9f5-4a21-bc69-f252d5388eac
+  Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
-    Pinch: 0.000000
+    {}
 - !<ScriptComponent/f5e87e0c-b77b-40e7-8b01-2e563f61c0be>
   PrefabRemaps:
     []

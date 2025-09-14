@@ -1,9 +1,8 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 732
+    size: 692
     values:
-      - ""
       - CatalogueItemPrefab.prefab
       - Empty.ss_graph
       - Image 2.mat
@@ -119,7 +118,6 @@ CollapsedEntities:
       - Scripts/Snap3DInteractable.ts
       - Scripts/Snap3DInteractableFactory.ts
       - Scripts/SphereController.ts
-      - SpectaclesInteractionKit.lspkg/Assets
       - SpectaclesInteractionKit.lspkg/Assets/Audio
       - SpectaclesInteractionKit.lspkg/Assets/Audio/HoverAudioTrack.wav
       - SpectaclesInteractionKit.lspkg/Assets/Audio/TriggerEndAudioTrack.wav
@@ -177,31 +175,15 @@ CollapsedEntities:
       - SpectaclesInteractionKit.lspkg/Assets/Materials/SpritePreset.mat
       - SpectaclesInteractionKit.lspkg/Assets/Materials/TargetOutlineMaterial.mat
       - SpectaclesInteractionKit.lspkg/Assets/Materials/Text3DDefault.mat
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/BoxMesh.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/ButtonCapsuleMesh.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/ButtonSphereMesh.mesh
       - SpectaclesInteractionKit.lspkg/Assets/Meshes/Check.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/LeftHandMeshFull.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/LeftHandMeshIndexThumb.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/LeftHandMeshPin.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/PlaneMesh.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI
       - SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/PlatformCapsuleButton.mesh
       - SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/PlatformSphereButton.mesh
       - SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/RoundButton.mesh
       - SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/RoundButtonGlow.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/ScrollBarKnobMesh.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/ScrollBarMesh.mesh
       - SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/Slider.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/RightHandMeshFull.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/RightHandMeshIndexThumb.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/RightHandMeshPin.mesh
       - SpectaclesInteractionKit.lspkg/Assets/Meshes/ScrollBarSlider.mesh
       - SpectaclesInteractionKit.lspkg/Assets/Meshes/SliderSphereKnob.mesh
       - SpectaclesInteractionKit.lspkg/Assets/Meshes/SliderTrack.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/SnapGhost_Mesh.mesh
-      - SpectaclesInteractionKit.lspkg/Assets/Meshes/SphereMesh.mesh
       - SpectaclesInteractionKit.lspkg/Assets/Meshes/Uncheck.mesh
       - SpectaclesInteractionKit.lspkg/Assets/Shaders
       - SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders
@@ -273,9 +255,7 @@ CollapsedEntities:
       - SpectaclesInteractionKit.lspkg/Assets/Textures/SIKContainerExampleImage.jpg
       - SpectaclesInteractionKit.lspkg/Assets/Textures/SIKLogo.png
       - SpectaclesInteractionKit.lspkg/Assets/Textures/ScrollBarRectangle.png
-      - SpectaclesInteractionKit.lspkg/Components/Helpers
       - SpectaclesInteractionKit.lspkg/Components/Helpers/ButtonFeedback.ts
-      - SpectaclesInteractionKit.lspkg/Components/Helpers/CapsuleMeshCustomizer.ts
       - SpectaclesInteractionKit.lspkg/Components/Helpers/InteractableAudioFeedback.ts
       - SpectaclesInteractionKit.lspkg/Components/Helpers/InteractableColorFeedback.ts
       - SpectaclesInteractionKit.lspkg/Components/Helpers/InteractableOutlineFeedback.ts
@@ -335,7 +315,6 @@ CollapsedEntities:
       - SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/container-button.mat
       - SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/container-button.ss_graph
       - SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/flat.ss_graph
-      - SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes
       - SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/Frame.mesh
       - SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/Frame_High.mesh
       - SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/Frame_Mid.mesh
@@ -478,7 +457,6 @@ CollapsedEntities:
       - SpectaclesInteractionKit.lspkg/Providers/TargetProvider/TargetingData.ts
       - SpectaclesInteractionKit.lspkg/README.md
       - SpectaclesInteractionKit.lspkg/SIK.ts
-      - SpectaclesInteractionKit.lspkg/Utils
       - SpectaclesInteractionKit.lspkg/Utils/BinaryHeap.ts
       - SpectaclesInteractionKit.lspkg/Utils/BistableThreshold.ts
       - SpectaclesInteractionKit.lspkg/Utils/ColliderUtils.ts
@@ -512,18 +490,11 @@ CollapsedEntities:
       - SpectaclesInteractionKit.lspkg/Utils/notEmpty.ts
       - SpectaclesInteractionKit.lspkg/Utils/springAnimate.ts
       - SpectaclesInteractionKit.lspkg/Utils/validate.ts
-      - SpectaclesInteractionKit.lspkg/Utils/views
-      - SpectaclesInteractionKit.lspkg/Utils/views/LineRenderer
-      - SpectaclesInteractionKit.lspkg/Utils/views/LineRenderer/LineMeshUtils.ts
       - SpectaclesInteractionKit.lspkg/Utils/views/LineRenderer/LineRenderer.ts
-      - SpectaclesInteractionKit.lspkg/Utils/views/MeshView.ts
       - SpectaclesInteractionKit.lspkg/Utils/views/View.ts
       - SpectaclesInteractionKit.lspkg/VersionNumber.ts
       - SpectaclesInteractionKit.lspkg/package.native
       - SpectaclesInteractionKit.lspkg/tsconfig.json
-      - SpectaclesInteractionKitExamples.lspkg
-      - SpectaclesInteractionKitExamples.lspkg/Examples
-      - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Materials
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Materials/Icons
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Materials/Icons/ModernBodyTube_icon.mat
@@ -553,20 +524,15 @@ CollapsedEntities:
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Materials/Objects/SIK_Rocket_white.mat
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Materials/Objects/SIK_Rocket_white_logo.mat
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Materials/Objects/SIK_Satellite_blue.mat
-      - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes
-      - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/Bases.fbx
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/Bases.fbx/.hidden
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/Bases.fbx/.hidden/Lightbake.001
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/Bases.fbx/.hidden/white
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/Bases.fbx/Bases
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/Bases.fbx/Materials
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/Bases.fbx/Materials/Lightbake.001
-      - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/Bases.fbx/Meshes
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/Bases.fbx/Meshes/Circular
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/Bases.fbx/Meshes/Cubic_01
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/Bases.fbx/Meshes/Hexagon_01
-      - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/SIK_Rockets.fbx
-      - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/SIK_Rockets.fbx/Meshes
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/SIK_Rockets.fbx/Meshes/Meteor
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/SIK_Rockets.fbx/Meshes/Planet
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Meshes/SIK_Rockets.fbx/Meshes/Planet1
@@ -655,7 +621,6 @@ CollapsedEntities:
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Textures/ScrollViewThumbnails/nose-cone_rocket-A.png
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Textures/ScrollViewThumbnails/nose-cone_rocket-B.png
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/Textures/ScrollViewThumbnails/nose-cone_rocket-C.png
-      - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX/Clouds Landing
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX/Clouds Landing/Bones_clouds_ANIM_mat_landing.mat
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX/Clouds Landing/Bones_clouds_material_landing_.ss_graph
@@ -666,8 +631,6 @@ CollapsedEntities:
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX/Clouds Start/Bones_clouds_material_start_.ss_graph
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX/Clouds Start/CloudsStart.animationAsset
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX/Clouds Start/line1.mesh
-      - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX/Custom Mesh Emitter
-      - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX/Custom Mesh Emitter/Custom Mesh Emitter.prefab
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX/Custom Mesh Emitter/Rocket_clouds_emit.vfxgraph
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX/Custom Mesh Emitter/cl_goup.mesh
       - SpectaclesInteractionKitExamples.lspkg/Examples/RocketWorkshop/VFX/Exhaust
@@ -700,7 +663,6 @@ CollapsedEntities:
       - Text3D.mat
       - UI Scroll View.lsc
       - Untitled TypeScript.ts
-      - Visuals/AI Visual
       - Visuals/AI Visual/Animations
       - Visuals/AI Visual/Animations/BaseLayer.animationMixerLayer
       - Visuals/AI Visual/Animations/Constraint_rotation_45.animationLayer
@@ -709,8 +671,6 @@ CollapsedEntities:
       - Visuals/AI Visual/Materials/Assist_sphere_Idle_L_T_T.ss_graph
       - Visuals/AI Visual/Materials/HoverColor.mat
       - Visuals/AI Visual/Materials/HoverColor.ss_graph
-      - Visuals/AI Visual/Meshes
-      - Visuals/AI Visual/Meshes/HoverMesh.mesh
       - Visuals/AI Visual/Meshes/Main_sphere_default_normals.mesh
       - Visuals/AI Visual/Textures
       - Visuals/AI Visual/Textures/Noise_combine_512.png

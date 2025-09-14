@@ -189,6 +189,7 @@ export class Catalogue3DController extends BaseScriptComponent {
         }
 
         print(`3D Catalogue initialized: ${this.catalogueData.length} items, ${this.totalPages} pages`);
+        this.createSingleItem();
     }
 
     // Replace the setupInteractionComponents method starting around line 186:
@@ -256,6 +257,39 @@ export class Catalogue3DController extends BaseScriptComponent {
 
         print("Interaction components setup completed");
     }
+
+    // Add this method to your Catalogue3DController class:
+
+    public createSingleItem(): void {
+        if (!this.itemPrefab || !this.itemsContainer) {
+            print("Cannot create item: missing prefab or container");
+            return;
+        }
+
+        // Use the first item from your catalogue data
+        const itemData = this.catalogueData[0];
+
+        print(`Creating single item: ${itemData.name}`);
+
+        try {
+            // Create item instance
+            const itemObject = this.itemPrefab.copyWholeHierarchy(this.itemsContainer);
+            itemObject.enabled = true;
+            itemObject.name = `SingleItem_${itemData.id}`;
+
+            // Position at center (0, 0, 0) relative to container
+            itemObject.getTransform().setLocalPosition(vec3.zero());
+
+            // Setup the item content
+            this.setupCatalogueItem(itemObject, itemData);
+
+            print(`Successfully created single item: ${itemData.name}`);
+
+        } catch (error) {
+            print(`Failed to create single item: ${error}`);
+        }
+    }
+
 
 
     private updateHandPosition(): void {
