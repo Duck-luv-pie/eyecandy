@@ -1,8 +1,11 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 783
+    size: 1750
     values:
+      - ""
+      - CatalogueManager.ts
+      - Cloth Simulation Coat.lspkg
       - Cloth Simulation Coat.lspkg/Body Assets
       - Cloth Simulation Coat.lspkg/Body Assets/Body Tracking Asset.bodyTracking3D
       - Cloth Simulation Coat.lspkg/Cloth Simulation Coat__PUT_UNDER_MAIN_CAM.prefab
@@ -11,6 +14,8 @@ CollapsedEntities:
       - Cloth Simulation Coat.lspkg/Materials/Coat_Fabric.mat
       - Cloth Simulation Coat.lspkg/Materials/Collider Occluder.mat
       - Cloth Simulation Coat.lspkg/Materials/Occluder_ Back.mat
+      - Cloth Simulation Coat.lspkg/Meshes
+      - Cloth Simulation Coat.lspkg/Meshes/Coat
       - Cloth Simulation Coat.lspkg/Meshes/Coat/middle_coat.mesh
       - Cloth Simulation Coat.lspkg/Meshes/Coat/middle_coat_button.mesh
       - Cloth Simulation Coat.lspkg/Meshes/Coat/trench_coat_buttons.bodyMesh
@@ -72,13 +77,19 @@ CollapsedEntities:
       - Prefabs/ImageMaterial.mat
       - Prefabs/Snap3DInteractable.prefab
       - Prefabs/t-shirt_low_poly
+      - Prefabs/t-shirt_low_poly/scene.gltf
+      - Prefabs/t-shirt_low_poly/scene.gltf/.hidden
       - Prefabs/t-shirt_low_poly/scene.gltf/.hidden/Material
+      - Prefabs/t-shirt_low_poly/scene.gltf/Materials
       - Prefabs/t-shirt_low_poly/scene.gltf/Materials/Material
+      - Prefabs/t-shirt_low_poly/scene.gltf/Meshes
       - Prefabs/t-shirt_low_poly/scene.gltf/Meshes/T-Shirt_Material_0
+      - Prefabs/t-shirt_low_poly/scene.gltf/Textures
       - Prefabs/t-shirt_low_poly/scene.gltf/Textures/Material_baseColor
       - Prefabs/t-shirt_low_poly/scene.gltf/Textures/Material_metallicRoughness
       - Prefabs/t-shirt_low_poly/scene.gltf/scene
       - Prefabs/t-shirt_low_poly/textures
+      - Remote Service Gateway.lspkg
       - Remote Service Gateway.lspkg/Helpers
       - Remote Service Gateway.lspkg/Helpers/AudioProcessor.ts
       - Remote Service Gateway.lspkg/Helpers/DynamicAudioOutput.ts
@@ -114,6 +125,7 @@ CollapsedEntities:
       - Remote Service Gateway.lspkg/HostedSnap/RemoteServiceModules/Snap3D_Submit.remoteServiceModule
       - Remote Service Gateway.lspkg/HostedSnap/Snap3D.ts
       - Remote Service Gateway.lspkg/HostedSnap/Snap3DTypes.ts
+      - Remote Service Gateway.lspkg/Prefabs
       - Remote Service Gateway.lspkg/Prefabs/RemoteServiceGatewayExamples.prefab
       - Remote Service Gateway.lspkg/README.md
       - Remote Service Gateway.lspkg/RemoteServiceGatewayCredentials.ts
@@ -140,6 +152,11 @@ CollapsedEntities:
       - Remote Service Gateway.lspkg/Utils/Promisfy.ts
       - Remote Service Gateway.lspkg/package.native
       - Render
+      - Render/Device Camera Texture.deviceCameraTexture
+      - Render/Echopark.hdr
+      - Render/Echopark.hdr/Diffuse
+      - Render/Echopark.hdr/Specular
+      - Render/Render Target.renderTarget
       - Scene.scene
       - ScreenTexture.screenTexture
       - Scripts
@@ -147,6 +164,8 @@ CollapsedEntities:
       - Scripts/APIKeyHint.ts
       - Scripts/ASRQueryController.ts
       - Scripts/AutoSnap3DGenerator.ts
+      - Scripts/AutoSnap3DGenerator_ImageDriven_Guide.md
+      - Scripts/GeminiAssistant.ts
       - Scripts/ImageDescriptionCaller.ts
       - Scripts/ImageDescriptionGenerator.ts
       - Scripts/ImageDescription_Usage_Guide.md
@@ -745,17 +764,965 @@ CollapsedEntities:
       - SpectaclesInteractionKitExamples.lspkg/Examples/SIK Examples.prefab
       - SpectaclesInteractionKitExamples.lspkg/package.native
       - SpectaclesInteractionKitExamples.lspkg/package_dependencies.json
+      - UI
       - UI/LSTween.lspkg
+      - UI/LSTween.lspkg/Examples
+      - UI/LSTween.lspkg/Examples/Assets
+      - UI/LSTween.lspkg/Examples/Assets/Box.mesh
+      - UI/LSTween.lspkg/Examples/Assets/Simple Diffuse.mat
+      - UI/LSTween.lspkg/Examples/Assets/Simple Diffuse.ss_graph
+      - UI/LSTween.lspkg/Examples/Assets/Sphere.mesh
+      - UI/LSTween.lspkg/Examples/Example__ADD_TO_SCENE.prefab
+      - UI/LSTween.lspkg/Examples/Scripts
+      - UI/LSTween.lspkg/Examples/Scripts/Example_ChainTween.ts
+      - UI/LSTween.lspkg/Examples/Scripts/Example_RawTween.ts
+      - UI/LSTween.lspkg/Examples/Scripts/Example_YoyoTween.ts
+      - UI/LSTween.lspkg/LSTween.ts
+      - UI/LSTween.lspkg/RotationInterpolationType.ts
+      - UI/LSTween.lspkg/TweenJS
+      - UI/LSTween.lspkg/TweenJS/Easing.ts
+      - UI/LSTween.lspkg/TweenJS/Group.ts
+      - UI/LSTween.lspkg/TweenJS/Index.ts
+      - UI/LSTween.lspkg/TweenJS/Interpolation.ts
+      - UI/LSTween.lspkg/TweenJS/Now.ts
+      - UI/LSTween.lspkg/TweenJS/Sequence.ts
+      - UI/LSTween.lspkg/TweenJS/Tween.ts
+      - UI/LSTween.lspkg/TweenJS/Version.ts
+      - UI/LSTween.lspkg/TweenJS/mainGroup.ts
       - UI/LSTween.lspkg/package.native
       - UI/Prefabs
+      - UI/Prefabs/InternetAvailabilityPopUp.prefab
       - UI/Scripts
+      - UI/Scripts/InternetAvailabilityPopUp.ts
       - UI/SpectaclesInteractionKit.lspkg
+      - UI/SpectaclesInteractionKit.lspkg/Assets
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Audio
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Audio/HoverAudioTrack.wav
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Audio/TriggerEndAudioTrack.wav
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Audio/TriggerStartAudioTrack.wav
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/FingerHighlightLeft.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/FingerHighlightRight.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/FingerTipGlow.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/HandOccluderLeft.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/HandOccluderRight.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/NoDraw.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/BitmojiMaterial.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/ContainerImageMaterial.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/LogoMaterial.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/NormalBasedTargetOutline.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonDarkInactive.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonDarkRadial.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonToggleOffIcon.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonToggleOnDefault.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonToggleOnIcon.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonToggleOnSelect.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ButtonHover.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ButtonIdle.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ButtonPinched.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/CapsuleButtonHover.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/CapsuleButtonIdle.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/CapsuleButtonPinched.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButtonGlowHover.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButtonGlowIdle.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButtonGlowPinched.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButtonHover.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButtonPinched.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButton_Idle.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ScrollBackground.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ScrollButtonHover.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ScrollButtonIdle.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ScrollButtonPinched.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/Slider_Platform.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/StateButtonToggledHover.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/StateButtonToggledPinched.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ToggleButtonToggledHover.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ToggleButtonToggledIdle.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ToggleButtonToggledPinched.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/ScaleBasedTargetOutline.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/ScrollBarButton.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/ScrollBarSlider.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/SimplePBRMaterial.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/SliderMat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/SliderMat/PinchButtonDarkDefault.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/SliderMat/PinchButtonOnSelect.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/SliderMat/SliderMat.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/SliderMat/TargetOutlineMaterial.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/SpritePreset.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/TargetOutlineMaterial.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Materials/Text3DDefault.mat
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/BoxMesh.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/ButtonCapsuleMesh.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/ButtonSphereMesh.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/Check.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/LeftHandMeshFull.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/LeftHandMeshIndexThumb.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/LeftHandMeshPin.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlaneMesh.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/PlatformCapsuleButton.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/PlatformSphereButton.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/RoundButton.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/RoundButtonGlow.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/ScrollBarKnobMesh.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/ScrollBarMesh.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/Slider.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/RightHandMeshFull.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/RightHandMeshIndexThumb.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/RightHandMeshPin.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/ScrollBarSlider.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/SliderSphereKnob.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/SliderTrack.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/SnapGhost_Mesh.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/SphereMesh.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Meshes/Uncheck.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders/FingerHighlightAdd.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders/FingerHighlightOpaque.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders/FingerTipGlow.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders/HandOccluder.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders/NoDraw.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/NormalBasedTargetOutline.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PinchButton-ActiveOrInActive.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PinchDarkRadial.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ButtonHover.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ButtonIdle.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ButtonPinched.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/CapsuleButtonHover.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/CapsuleButtonIdle.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/CapsuleButtonPinched.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButtonGlowHover.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButtonGlowIdle.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButtonGlowPinched.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButtonHover.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButtonPinched.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButton_Idle.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ScrollBackground.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ScrollButtonHover.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ScrollButtonIdle.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ScrollButtonPinched.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/Slider_Platform.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/StateButtonToggledHover.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/StateButtonToggledPinched.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/ScaleBasedTargetOutline.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/ScrollBarSlider.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/SliderShaders
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/SliderShaders/PinchButton-Default.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/SliderShaders/Slider.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/SpritePreset.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/TargetOutline.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/Text3DDefault.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/ToggleOff.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/ToggleOn.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/ToggleOnSelect.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Shaders/simple_pbr.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/2DBitmojiAvatar.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/Base.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/BaseHandVisualsTextures
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/BaseHandVisualsTextures/Glow.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/BaseHandVisualsTextures/MaskMap.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/MaterialParams.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/Normal.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/ArrowDown.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/ArrowUp.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/Close.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/FollowIconBlack.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/FollowIconWhite.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/Image.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/Mask_simple_reflection_ellipse.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/SimpleIdle.jpg
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/SimpleIdle_05.jpg
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/SimpleRefl_02.jpg
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/SimpleRefl_05.jpg
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/SimpleRefl_06.jpg
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/UI_glow.jpg
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/Rectangle-Active.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/Rectangle-Inactive.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/Rectangle.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/SIKContainerExampleImage.jpg
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/SIKLogo.png
+      - UI/SpectaclesInteractionKit.lspkg/Assets/Textures/ScrollBarRectangle.png
+      - UI/SpectaclesInteractionKit.lspkg/Components
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers/ButtonFeedback.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers/CapsuleMeshCustomizer.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers/InteractableAudioFeedback.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers/InteractableColorFeedback.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers/InteractableOutlineFeedback.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers/InteractableSquishFeedback.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers/ProximitySensor.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers/ScreenTransformAdapter.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers/ScrollBarFeedback.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers/SliderFeedback.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Helpers/ToggleFeedback.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/Billboard
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/Billboard/Billboard.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/Billboard/BillboardController.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/Billboard/BillboardRotationCalculator.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/HandVisual
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/HandVisual/GlowEffectView.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/HandVisual/GlowEffectViewModel.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/HandVisual/HandVisual.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/Headlock
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/Headlock/Headlock.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/Headlock/HeadlockController.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/Headlock/HeadlockRotationCalculator.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/Headlock/HeadlockTranslationCalculator.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/Interactable
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/Interactable/Interactable.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation/InteractableManipulation.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractionPlane
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractionPlane/InteractionPlane.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/CircleVisual.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/Cursor.mat
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/CursorController.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/CursorMat.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/CursorViewModel.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/InteractorCursor.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/ManipulateLineMat.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/ManipulateLineMaterial.mat
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/Plane.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/disabled.png
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/scale-tl.png
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/scale-tr.png
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/translate.png
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorLineVisual
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorLineVisual/InteractorLineMat.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorLineVisual/InteractorLineMaterial.mat
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorLineVisual/InteractorLineRenderer.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorLineVisual/InteractorLineVisual.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/ContainerFrame.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/FrameMaterial.mat
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/FrameMaterial.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/Ghost Material.mat
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/Ghost Material.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/Image.mat
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/Label.mat
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/container-button.mat
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/container-button.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/flat.ss_graph
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/Frame.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/Frame_High.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/Frame_Mid.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/SphereButton.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/SysSettings_settings_button.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/pinch-depth-button.mesh
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Prefabs
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Prefabs/FramePrefab.prefab
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Prefabs/container-button.prefab
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/README.md
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/close-icon-1.png
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/close-icon.png
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/container-button-matcap.jpg
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/follow-black.png
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/follow-white-shadow.png
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/follow-white.png
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/reflection-map-1-cube.png
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/reflection-map-1.jpg
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/soft-reflection.jpg
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/container-ui.png
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/CursorHandler.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/ForceContainerParent.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/FrameInputHandler.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/HoverBehavior.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/LabeledPinchButton.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/SimpleLODRenderMeshVisual
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/SimpleLODRenderMeshVisual/SimpleLODRenderMeshVisual.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/SmoothFollow.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/SnappableBehavior.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/PinchButton
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/PinchButton/PinchButton.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollBar
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollBar/ScrollBar.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/GridContentCreator.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/ScrollArea.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/ScrollProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/ScrollView.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider/BoundariesProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider/BufferedBoundariesProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider/SceneObjectBoundariesProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider/ScreenTransformBoundariesProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider/VisualBoundariesProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/Slider
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/Slider/Slider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ToggleButton
+      - UI/SpectaclesInteractionKit.lspkg/Components/UI/ToggleButton/ToggleButton.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core
+      - UI/SpectaclesInteractionKit.lspkg/Core/ConfigurationValidator
+      - UI/SpectaclesInteractionKit.lspkg/Core/ConfigurationValidator/ConfigurationValidator.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/HandInteractor
+      - UI/SpectaclesInteractionKit.lspkg/Core/HandInteractor/HandInteractor.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/InteractionManager
+      - UI/SpectaclesInteractionKit.lspkg/Core/InteractionManager/EventDispatcher.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/InteractionManager/InteractionManager.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/BaseInteractor.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/ColliderTargetProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/DirectTargetProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/DragProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/HandRayProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/IndirectTargetProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/Interactor.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/InteractorEvent.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/MobileRayProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/MouseTargetProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/PokeTargetProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/RayProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/TouchRayProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/AxisAngle.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/ContinousIrInteractionTransition.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/IrInteractionTransition.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/PinchJumpSuppressor.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/RaycastBase.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/RaycastProxy.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/RgbIrTransitionJumpSuppressor.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/SwitchIrInteractionTransition.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/TimeDataContainer.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/TimeScalarContainer.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/TimedVec2Container.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/TimedVec3Container.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/LogLevelConfiguration
+      - UI/SpectaclesInteractionKit.lspkg/Core/LogLevelConfiguration/LogLevelConfiguration.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/LogLevelConfiguration/SIKLogLevelConfiguration.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/MobileInteractor
+      - UI/SpectaclesInteractionKit.lspkg/Core/MobileInteractor/MobileInteractor.ts
+      - UI/SpectaclesInteractionKit.lspkg/Core/MouseInteractor
+      - UI/SpectaclesInteractionKit.lspkg/Core/MouseInteractor/MouseInteractor.ts
+      - UI/SpectaclesInteractionKit.lspkg/Decorators
+      - UI/SpectaclesInteractionKit.lspkg/Decorators/Singleton.ts
+      - UI/SpectaclesInteractionKit.lspkg/Prefabs
+      - UI/SpectaclesInteractionKit.lspkg/Prefabs/ScrollViewListItem.prefab
+      - UI/SpectaclesInteractionKit.lspkg/Prefabs/SpectaclesInteractionKit.prefab
+      - UI/SpectaclesInteractionKit.lspkg/Providers
+      - UI/SpectaclesInteractionKit.lspkg/Providers/CameraProvider
+      - UI/SpectaclesInteractionKit.lspkg/Providers/CameraProvider/ARCameraFinderProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/CameraProvider/BaseCameraFinderProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/CameraProvider/BaseWorldCameraProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/CameraProvider/CameraProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/CameraProvider/WorldCameraFinderProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/CursorControllerProvider
+      - UI/SpectaclesInteractionKit.lspkg/Providers/CursorControllerProvider/CursorControllerProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/BaseHand.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/DefaultHandTrackingAssetProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/GestureModuleProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PalmTapDetection
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PalmTapDetection/PalmTapDetector.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PalmTapDetection/PalmTapDetectorStateMachine.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PalmTapDetectionEvent.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PalmTapEvent.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection/DetectionStrategies
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection/DetectionStrategies/HciPinchDetectionStrategy.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection/DetectionStrategies/PinchDetectionStrategy.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection/PinchDetector.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection/PinchDetectorStateMachine.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchEventType.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/HandInputData.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/HandTrackingAssetProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/HandType.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/HandVisuals.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/Joints.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/Keypoint.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/LandmarkNames.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/LeftHandAsset.handTracking3D
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/RightHandAsset.handTracking3D
+      - UI/SpectaclesInteractionKit.lspkg/Providers/HandInputData/TrackedHand.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/InteractionConfigurationProvider
+      - UI/SpectaclesInteractionKit.lspkg/Providers/InteractionConfigurationProvider/InteractionConfigurationProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/InteractionConfigurationProvider/LogLevelProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/InteractionConfigurationProvider/SIKLogLevelProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/MobileInputData
+      - UI/SpectaclesInteractionKit.lspkg/Providers/MobileInputData/MobileInputData.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/MobileInputData/MotionControllerProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/TargetProvider
+      - UI/SpectaclesInteractionKit.lspkg/Providers/TargetProvider/TargetProvider.ts
+      - UI/SpectaclesInteractionKit.lspkg/Providers/TargetProvider/TargetingData.ts
+      - UI/SpectaclesInteractionKit.lspkg/README.md
+      - UI/SpectaclesInteractionKit.lspkg/SIK.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils
+      - UI/SpectaclesInteractionKit.lspkg/Utils/BinaryHeap.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/BistableThreshold.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/ColliderUtils.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/Event.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/Filter.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/FunctionTimingUtils.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/InputChecker.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/InspectorCallbacks.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/LensConfig.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/LogLevel.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/MovingAverageFilter.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/NativeLogger.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/ObjectPool.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/OneEuroFilter.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/ReplayEvent.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/SafeReference.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/SampleOps.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/SceneObjectUtils.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/SeededRandomNumberGenerator.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/Spatial.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/State.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/StateMachine.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/UpdateDispatcher.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/aabb.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/algorithms.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/animate.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/color.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/lazyProperty.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/logger.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/mathUtils.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/notEmpty.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/springAnimate.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/validate.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/views
+      - UI/SpectaclesInteractionKit.lspkg/Utils/views/LineRenderer
+      - UI/SpectaclesInteractionKit.lspkg/Utils/views/LineRenderer/LineMeshUtils.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/views/LineRenderer/LineRenderer.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/views/MeshView.ts
+      - UI/SpectaclesInteractionKit.lspkg/Utils/views/View.ts
+      - UI/SpectaclesInteractionKit.lspkg/VersionNumber.ts
       - UI/SpectaclesInteractionKit.lspkg/package.native
+      - UI/SpectaclesInteractionKit.lspkg/tsconfig.json
+      - UI/UIBlock.png
       - UI/Visuals
+      - UI/Visuals/Textures
+      - UI/Visuals/Textures/NoInternetAlert.png
+      - UI/Visuals/Textures/NoInternetWarning.mat
+      - UI/Visuals/image_unlit.ss_graph
+      - UI2
+      - UI2/GetHttpImage.ts
+      - UI2/Image 2.mat
+      - UI2/LSTween.lspkg
+      - UI2/LSTween.lspkg/Examples
+      - UI2/LSTween.lspkg/Examples/Assets
+      - UI2/LSTween.lspkg/Examples/Assets/Box.mesh
+      - UI2/LSTween.lspkg/Examples/Assets/Simple Diffuse.mat
+      - UI2/LSTween.lspkg/Examples/Assets/Simple Diffuse.ss_graph
+      - UI2/LSTween.lspkg/Examples/Assets/Sphere.mesh
+      - UI2/LSTween.lspkg/Examples/Example__ADD_TO_SCENE.prefab
+      - UI2/LSTween.lspkg/Examples/Scripts
+      - UI2/LSTween.lspkg/Examples/Scripts/Example_ChainTween.ts
+      - UI2/LSTween.lspkg/Examples/Scripts/Example_RawTween.ts
+      - UI2/LSTween.lspkg/Examples/Scripts/Example_YoyoTween.ts
+      - UI2/LSTween.lspkg/LSTween.ts
+      - UI2/LSTween.lspkg/RotationInterpolationType.ts
+      - UI2/LSTween.lspkg/TweenJS
+      - UI2/LSTween.lspkg/TweenJS/Easing.ts
+      - UI2/LSTween.lspkg/TweenJS/Group.ts
+      - UI2/LSTween.lspkg/TweenJS/Index.ts
+      - UI2/LSTween.lspkg/TweenJS/Interpolation.ts
+      - UI2/LSTween.lspkg/TweenJS/Now.ts
+      - UI2/LSTween.lspkg/TweenJS/Sequence.ts
+      - UI2/LSTween.lspkg/TweenJS/Tween.ts
+      - UI2/LSTween.lspkg/TweenJS/Version.ts
+      - UI2/LSTween.lspkg/TweenJS/mainGroup.ts
       - UI2/LSTween.lspkg/package.native
+      - UI2/Prefabs
+      - UI2/Prefabs/CataloguePanel.prefab
+      - UI2/Remote Service Gateway.lspkg
+      - UI2/Remote Service Gateway.lspkg/Helpers
+      - UI2/Remote Service Gateway.lspkg/Helpers/AudioProcessor.ts
+      - UI2/Remote Service Gateway.lspkg/Helpers/DynamicAudioOutput.ts
+      - UI2/Remote Service Gateway.lspkg/Helpers/MicrophoneRecorder.ts
+      - UI2/Remote Service Gateway.lspkg/Helpers/VideoController.ts
+      - UI2/Remote Service Gateway.lspkg/HostedExternal
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/Examples
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/Examples/ExampleGeminiCalls.ts
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/Examples/ExampleGeminiLive.ts
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/Examples/ExampleOAICalls.ts
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/Examples/ExampleOAIRealtime.ts
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/Gemini.ts
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/GeminiTypes.ts
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/OpenAI.ts
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/OpenAITypes.ts
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/RemoteServiceModules
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/RemoteServiceModules/Gemini_Live.remoteServiceModule
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/RemoteServiceModules/Gemini_Sync.remoteServiceModule
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/RemoteServiceModules/OpenAi_Completions.remoteServiceModule
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/RemoteServiceModules/OpenAi_Generations.remoteServiceModule
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/RemoteServiceModules/OpenAi_Realtime.remoteServiceModule
+      - UI2/Remote Service Gateway.lspkg/HostedExternal/RemoteServiceModules/OpenAi_Speech.remoteServiceModule
+      - UI2/Remote Service Gateway.lspkg/HostedSnap
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/DeepSeekTypes.ts
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/Deepseek.ts
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/Examples
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/Examples/ExampleDeepseekCalls.ts
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/Examples/ExampleSnap3D.ts
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/RemoteServiceModules
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/RemoteServiceModules/Deepseek_Completions.remoteServiceModule
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/RemoteServiceModules/Remote Media Module.remoteMediaModule
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/RemoteServiceModules/Snap3D_GetStatus.remoteServiceModule
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/RemoteServiceModules/Snap3D_Submit.remoteServiceModule
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/Snap3D.ts
+      - UI2/Remote Service Gateway.lspkg/HostedSnap/Snap3DTypes.ts
+      - UI2/Remote Service Gateway.lspkg/Prefabs
+      - UI2/Remote Service Gateway.lspkg/Prefabs/RemoteServiceGatewayExamples.prefab
+      - UI2/Remote Service Gateway.lspkg/README.md
+      - UI2/Remote Service Gateway.lspkg/RemoteServiceGatewayCredentials.ts
+      - UI2/Remote Service Gateway.lspkg/Resources
+      - UI2/Remote Service Gateway.lspkg/Resources/Audio Output.audioOutput
+      - UI2/Remote Service Gateway.lspkg/Resources/Microphone Audio.micaudio
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/LoadingSpinner
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner.prefab
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.mat
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.mesh
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.ss_graph
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.ts
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/Materials
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/Materials/Image.mat
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/Materials/Image.png
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/Materials/SnapImage3D.mat
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/Materials/Unlit.mat
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/Materials/flat.ss_graph
+      - UI2/Remote Service Gateway.lspkg/Resources/Visuals/Materials/unlit.ss_graph
+      - UI2/Remote Service Gateway.lspkg/Utils
+      - UI2/Remote Service Gateway.lspkg/Utils/Event.ts
+      - UI2/Remote Service Gateway.lspkg/Utils/Promisfy.ts
       - UI2/Remote Service Gateway.lspkg/package.native
+      - UI2/Scripts
+      - UI2/Scripts/Catalogue3DController.ts
+      - UI2/Scripts/CatalogueItem3D.ts
+      - UI2/Scripts/CatalogueItem3D_ImageDescription_Guide.md
+      - UI2/Scripts/SimpleProductSearch.ts
+      - UI2/SpectaclesInteractionKit.lspkg
+      - UI2/SpectaclesInteractionKit.lspkg/Assets
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Audio
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Audio/HoverAudioTrack.wav
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Audio/TriggerEndAudioTrack.wav
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Audio/TriggerStartAudioTrack.wav
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/FingerHighlightLeft.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/FingerHighlightRight.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/FingerTipGlow.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/HandOccluderLeft.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/HandOccluderRight.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/BaseHandVisualsMaterials/NoDraw.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/BitmojiMaterial.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/ContainerImageMaterial.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/LogoMaterial.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/NormalBasedTargetOutline.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonDarkInactive.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonDarkRadial.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonToggleOffIcon.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonToggleOnDefault.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonToggleOnIcon.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PinchButtonToggleOnSelect.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ButtonHover.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ButtonIdle.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ButtonPinched.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/CapsuleButtonHover.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/CapsuleButtonIdle.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/CapsuleButtonPinched.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButtonGlowHover.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButtonGlowIdle.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButtonGlowPinched.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButtonHover.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButtonPinched.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/RoundButton_Idle.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ScrollBackground.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ScrollButtonHover.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ScrollButtonIdle.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ScrollButtonPinched.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/Slider_Platform.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/StateButtonToggledHover.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/StateButtonToggledPinched.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ToggleButtonToggledHover.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ToggleButtonToggledIdle.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/PlatformUI/ToggleButtonToggledPinched.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/ScaleBasedTargetOutline.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/ScrollBarButton.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/ScrollBarSlider.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/SimplePBRMaterial.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/SliderMat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/SliderMat/PinchButtonDarkDefault.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/SliderMat/PinchButtonOnSelect.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/SliderMat/SliderMat.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/SliderMat/TargetOutlineMaterial.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/SpritePreset.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/TargetOutlineMaterial.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Materials/Text3DDefault.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/BoxMesh.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/ButtonCapsuleMesh.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/ButtonSphereMesh.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/Check.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/LeftHandMeshFull.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/LeftHandMeshIndexThumb.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/LeftHandMeshPin.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlaneMesh.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/PlatformCapsuleButton.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/PlatformSphereButton.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/RoundButton.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/RoundButtonGlow.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/ScrollBarKnobMesh.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/ScrollBarMesh.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/PlatformUI/Slider.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/RightHandMeshFull.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/RightHandMeshIndexThumb.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/RightHandMeshPin.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/ScrollBarSlider.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/SliderSphereKnob.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/SliderTrack.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/SnapGhost_Mesh.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/SphereMesh.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Meshes/Uncheck.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders/FingerHighlightAdd.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders/FingerHighlightOpaque.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders/FingerTipGlow.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders/HandOccluder.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/BaseHandVisualsShaders/NoDraw.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/NormalBasedTargetOutline.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PinchButton-ActiveOrInActive.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PinchDarkRadial.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ButtonHover.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ButtonIdle.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ButtonPinched.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/CapsuleButtonHover.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/CapsuleButtonIdle.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/CapsuleButtonPinched.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButtonGlowHover.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButtonGlowIdle.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButtonGlowPinched.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButtonHover.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButtonPinched.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/RoundButton_Idle.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ScrollBackground.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ScrollButtonHover.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ScrollButtonIdle.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/ScrollButtonPinched.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/Slider_Platform.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/StateButtonToggledHover.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/PlatformUI/StateButtonToggledPinched.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/ScaleBasedTargetOutline.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/ScrollBarSlider.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/SliderShaders
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/SliderShaders/PinchButton-Default.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/SliderShaders/Slider.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/SpritePreset.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/TargetOutline.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/Text3DDefault.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/ToggleOff.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/ToggleOn.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/ToggleOnSelect.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Shaders/simple_pbr.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/2DBitmojiAvatar.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/Base.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/BaseHandVisualsTextures
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/BaseHandVisualsTextures/Glow.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/BaseHandVisualsTextures/MaskMap.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/MaterialParams.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/Normal.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/ArrowDown.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/ArrowUp.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/Close.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/FollowIconBlack.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/FollowIconWhite.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/Image.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/Mask_simple_reflection_ellipse.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/SimpleIdle.jpg
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/SimpleIdle_05.jpg
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/SimpleRefl_02.jpg
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/SimpleRefl_05.jpg
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/SimpleRefl_06.jpg
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/PlatformUI/UI_glow.jpg
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/Rectangle-Active.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/Rectangle-Inactive.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/Rectangle.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/SIKContainerExampleImage.jpg
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/SIKLogo.png
+      - UI2/SpectaclesInteractionKit.lspkg/Assets/Textures/ScrollBarRectangle.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers/ButtonFeedback.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers/CapsuleMeshCustomizer.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers/InteractableAudioFeedback.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers/InteractableColorFeedback.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers/InteractableOutlineFeedback.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers/InteractableSquishFeedback.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers/ProximitySensor.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers/ScreenTransformAdapter.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers/ScrollBarFeedback.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers/SliderFeedback.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Helpers/ToggleFeedback.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/Billboard
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/Billboard/Billboard.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/Billboard/BillboardController.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/Billboard/BillboardRotationCalculator.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/HandVisual
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/HandVisual/GlowEffectView.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/HandVisual/GlowEffectViewModel.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/HandVisual/HandVisual.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/Headlock
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/Headlock/Headlock.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/Headlock/HeadlockController.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/Headlock/HeadlockRotationCalculator.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/Headlock/HeadlockTranslationCalculator.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/Interactable
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/Interactable/Interactable.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractableManipulation/InteractableManipulation.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractionPlane
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractionPlane/InteractionPlane.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/CircleVisual.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/Cursor.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/CursorController.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/CursorMat.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/CursorViewModel.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/InteractorCursor.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/ManipulateLineMat.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/ManipulateLineMaterial.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/Plane.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/disabled.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/scale-tl.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/scale-tr.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorCursor/translate.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorLineVisual
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorLineVisual/InteractorLineMat.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorLineVisual/InteractorLineMaterial.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorLineVisual/InteractorLineRenderer.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/Interaction/InteractorLineVisual/InteractorLineVisual.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/ContainerFrame.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/FrameMaterial.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/FrameMaterial.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/Ghost Material.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/Ghost Material.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/Image.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/Label.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/container-button.mat
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/container-button.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Materials/flat.ss_graph
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/Frame.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/Frame_High.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/Frame_Mid.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/SphereButton.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/SysSettings_settings_button.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Meshes/pinch-depth-button.mesh
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Prefabs
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Prefabs/FramePrefab.prefab
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Prefabs/container-button.prefab
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/README.md
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/close-icon-1.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/close-icon.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/container-button-matcap.jpg
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/follow-black.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/follow-white-shadow.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/follow-white.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/reflection-map-1-cube.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/reflection-map-1.jpg
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/Textures/soft-reflection.jpg
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/container-ui.png
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/CursorHandler.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/ForceContainerParent.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/FrameInputHandler.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/HoverBehavior.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/LabeledPinchButton.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/SimpleLODRenderMeshVisual
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/SimpleLODRenderMeshVisual/SimpleLODRenderMeshVisual.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/SmoothFollow.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ContainerFrame/modules/SnappableBehavior.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/PinchButton
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/PinchButton/PinchButton.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollBar
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollBar/ScrollBar.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/GridContentCreator.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/ScrollArea.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/ScrollProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/ScrollView.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider/BoundariesProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider/BufferedBoundariesProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider/SceneObjectBoundariesProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider/ScreenTransformBoundariesProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ScrollView/boundariesProvider/VisualBoundariesProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/Slider
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/Slider/Slider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ToggleButton
+      - UI2/SpectaclesInteractionKit.lspkg/Components/UI/ToggleButton/ToggleButton.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core
+      - UI2/SpectaclesInteractionKit.lspkg/Core/ConfigurationValidator
+      - UI2/SpectaclesInteractionKit.lspkg/Core/ConfigurationValidator/ConfigurationValidator.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/HandInteractor
+      - UI2/SpectaclesInteractionKit.lspkg/Core/HandInteractor/HandInteractor.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/InteractionManager
+      - UI2/SpectaclesInteractionKit.lspkg/Core/InteractionManager/EventDispatcher.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/InteractionManager/InteractionManager.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/BaseInteractor.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/ColliderTargetProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/DirectTargetProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/DragProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/HandRayProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/IndirectTargetProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/Interactor.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/InteractorEvent.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/MobileRayProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/MouseTargetProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/PokeTargetProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/RayProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/TouchRayProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/AxisAngle.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/ContinousIrInteractionTransition.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/IrInteractionTransition.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/PinchJumpSuppressor.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/RaycastBase.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/RaycastProxy.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/RgbIrTransitionJumpSuppressor.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/SwitchIrInteractionTransition.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/TimeDataContainer.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/TimeScalarContainer.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/TimedVec2Container.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/Interactor/raycastAlgorithms/TimedVec3Container.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/LogLevelConfiguration
+      - UI2/SpectaclesInteractionKit.lspkg/Core/LogLevelConfiguration/LogLevelConfiguration.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/LogLevelConfiguration/SIKLogLevelConfiguration.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/MobileInteractor
+      - UI2/SpectaclesInteractionKit.lspkg/Core/MobileInteractor/MobileInteractor.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Core/MouseInteractor
+      - UI2/SpectaclesInteractionKit.lspkg/Core/MouseInteractor/MouseInteractor.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Decorators
+      - UI2/SpectaclesInteractionKit.lspkg/Decorators/Singleton.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Prefabs
+      - UI2/SpectaclesInteractionKit.lspkg/Prefabs/ScrollViewListItem.prefab
+      - UI2/SpectaclesInteractionKit.lspkg/Prefabs/SpectaclesInteractionKit.prefab
+      - UI2/SpectaclesInteractionKit.lspkg/Providers
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/CameraProvider
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/CameraProvider/ARCameraFinderProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/CameraProvider/BaseCameraFinderProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/CameraProvider/BaseWorldCameraProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/CameraProvider/CameraProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/CameraProvider/WorldCameraFinderProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/CursorControllerProvider
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/CursorControllerProvider/CursorControllerProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/BaseHand.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/DefaultHandTrackingAssetProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/GestureModuleProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PalmTapDetection
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PalmTapDetection/PalmTapDetector.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PalmTapDetection/PalmTapDetectorStateMachine.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PalmTapDetectionEvent.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PalmTapEvent.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection/DetectionStrategies
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection/DetectionStrategies/HciPinchDetectionStrategy.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection/DetectionStrategies/PinchDetectionStrategy.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection/PinchDetector.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchDetection/PinchDetectorStateMachine.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/GestureProvider/PinchEventType.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/HandInputData.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/HandTrackingAssetProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/HandType.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/HandVisuals.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/Joints.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/Keypoint.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/LandmarkNames.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/LeftHandAsset.handTracking3D
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/RightHandAsset.handTracking3D
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/HandInputData/TrackedHand.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/InteractionConfigurationProvider
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/InteractionConfigurationProvider/InteractionConfigurationProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/InteractionConfigurationProvider/LogLevelProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/InteractionConfigurationProvider/SIKLogLevelProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/MobileInputData
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/MobileInputData/MobileInputData.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/MobileInputData/MotionControllerProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/TargetProvider
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/TargetProvider/TargetProvider.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Providers/TargetProvider/TargetingData.ts
+      - UI2/SpectaclesInteractionKit.lspkg/README.md
+      - UI2/SpectaclesInteractionKit.lspkg/SIK.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/BinaryHeap.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/BistableThreshold.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/ColliderUtils.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/Event.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/Filter.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/FunctionTimingUtils.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/InputChecker.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/InspectorCallbacks.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/LensConfig.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/LogLevel.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/MovingAverageFilter.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/NativeLogger.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/ObjectPool.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/OneEuroFilter.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/ReplayEvent.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/SafeReference.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/SampleOps.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/SceneObjectUtils.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/SeededRandomNumberGenerator.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/Spatial.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/State.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/StateMachine.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/UpdateDispatcher.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/aabb.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/algorithms.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/animate.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/color.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/lazyProperty.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/logger.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/mathUtils.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/notEmpty.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/springAnimate.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/validate.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/views
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/views/LineRenderer
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/views/LineRenderer/LineMeshUtils.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/views/LineRenderer/LineRenderer.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/views/MeshView.ts
+      - UI2/SpectaclesInteractionKit.lspkg/Utils/views/View.ts
+      - UI2/SpectaclesInteractionKit.lspkg/VersionNumber.ts
       - UI2/SpectaclesInteractionKit.lspkg/package.native
-      - Untitled TypeScript.ts
+      - UI2/SpectaclesInteractionKit.lspkg/tsconfig.json
+      - UI2/Visuals
+      - UI2/Visuals/TeXGyreAdventor-Bold.ttf
+      - UI2/Visuals/White 2.mat
+      - UI2/Visuals/White 3.mat
+      - UI2/Visuals/White.mat
+      - UI2/Visuals/borderSquare.mat
+      - UI2/Visuals/borderSquare.png
+      - UI2/Visuals/whiteSquarew.png
       - Visuals
       - Visuals/AI Visual
       - Visuals/AI Visual/Animations

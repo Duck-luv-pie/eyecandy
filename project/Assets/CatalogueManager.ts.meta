@@ -1,0 +1,44 @@
+- !<AssetImportMetadata/e5d30f64-5c0e-4ea5-8b20-ce61472d32f4>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 8f1a9a39-3fd4-41a7-bbc6-4f9db6615fab
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 8f1a9a39-3fd4-41a7-bbc6-4f9db6615fab
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> c6448e96-d06f-4905-9d88-ba73a6218139
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/c6448e96-d06f-4905-9d88-ba73a6218139>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 570f823f-5683-45ea-87d8-8dba2d1489db
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    activationButton: false
+    targetObject: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - targetObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      activationButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input SceneObject targetObject {"hint":"Object to enable after 5 seconds"}'
+    - '// @input SceneObject activationButton {"hint":"Button to start the 5 second timer"}'
