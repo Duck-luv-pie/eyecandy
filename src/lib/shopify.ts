@@ -175,6 +175,16 @@ export async function getProductRecommendations(
             } 
           } 
         }
+        variants(first: 1) {
+          edges {
+            node {
+              price {
+                amount
+                currencyCode
+              }
+            }
+          }
+        }
       }
     }
   `;
@@ -201,11 +211,19 @@ export function mapShopifyProductToSimilarItem(product: ShopifyProduct): {
   id: string;
   title: string;
   imageUrl: string | null;
+  price?: {
+    amount: string;
+    currencyCode: string;
+  };
 } {
   return {
     id: product.id,
     title: product.title,
-    imageUrl: product.images.edges.length > 0 ? product.images.edges[0]?.node.url ?? null : null
+    imageUrl: product.images.edges.length > 0 ? product.images.edges[0]?.node.url ?? null : null,
+    price: product.variants?.edges && product.variants.edges.length > 0 && product.variants.edges[0] ? {
+      amount: product.variants.edges[0].node.price.amount,
+      currencyCode: product.variants.edges[0].node.price.currencyCode
+    } : undefined
   };
 }
 

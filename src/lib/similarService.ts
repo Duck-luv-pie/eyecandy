@@ -27,7 +27,12 @@ async function mapRecommendationsForStore(
   perStore: number
 ): Promise<StoreCandidate> {
   const warnings: string[] = [];
-  let items: Array<{ id: string; title: string; imageUrl: string | null }> = [];
+  let items: Array<{ 
+    id: string; 
+    title: string; 
+    imageUrl: string | null;
+    price?: { amount: string; currencyCode: string };
+  }> = [];
 
   try {
     // Check if we should use mock data

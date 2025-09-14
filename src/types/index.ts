@@ -2,6 +2,10 @@ export interface SimilarItem {
   id: string;        // Shopify gid, e.g., "gid://shopify/Product/1234567890"
   title: string;     // product title
   imageUrl: string | null; // first image URL or null
+  price?: {
+    amount: string;  // e.g., "29.99"
+    currencyCode: string; // e.g., "USD"
+  };
 }
 
 export interface StoreEntry {
@@ -42,6 +46,16 @@ export interface ShopifyProduct {
     edges: Array<{
       node: {
         url: string;
+      };
+    }>;
+  };
+  variants?: {
+    edges: Array<{
+      node: {
+        price: {
+          amount: string;
+          currencyCode: string;
+        };
       };
     }>;
   };

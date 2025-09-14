@@ -12,6 +12,16 @@ export interface ShopifyProduct {
       };
     }>;
   };
+  variants?: {
+    edges: Array<{
+      node: {
+        price: {
+          amount: string;
+          currencyCode: string;
+        };
+      };
+    }>;
+  };
 }
 
 export interface ShopifyProductsResponse {
@@ -44,6 +54,16 @@ export async function getAllProducts(
                 }
               }
             }
+            variants(first: 1) {
+              edges {
+                node {
+                  price {
+                    amount
+                    currencyCode
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -62,7 +82,11 @@ export async function getAllProducts(
     return result.products.edges.map(edge => ({
       id: edge.node.id,
       title: edge.node.title,
-      imageUrl: edge.node.images.edges.length > 0 ? edge.node.images.edges[0]?.node.url ?? null : null
+      imageUrl: edge.node.images.edges.length > 0 ? edge.node.images.edges[0]?.node.url ?? null : null,
+      price: edge.node.variants?.edges && edge.node.variants.edges.length > 0 && edge.node.variants.edges[0] ? {
+        amount: edge.node.variants.edges[0].node.price.amount,
+        currencyCode: edge.node.variants.edges[0].node.price.currencyCode
+      } : undefined
     }));
   } catch (error) {
     console.error(`Failed to get products from ${storeDomain}:`, error);
