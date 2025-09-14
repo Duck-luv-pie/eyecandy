@@ -27,6 +27,7 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
+    catalogueItems: false
     cataloguePanel: false
     closeButton: false
     followHand: false
@@ -40,6 +41,7 @@
     rowsPerPage: false
     scrollDownButton: false
     scrollUpButton: false
+    shopifySearch: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -58,6 +60,9 @@
       rowSpacing: !<float> 12.000000
       followHand: true
       panelDistance: !<float> 50.000000
+      catalogueItems: !<MappingBased.AssignableType[]>
+        []
+      shopifySearch: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -87,4 +92,7 @@
     - '// @ui {"widget":"group_start", "label":"Panel Positioning"}'
     - // @input bool followHand = true
     - // @input float panelDistance = 50
+    - '// @ui {"widget":"group_start", "label":"Pre-made Items"}'
+    - "// @input AssignableType[] catalogueItems = {}"
+    - // @input AssignableType_1 shopifySearch
     - '// @ui {"widget":"group_end"}'

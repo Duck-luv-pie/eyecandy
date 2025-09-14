@@ -3,11 +3,16 @@ ExternalSources:
   value:
     - 00a772cb-8673-48c6-a4da-466dcc0f1f45: "C:/Program Files/Snap Inc/Lens Studio/JsPlugins/PresetsRegistry/Assets/TypeScript/Resources/Untitled TypeScript.ts"
     - 33d400c5-6425-4bee-9889-b214d3b945ee: "C:/Users/maxsu/Downloads/image.png"
+    - 570a92ef-32c9-4eb9-b507-bc64e0aa6cb9: "C:/Users/maxsu/Downloads/utrg-fonts/fonts/TeXGyreAdventor-Regular.ttf"
     - 6513f88d-aa88-446e-bfd9-fc7b4a78a7df: "C:/Program Files/Snap Inc/Lens Studio/JsPlugins/PresetsRegistry/Assets/TypeScript/Resources/Untitled TypeScript.ts"
+    - a898db20-e26c-474e-8cb0-c8d8310ed21b: "C:/Users/maxsu/Downloads/utrg-fonts/fonts/TeXGyreAdventor-Bold.ttf"
     - ac4ad21e-358a-4081-9310-75ac73f68565: "C:/Program Files/Snap Inc/Lens Studio/JsPlugins/PresetsRegistry/Assets/EmptyMaterial/Resources/Empty.ss_graph"
     - aed3eb8d-040e-4a61-b573-18846aac69d6: "C:/Users/maxsu/AppData/Local/Snap/Lens Studio/LibraryComponents/UI Scroll View.lsc"
     - b17734dc-aec8-4e78-848b-68c54f7c9c33: "C:/Users/maxsu/Downloads/borderSquare.png"
     - b5ca4ebc-baea-4715-8759-2f3a2c7238c3: "C:/Program Files/Snap Inc/Lens Studio/JsPlugins/PresetsRegistry/Assets/TypeScript/Resources/Untitled TypeScript.ts"
     - bf65f555-0fce-4508-a34f-0ee0ac4058ea: "C:/Users/maxsu/Downloads/whiteSquarew.png"
+    - d26195da-1141-44fa-afb5-8642df1fe6e3: "C:/Program Files/Snap Inc/Lens Studio/JsPlugins/PresetsRegistry/Assets/TypeScript/Resources/Untitled TypeScript.ts"
+    - ead33240-ccce-42ab-bda8-9e6acbe70a4b: "C:/Users/maxsu/Downloads/utrg-fonts/fonts/TeXGyreAdventor-BoldItalic.ttf"
     - ee9d72eb-0f38-489a-b24b-3226acd6c065: "C:/Program Files/Snap Inc/Lens Studio/JsPlugins/PresetsRegistry/Assets/Text3DMaterial/Resources/text_3d.ss_graph"
+    - f981e9a5-f0f4-4776-a85f-42690acccfdd: "C:/Users/maxsu/Downloads/utrg-fonts/fonts/TeXGyreAdventor-Italic.ttf"
   options: 4

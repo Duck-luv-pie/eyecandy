@@ -42,7 +42,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000002, y: -3.794876, z: -0.000002}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -64,12 +64,12 @@
   ShadowDensity: 1.000000
   Materials:
     - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
-  Mesh: !<reference> f15bc11b-f9f5-4a21-bc69-f252d5388eac
+  Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
-    Pinch: 0.000000
+    {}
 - !<SceneObject/211a69d1-2476-42ad-9d54-ac465354af2b>
   PrefabRemaps:
     []
@@ -94,6 +94,7 @@
     - !<own> 39ccc39a-8275-4df8-a766-cff519de332d
     - !<own> e44846fc-0d05-4eef-ac27-d490258f80fa
     - !<own> b994eb30-0077-4c04-a01d-3d64b90f5eee
+    - !<own> 8c0b859e-4fc4-4a24-af86-f0bed7a1d3c4
 - !<ColliderComponent/39ccc39a-8275-4df8-a766-cff519de332d>
   PrefabRemaps:
     []
@@ -111,7 +112,7 @@
   RotationTension: 30.000000
   ForceCompound: false
   Intangible: false
-  ShowCollider: false
+  ShowCollider: true
 - !<SceneObject/4123e656-1a51-47e1-83e1-c8aa6ed7f086>
   PrefabRemaps:
     []
@@ -121,7 +122,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -131,7 +132,7 @@
   PrefabRemaps:
     []
   Name: ItemDescription
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -184,7 +185,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000002, y: 4.141721, z: -0.000002}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -213,6 +214,26 @@
   ScriptTypes:
     "":
       {}
+- !<RenderMeshVisual/8c0b859e-4fc4-4a24-af86-f0bed7a1d3c4>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    []
+  Mesh: !<reference> 00000000-0000-0000-0000-000000000000
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<ObjectPrefab/a4fd350b-981d-40af-9226-047809f9f868>
   PackagePath: ""
   objects:
@@ -304,7 +325,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 6.000000, y: 6.000000, z: 6.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -340,7 +361,7 @@
   ScriptInputs:
     "":
       buttonType: 0
-      renderMeshVisual: !<reference.RenderMeshVisual> ea686c27-b2b2-4c70-a696-a6c54b0c28e5
+      renderMeshVisual: !<reference.RenderMeshVisual> 1a2d85bb-0ea3-421b-b23e-b62a8350e63d
       useGlowMesh: false
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
@@ -377,7 +398,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Text: |
-    Hey wahts up
+    Dog
 
   Editable: false
   ShowEditingPreview: true
@@ -476,6 +497,7 @@
     - 615aaac9-0a06-4229-84c3-b4248346f2d6: 211a69d1-2476-42ad-9d54-ac465354af2b
     - 6c4bfb3a-5eed-4109-8d0a-b821727723ff: 72dd6b38-4065-4921-b094-eba3435daa1f
     - 8728eefd-708f-4338-ae57-af9aa4277934: 6691f6e9-d207-4561-8fd9-220c11241326
+    - 91a1be64-6bb0-4ce2-91ee-c22c7a33727f: 8c0b859e-4fc4-4a24-af86-f0bed7a1d3c4
     - 949fc44a-d4da-420a-b706-cce6eeb0f132: 028fb1aa-8704-4114-aaf8-89d415fbb562
     - 94d8521e-3430-4b28-99d3-cedf8af36242: fcc92e8d-2cc1-4fce-ba4e-9fd54b2b4b55
     - 95479ab5-61f0-4f43-af05-02a6334f7df6: e44846fc-0d05-4eef-ac27-d490258f80fa
@@ -494,7 +516,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 2
   StretchMode: Fit
   VerticalAlignment: Center
   HorizontalAlignment: Center

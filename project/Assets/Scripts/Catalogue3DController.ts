@@ -5,6 +5,10 @@ import Easing from "LSTween.lspkg/TweenJS/Easing";
 import { HandInputData } from "SpectaclesInteractionKit.lspkg/Providers/HandInputData/HandInputData";
 import WorldCameraFinderProvider from "SpectaclesInteractionKit.lspkg/Providers/CameraProvider/WorldCameraFinderProvider";
 import Event from "SpectaclesInteractionKit.lspkg/Utils/Event";
+import { CatalogueItem3D } from "./CatalogueItem3D";
+import { SimpleProductSearch } from "./SimpleProductSearch";
+
+
 
 @component
 export class Catalogue3DController extends BaseScriptComponent {
@@ -59,6 +63,14 @@ export class Catalogue3DController extends BaseScriptComponent {
 
     @input
     private panelDistance: number = 50;
+    // Around line 71, make shopifySearch optional:
+
+    @ui.group_start("Pre-made Items")
+    @input
+    private catalogueItems: CatalogueItem3D[] = []; // Array of pre-made CatalogueItem3D components
+
+    @input
+    private shopifySearch: SimpleProductSearch | null = null; // Make it optional/nullable
     @ui.group_end
 
     // Sample catalogue data with more items for scrolling
@@ -177,20 +189,217 @@ export class Catalogue3DController extends BaseScriptComponent {
 
     public onCatalogueVisibilityChanged: Event<boolean> = new Event<boolean>();
 
-    onAwake() {
-        this.itemsPerPage = this.itemsPerRow * this.rowsPerPage;
-        this.totalPages = Math.ceil(this.catalogueData.length / this.itemsPerPage);
+    // Simplify onAwake to only use pre-made items:
 
+    onAwake() {
         this.setupInteractionComponents();
-        // this.hideCatalogue();
+        this.validateCatalogueItems();
 
         if (this.followHand) {
             this.createEvent("UpdateEvent").bind(this.updateHandPosition.bind(this));
         }
 
-        print(`3D Catalogue initialized: ${this.catalogueData.length} items, ${this.totalPages} pages`);
-        this.createSingleItem();
+        print(`3D Catalogue initialized with ${this.catalogueItems.length} pre-made items`);
+
+        // // Load Shopify products automatically
+        // this.loadShopifyProducts("sweater");
     }
+    private validateCatalogueItems() {
+        print(`=== Validating ${this.catalogueItems.length} catalogue items ===`);
+
+        for (let i = 0; i < this.catalogueItems.length; i++) {
+            const item = this.catalogueItems[i];
+            if (item) {
+                print(`Item ${i}: ${item.getSceneObject().name} - OK`);
+            } else {
+                print(`Item ${i}: NULL - Please assign in Inspector`);
+            }
+        }
+    }
+
+    // Add convenience methods:
+    public switchToShopifyProducts(keyword: string) {
+        this.loadShopifyProducts(keyword);
+    }
+
+    public switchToSampleData() {
+        this.fillWithSampleData();
+    }
+
+    public refreshCatalogue() {
+        // Re-load current content
+        this.loadShopifyProducts("sweater");
+    }
+
+    // Update the setupCatalogueItem method to work with pre-made items:
+    private setupCatalogueItem(itemObject: SceneObject, itemData: any): void {
+        // This method is now replaced by direct CatalogueItem3D.setItemData() calls
+        // Keep for backward compatibility if needed
+        const catalogueItemComponent = itemObject.getComponent(CatalogueItem3D.getTypeName()) as CatalogueItem3D;
+        if (catalogueItemComponent) {
+            catalogueItemComponent.setItemData(itemData);
+        }
+    }
+
+    // Replace the loadShopifyProducts method with this simplified version:
+
+    public loadShopifyProducts(keyword: string = "sweater") {
+        if (!this.shopifySearch) {
+            print("ShopifySearch component not assigned!");
+            this.fillWithSampleData();
+            return;
+        }
+
+        print(`Loading Shopify products for keyword: "${keyword}"`);
+
+        // Trigger the search (without callback for now)
+        try {
+            this.shopifySearch.searchProducts(keyword);
+            print("Shopify search initiated...");
+        } catch (error) {
+            print(`Error calling Shopify search: ${error}`);
+        }
+
+        // Use sample data as fallback while Shopify loads
+        print("Displaying sample data while Shopify products load...");
+        this.fillWithSampleData();
+    }
+
+    // Remove the event listener line completely:
+    // this.shopifySearch.onProductsReceived.add(...) // DELETE THIS LINE
+    private fillCatalogueItems(shopifyProducts: any[]) {
+        print(`Filling catalogue with ${shopifyProducts.length} Shopify products`);
+
+        // Get the number of available catalogue item slots
+        const availableSlots = this.catalogueItems.length;
+        const productsToShow = Math.min(shopifyProducts.length, availableSlots);
+
+        print(`Available slots: ${availableSlots}, Products to show: ${productsToShow}`);
+
+        for (let i = 0; i < availableSlots; i++) {
+            const catalogueItem = this.catalogueItems[i];
+
+            if (!catalogueItem) {
+                print(`Warning: catalogueItems[${i}] is null`);
+                continue;
+            }
+
+            if (i < productsToShow) {
+                // Fill with Shopify product data
+                const product = shopifyProducts[i];
+                const itemData = {
+                    id: i + 1000, // Use high IDs for Shopify products
+                    name: product.name,
+                    description: "Available on Shopify",
+                    category: "Shopify Products"
+                };
+
+                // Activate and setup the catalogue item
+                catalogueItem.getSceneObject().enabled = true;
+                catalogueItem.setItemData(itemData);
+
+                // Set product image if available
+                if (product.imageTexture) {
+                    catalogueItem.setItemTexture(product.imageTexture);
+                } else {
+                    catalogueItem.setPlaceholderImage();
+                }
+
+                print(`Filled slot ${i}: ${product.name}`);
+
+            } else {
+                // Deactivate unused catalogue items
+                catalogueItem.getSceneObject().enabled = false;
+                print(`Deactivated slot ${i}`);
+            }
+        }
+
+        print(`Catalogue filling completed. ${productsToShow} items shown, ${availableSlots - productsToShow} items hidden`);
+    }
+    private fillWithSampleData() {
+        print("Filling catalogue with sample data");
+
+        const availableSlots = this.catalogueItems.length;
+        const samplesToShow = Math.min(this.catalogueData.length, availableSlots);
+
+        for (let i = 0; i < availableSlots; i++) {
+            const catalogueItem = this.catalogueItems[i];
+
+            if (!catalogueItem) continue;
+
+            if (i < samplesToShow) {
+                // Fill with sample data
+                const sampleData = this.catalogueData[i];
+
+                catalogueItem.getSceneObject().enabled = true;
+                catalogueItem.setItemData(sampleData);
+                catalogueItem.setPlaceholderImage();
+
+                print(`Filled slot ${i} with sample: ${sampleData.name}`);
+
+            } else {
+                // Deactivate unused items
+                catalogueItem.getSceneObject().enabled = false;
+                print(`Deactivated slot ${i}`);
+            }
+        }
+    }
+
+    // Add this new method:
+
+    // public createGridLayout(numItems: number = 20, cols: number = 4): void {
+    //     print(`=== Creating ${numItems} items in ${cols}-column grid ===`);
+
+    //     if (!this.itemPrefab || !this.itemsContainer) {
+    //         print("ERROR: Missing prefab or container!");
+    //         return;
+    //     }
+
+    //     // Clear any existing items
+    //     this.clearCurrentItems();
+
+    //     const itemsToCreate = Math.min(numItems, this.catalogueData.length);
+    //     const rows = Math.ceil(itemsToCreate / cols);
+
+    //     // Grid spacing based on Spectacles samples
+    //     const itemSpacing = 15;
+    //     const rowSpacing = 12;
+
+    //     print(`Creating ${cols}x${rows} grid with ${itemsToCreate} items`);
+
+    //     for (let i = 0; i < itemsToCreate; i++) {
+    //         try {
+    //             // Calculate grid position
+    //             const row = Math.floor(i / cols);
+    //             const col = i % cols;
+
+    //             // Calculate centered position
+    //             const xOffset = (col - (cols - 1) / 2) * itemSpacing;
+    //             const yOffset = (rows - 1) / 2 * rowSpacing - (row * rowSpacing);
+
+    //             // Create and position item
+    //             const itemObject = this.itemPrefab.copyWholeHierarchy(this.itemsContainer);
+    //             itemObject.enabled = true;
+    //             itemObject.name = `GridItem_${i + 1}_${this.catalogueData[i].name}`;
+
+    //             itemObject.getTransform().setLocalPosition(new vec3(xOffset, yOffset, 0));
+
+    //             // Setup item data
+    //             this.setupCatalogueItem(itemObject, this.catalogueData[i]);
+
+    //             // Store reference
+    //             this.currentItemObjects.push(itemObject);
+
+    //             print(`Item ${i + 1}: ${this.catalogueData[i].name} at (${xOffset.toFixed(1)}, ${yOffset.toFixed(1)})`);
+
+    //         } catch (error) {
+    //             print(`Error creating item ${i + 1}: ${error}`);
+    //             break;
+    //         }
+    //     }
+
+    //     print(`Grid creation completed: ${this.currentItemObjects.length} items created`);
+    // }
 
     // Replace the setupInteractionComponents method starting around line 186:
 
@@ -260,35 +469,75 @@ export class Catalogue3DController extends BaseScriptComponent {
 
     // Add this method to your Catalogue3DController class:
 
-    public createSingleItem(): void {
-        if (!this.itemPrefab || !this.itemsContainer) {
-            print("Cannot create item: missing prefab or container");
-            return;
-        }
+    // Replace your createSingleItem method around line 263:
 
-        // Use the first item from your catalogue data
-        const itemData = this.catalogueData[0];
+    // Replace your createSingleItem method around line 263:
 
-        print(`Creating single item: ${itemData.name}`);
+    // Replace your createSingleItem method around line 263:
 
-        try {
-            // Create item instance
-            const itemObject = this.itemPrefab.copyWholeHierarchy(this.itemsContainer);
-            itemObject.enabled = true;
-            itemObject.name = `SingleItem_${itemData.id}`;
+    // public createSingleItem(): void {
+    //     print("=== Creating 20 items in grid format ===");
 
-            // Position at center (0, 0, 0) relative to container
-            itemObject.getTransform().setLocalPosition(vec3.zero());
+    //     // Check if required components exist
+    //     if (!this.itemPrefab) {
+    //         print("ERROR: itemPrefab is not assigned in Inspector!");
+    //         return;
+    //     }
 
-            // Setup the item content
-            this.setupCatalogueItem(itemObject, itemData);
+    //     if (!this.itemsContainer) {
+    //         print("ERROR: itemsContainer is not assigned in Inspector!");
+    //         return;
+    //     }
 
-            print(`Successfully created single item: ${itemData.name}`);
+    //     print("Creating 20 items in grid layout...");
 
-        } catch (error) {
-            print(`Failed to create single item: ${error}`);
-        }
-    }
+    //     // Grid configuration for 20 items
+    //     const itemsToCreate = Math.min(20, this.catalogueData.length);
+    //     const gridCols = 4; // 4 columns
+    //     const gridRows = 5; // 5 rows (4x5 = 20 items)
+    //     const itemSpacing = 12; // Space between items
+    //     const rowSpacing = 10; // Space between rows
+
+    //     let createdCount = 0;
+
+    //     try {
+    //         for (let i = 0; i < itemsToCreate; i++) {
+    //             // Calculate grid position
+    //             const row = Math.floor(i / gridCols);
+    //             const col = i % gridCols;
+
+    //             // Calculate world position (centered grid)
+    //             const xOffset = (col - (gridCols - 1) / 2) * itemSpacing;
+    //             const yOffset = -(row - (gridRows - 1) / 2) * rowSpacing;
+    //             const zOffset = 0;
+
+    //             // Create item instance
+    //             const itemObject = this.itemPrefab.copyWholeHierarchy(this.itemsContainer);
+    //             itemObject.enabled = true;
+    //             itemObject.name = `GridItem_${this.catalogueData[i].id}`;
+
+    //             // Position the item in grid
+    //             itemObject.getTransform().setLocalPosition(new vec3(xOffset, yOffset, zOffset));
+
+    //             // Setup with actual data
+    //             this.setupCatalogueItem(itemObject, this.catalogueData[i]);
+
+    //             // Store reference
+    //             this.currentItemObjects.push(itemObject);
+
+    //             createdCount++;
+    //             print(`Created item ${createdCount}: ${this.catalogueData[i].name} at (${xOffset}, ${yOffset})`);
+    //         }
+
+    //         print(`Successfully created ${createdCount} items in grid format`);
+    //         print(`itemsContainer children count: ${this.itemsContainer.getChildrenCount()}`);
+
+    //     } catch (error) {
+    //         print(`ERROR creating grid items: ${error}`);
+    //         print(`Successfully created ${createdCount} items before error`);
+    //     }
+    // }
+
 
 
 
@@ -309,12 +558,16 @@ export class Catalogue3DController extends BaseScriptComponent {
         }
     }
 
+    // Replace your showCatalogue method around line 638:
+
     public showCatalogue(): void {
         if (!this.cataloguePanel) return;
 
         this.isVisible = true;
         this.cataloguePanel.enabled = true;
-        this.generateCurrentPage();
+
+        // Use pre-made items instead of generating pages
+        // this.generateCurrentPage(); // REMOVE THIS LINE
         this.updatePageIndicator();
 
         // Animate panel appearance
@@ -356,94 +609,45 @@ export class Catalogue3DController extends BaseScriptComponent {
         }
     }
 
-    private generateCurrentPage(): void {
-        this.clearCurrentItems();
+    // private generateCurrentPage(): void {
+    //     this.clearCurrentItems();
 
-        const startIndex = this.currentPage * this.itemsPerPage;
-        const endIndex = Math.min(startIndex + this.itemsPerPage, this.catalogueData.length);
+    //     const startIndex = this.currentPage * this.itemsPerPage;
+    //     const endIndex = Math.min(startIndex + this.itemsPerPage, this.catalogueData.length);
 
-        for (let i = startIndex; i < endIndex; i++) {
-            const itemData = this.catalogueData[i];
-            const localIndex = i - startIndex;
-            this.createCatalogueItem(itemData, localIndex);
-        }
-    }
+    //     for (let i = startIndex; i < endIndex; i++) {
+    //         const itemData = this.catalogueData[i];
+    //         const localIndex = i - startIndex;
+    //         this.createCatalogueItem(itemData, localIndex);
+    //     }
+    // }
 
-    private createCatalogueItem(itemData: any, localIndex: number): void {
-        if (!this.itemPrefab || !this.itemsContainer) return;
+    // private createCatalogueItem(itemData: any, localIndex: number): void {
+    //     if (!this.itemPrefab || !this.itemsContainer) return;
 
-        // Calculate grid position
-        const row = Math.floor(localIndex / this.itemsPerRow);
-        const col = localIndex % this.itemsPerRow;
+    //     // Calculate grid position
+    //     const row = Math.floor(localIndex / this.itemsPerRow);
+    //     const col = localIndex % this.itemsPerRow;
 
-        // Calculate world position relative to container
-        const xOffset = (col - (this.itemsPerRow - 1) / 2) * this.itemSpacing;
-        const yOffset = -(row * this.rowSpacing);
-        const zOffset = 0;
+    //     // Calculate world position relative to container
+    //     const xOffset = (col - (this.itemsPerRow - 1) / 2) * this.itemSpacing;
+    //     const yOffset = -(row * this.rowSpacing);
+    //     const zOffset = 0;
 
-        // Create item instance
-        const itemObject = this.itemPrefab.copyWholeHierarchy(this.itemsContainer);
-        itemObject.enabled = true;
-        itemObject.name = `CatalogueItem_${itemData.id}`;
+    //     // Create item instance
+    //     const itemObject = this.itemPrefab.copyWholeHierarchy(this.itemsContainer);
+    //     itemObject.enabled = true;
+    //     itemObject.name = `CatalogueItem_${itemData.id}`;
 
-        // Position the item
-        itemObject.getTransform().setLocalPosition(new vec3(xOffset, yOffset, zOffset));
+    //     // Position the item
+    //     itemObject.getTransform().setLocalPosition(new vec3(xOffset, yOffset, zOffset));
 
-        // Setup the item content and interaction
-        this.setupCatalogueItem(itemObject, itemData);
+    //     // Setup the item content and interaction
+    //     this.setupCatalogueItem(itemObject, itemData);
 
-        // Store reference for cleanup
-        this.currentItemObjects.push(itemObject);
-    }
-
-    private setupCatalogueItem(itemObject: SceneObject, itemData: any): void {
-        // Find and setup text components
-        const nameText = this.findChildByName(itemObject, "ItemName");
-        const descriptionText = this.findChildByName(itemObject, "ItemDescription");
-        const categoryText = this.findChildByName(itemObject, "ItemCategory");
-
-        if (nameText) {
-            const textComponent = nameText.getComponent("Component.Text") as Text;
-            if (textComponent) {
-                textComponent.text = itemData.name;
-            }
-        }
-
-        if (descriptionText) {
-            const textComponent = descriptionText.getComponent("Component.Text") as Text;
-            if (textComponent) {
-                textComponent.text = itemData.description;
-            }
-        }
-
-        if (categoryText) {
-            const textComponent = categoryText.getComponent("Component.Text") as Text;
-            if (textComponent) {
-                textComponent.text = itemData.category;
-            }
-        }
-
-        // Setup interaction
-        const buttonComponent = itemObject.getComponent(PinchButton.getTypeName()) as PinchButton;
-        if (buttonComponent && buttonComponent.onButtonPinched) {
-            buttonComponent.onButtonPinched.add(() => {
-                this.onItemTapped(itemData);
-            });
-        } else {
-            // Fallback: try to find a child with PinchButton
-            const buttonObject = this.findChildByName(itemObject, "ItemButton");
-            if (buttonObject) {
-                const childButtonComponent = buttonObject.getComponent(PinchButton.getTypeName()) as PinchButton;
-                if (childButtonComponent && childButtonComponent.onButtonPinched) {
-                    childButtonComponent.onButtonPinched.add(() => {
-                        this.onItemTapped(itemData);
-                    });
-                }
-            }
-        }
-
-        print(`Setup catalogue item: ${itemData.name}`);
-    }
+    //     // Store reference for cleanup
+    //     this.currentItemObjects.push(itemObject);
+    // }
 
     private onItemTapped(itemData: any): void {
         print(`Item selected: ${itemData.name} (${itemData.category})`);
@@ -473,22 +677,16 @@ export class Catalogue3DController extends BaseScriptComponent {
         });
     }
 
+    // Update the scroll methods to work with pre-made items:
+
     private scrollUp(): void {
-        if (this.currentPage > 0) {
-            this.currentPage--;
-            this.generateCurrentPage();
-            this.updatePageIndicator();
-            print(`Scrolled to page ${this.currentPage + 1}`);
-        }
+        print("Scroll up - switching to sample data for demo");
+        this.fillWithSampleData();
     }
 
     private scrollDown(): void {
-        if (this.currentPage < this.totalPages - 1) {
-            this.currentPage++;
-            this.generateCurrentPage();
-            this.updatePageIndicator();
-            print(`Scrolled to page ${this.currentPage + 1}`);
-        }
+        print("Scroll down - refreshing Shopify products");
+        this.loadShopifyProducts("sweater");
     }
 
     private updatePageIndicator(): void {
@@ -497,14 +695,20 @@ export class Catalogue3DController extends BaseScriptComponent {
         }
     }
 
+    // Update clearCurrentItems to work with pre-made items:
+
     private clearCurrentItems(): void {
-        for (const item of this.currentItemObjects) {
-            if (item && !isNull(item)) {
-                item.destroy();
+        // Don't destroy pre-made items, just hide them
+        for (let i = 0; i < this.catalogueItems.length; i++) {
+            const item = this.catalogueItems[i];
+            if (item) {
+                item.getSceneObject().enabled = false;
             }
         }
+        // Clear the dynamic objects array (if any remain)
         this.currentItemObjects = [];
     }
+
 
     private findChildByName(parent: SceneObject, name: string): SceneObject | null {
         for (let i = 0; i < parent.getChildrenCount(); i++) {
@@ -549,7 +753,7 @@ export class Catalogue3DController extends BaseScriptComponent {
             }
 
             if (this.isVisible) {
-                this.generateCurrentPage();
+                //this.generateCurrentPage();
                 this.updatePageIndicator();
             }
 

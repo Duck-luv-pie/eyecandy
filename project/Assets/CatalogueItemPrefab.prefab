@@ -9,7 +9,7 @@
     []
   Name: Image
   Enabled: true
-  RenderOrder: 0
+  RenderOrder: 2
   StretchMode: Fit
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -32,7 +32,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -62,6 +62,7 @@
     - !<own> c53e7c64-299a-4538-a127-2070a12742b8
     - !<own> 95479ab5-61f0-4f43-af05-02a6334f7df6
     - !<own> b60660fe-1491-41e4-bda8-1bcb8970c82e
+    - !<own> 91a1be64-6bb0-4ce2-91ee-c22c7a33727f
 - !<SceneObject/6c4bfb3a-5eed-4109-8d0a-b821727723ff>
   PrefabRemaps:
     []
@@ -69,7 +70,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000002, y: 4.141721, z: -0.000002}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -112,6 +113,26 @@
   ScriptTypes:
     "":
       {}
+- !<RenderMeshVisual/91a1be64-6bb0-4ce2-91ee-c22c7a33727f>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    []
+  Mesh: !<reference> 00000000-0000-0000-0000-000000000000
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<ScriptComponent/949fc44a-d4da-420a-b706-cce6eeb0f132>
   PrefabRemaps:
     []
@@ -248,7 +269,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Text: |
-    Hey wahts up
+    Dog
 
   Editable: false
   ShowEditingPreview: true
@@ -343,7 +364,7 @@
   ScriptInputs:
     "":
       buttonType: 0
-      renderMeshVisual: !<reference.RenderMeshVisual> ea686c27-b2b2-4c70-a696-a6c54b0c28e5
+      renderMeshVisual: !<reference.RenderMeshVisual> d83c0a5e-1efa-4122-8806-9aec236edae4
       useGlowMesh: false
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
@@ -395,7 +416,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000002, y: -3.794876, z: -0.000002}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -420,7 +441,7 @@
   RotationTension: 30.000000
   ForceCompound: false
   Intangible: false
-  ShowCollider: false
+  ShowCollider: true
 - !<RenderMeshVisual/d83c0a5e-1efa-4122-8806-9aec236edae4>
   PrefabRemaps:
     []
@@ -435,12 +456,12 @@
   ShadowDensity: 1.000000
   Materials:
     - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
-  Mesh: !<reference> f15bc11b-f9f5-4a21-bc69-f252d5388eac
+  Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
-    Pinch: 0.000000
+    {}
 - !<Text/e425f095-9fc8-44f6-ac6e-bdaec10b0bef>
   PrefabRemaps:
     []
@@ -521,7 +542,7 @@
   PrefabRemaps:
     []
   Name: ItemDescription
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -541,7 +562,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 6.000000, y: 6.000000, z: 6.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
