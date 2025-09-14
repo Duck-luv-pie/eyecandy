@@ -70,7 +70,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -159,7 +159,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
+    - !<reference> fca59b6d-aba2-4434-a97e-775410a22f2a
   Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -432,7 +432,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
+    - !<reference> fca59b6d-aba2-4434-a97e-775410a22f2a
   Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -1351,7 +1351,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.017388, y: 0.003027, z: 0.000000}
+    Position: {x: 0.018281, y: 0.003027, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.001700, y: 0.001700, z: 0.000000}
     HasSegmentScaleCompensation: false
@@ -1473,7 +1473,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
+    - !<reference> fca59b6d-aba2-4434-a97e-775410a22f2a
   Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -1724,7 +1724,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
+    Scale: {x: 15.000000, y: 11.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -2024,13 +2024,13 @@
   MeshShadowMode: None
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
-  Text: eyecandy
+  Text: Eyecandy
   Editable: false
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
   SizeToFit: false
   FontSize: 240
-  Font: !<reference> 00000000-0000-0000-0000-000000000000
+  Font: !<reference> 3ca7d4ce-2c3c-4d33-914e-bde80802b0fb
   LayoutRect:
     left: -7.500000
     bottom: -2.250000
@@ -2315,7 +2315,7 @@
       itemCategoryText: !<reference.Text> 41fe708c-eb04-44a3-a195-49f7ee19189d
       itemImage: !<reference.Image> bbbe4dc7-e7aa-44d7-82dc-a4ef3e69be44
       backgroundPanel: !<reference.SceneObject> 8fe1d7d2-0b62-477e-91d5-a287d79e6689
-      hoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
+      hoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
   ScriptTypes:
     "":
       {}
@@ -2474,7 +2474,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
+    Scale: {x: 15.000000, y: 11.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -2658,7 +2658,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -3166,7 +3166,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.017388, y: -0.013725, z: 0.000000}
+    Position: {x: 0.018281, y: -0.013725, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.001700, y: 0.001700, z: 0.000000}
     HasSegmentScaleCompensation: false
@@ -3492,9 +3492,9 @@
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
       meshBlendShapeName: Pinch
-      meshIdleMaterial: !<reference.Material> 7b4b9cea-ed98-4be8-935a-5021c1011214
-      meshHoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
-      meshPinchedMaterial: !<reference.Material> d847673e-59e3-489d-9c87-292a4046be7f
+      meshIdleMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshHoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshPinchedMaterial: !<reference.Material> a84f16b2-a988-4298-8b20-4ad1c556ded4
       glowBlendShapeName: Pinch
       glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
       glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
@@ -3598,7 +3598,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
+    - !<reference> fca59b6d-aba2-4434-a97e-775410a22f2a
   Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -4267,7 +4267,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
+    - !<reference> fca59b6d-aba2-4434-a97e-775410a22f2a
   Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -4574,7 +4574,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
+    Scale: {x: 15.000000, y: 11.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -4866,7 +4866,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
+    Scale: {x: 15.000000, y: 11.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -5191,7 +5191,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -5546,7 +5546,7 @@
       itemCategoryText: !<reference.Text> 11951590-3629-4401-be11-089003826b48
       itemImage: !<reference.Image> 0a5c49b0-9ae8-432a-b878-5e8190105298
       backgroundPanel: !<reference.SceneObject> 50ecd0d7-3f37-4943-b1c4-64dfa34d0474
-      hoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
+      hoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
   ScriptTypes:
     "":
       {}
@@ -5786,7 +5786,7 @@
       itemCategoryText: !<reference.Text> aad1c91f-3286-4521-b128-f69de4f3ab26
       itemImage: !<reference.Image> b174f136-6543-4439-bcc0-84580a14468e
       backgroundPanel: !<reference.SceneObject> 2bac86d1-b626-4739-ad81-9e6bc121971d
-      hoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
+      hoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
   ScriptTypes:
     "":
       {}
@@ -5910,7 +5910,7 @@
       itemCategoryText: !<reference.Text> 2b47b2d6-8130-4bfe-9366-405944a4810c
       itemImage: !<reference.Image> 495e00b0-5107-4dae-96f5-59ef58a21660
       backgroundPanel: !<reference.SceneObject> d4297ba7-d037-47ea-9d93-0cbd5a3eb3b5
-      hoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
+      hoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
   ScriptTypes:
     "":
       {}
@@ -6021,7 +6021,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -6158,7 +6158,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
+    - !<reference> fca59b6d-aba2-4434-a97e-775410a22f2a
   Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -6200,9 +6200,9 @@
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
       meshBlendShapeName: Pinch
-      meshIdleMaterial: !<reference.Material> 7b4b9cea-ed98-4be8-935a-5021c1011214
-      meshHoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
-      meshPinchedMaterial: !<reference.Material> d847673e-59e3-489d-9c87-292a4046be7f
+      meshIdleMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshHoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshPinchedMaterial: !<reference.Material> a84f16b2-a988-4298-8b20-4ad1c556ded4
       glowBlendShapeName: Pinch
       glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
       glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
@@ -6266,7 +6266,7 @@
       itemCategoryText: !<reference.Text> e8ca1384-7bde-4979-b0ad-33e9a44439e3
       itemImage: !<reference.Image> 04287cff-57f6-41d4-8ee8-29887f450ddf
       backgroundPanel: !<reference.SceneObject> cf526ac4-70e9-4455-a806-f68d1a7b9709
-      hoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
+      hoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
   ScriptTypes:
     "":
       {}
@@ -6712,7 +6712,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -6827,9 +6827,9 @@
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
       meshBlendShapeName: Pinch
-      meshIdleMaterial: !<reference.Material> 7b4b9cea-ed98-4be8-935a-5021c1011214
-      meshHoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
-      meshPinchedMaterial: !<reference.Material> d847673e-59e3-489d-9c87-292a4046be7f
+      meshIdleMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshHoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshPinchedMaterial: !<reference.Material> a84f16b2-a988-4298-8b20-4ad1c556ded4
       glowBlendShapeName: Pinch
       glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
       glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
@@ -7494,7 +7494,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -7590,7 +7590,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
+    Scale: {x: 15.000000, y: 11.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -7814,7 +7814,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.017388, y: 0.019261, z: 0.000000}
+    Position: {x: 0.018281, y: 0.019261, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 0.001700, y: 0.001700, z: 0.000000}
     HasSegmentScaleCompensation: false
@@ -7867,9 +7867,9 @@
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
       meshBlendShapeName: Pinch
-      meshIdleMaterial: !<reference.Material> 7b4b9cea-ed98-4be8-935a-5021c1011214
-      meshHoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
-      meshPinchedMaterial: !<reference.Material> d847673e-59e3-489d-9c87-292a4046be7f
+      meshIdleMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshHoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshPinchedMaterial: !<reference.Material> a84f16b2-a988-4298-8b20-4ad1c556ded4
       glowBlendShapeName: Pinch
       glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
       glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
@@ -7993,7 +7993,193 @@
     - !<own> ba3170a1-fa70-4c30-80a4-d44b46215606
 - !<SceneObject/988523cb-1782-42e7-9801-e79299b3bda2>
   PrefabRemaps:
-    []
+    - 002e61a4-f3bf-42b1-ab5d-05e529268ca5: 24dff9b6-f882-4348-9ea4-58d0b8d9802b
+    - 012c94fd-e03a-4b37-86d2-f847deaae0f0: abe2acb1-5c8d-4dac-919f-fd96aab3b1c2
+    - 029df9b8-3828-4491-a665-407c3d62ddd2: 5ca14cc1-aa41-4616-b835-e81becb1114a
+    - 04287cff-57f6-41d4-8ee8-29887f450ddf: 8ef7478d-0a18-47e7-8ead-68f8cdb19e52
+    - 04b5b88b-190d-4088-bfed-dfbf51962d59: f22de168-79c0-4da3-bb76-63002e501ddf
+    - 076d5477-3db0-4de3-bf4e-b78e9992a545: 3b61f688-458b-43c6-b0a6-13c2332056b5
+    - 07831f37-a598-4f07-940a-1194a46323c2: b4bc13f3-f799-4bd5-9cbb-98c6ca5a495c
+    - 0783b738-7938-43f8-8f23-160c3ff51b79: c0db3d46-72b9-48d5-90f7-d920dad501fd
+    - 08adb871-a376-4905-8c03-88a8b767635e: 0e13fac4-e29e-46b3-a1de-ca31d553cf3d
+    - 0a5c49b0-9ae8-432a-b878-5e8190105298: 32dbd17a-e3eb-4e2e-9a18-40b03c61e043
+    - 0a88df2b-1ba3-4374-9823-18e80a4f9770: c068bc0c-dae3-4ca7-98b5-4a8005b5e103
+    - 0bc063ff-3d71-47f8-860c-2f2df1ff9964: dddf8743-3380-4f79-baf5-c2545fbf09af
+    - 0c42c1cd-31fd-450e-aaf6-1637e3d6eebf: f86b3cd6-6032-4d11-913a-a10707dd3c3c
+    - 0dd9ec61-6cca-444b-8170-b28ea142291e: 2600fed2-e18a-45cd-8d4d-2aee8c3197d5
+    - 0fa2e073-8ca1-48b9-863a-97a664d7d2f3: c528dfde-20c5-43a0-b1fd-fda7cba87c17
+    - 107a5c57-b878-481d-a4de-f3a0ed831b85: b154af85-c99e-4850-8ec9-301c6df63ea5
+    - 11951590-3629-4401-be11-089003826b48: 231dc21b-5b37-4ba7-90a7-4770c279b43c
+    - 13520a09-3760-4c62-bddd-0d2a508eb724: 80720480-abb4-4ac5-a904-515ec7a5682c
+    - 15c437a5-be69-4301-abcc-232a5db4eff1: 2b863592-c6ad-4e9e-a837-eebb0973e267
+    - 186bac04-ed35-4135-9928-dd246084b7a9: 5b3a203e-1e35-412a-a23d-0eaeafc3243c
+    - 19542053-7b75-45c9-9fc4-998c9068bd26: efe6164a-4fd4-4c1a-8023-3d37589843b6
+    - 195def03-6ad8-4d84-91bd-fb6751cb511e: 2dade8e3-5a4f-466e-a963-5faa676c9d3a
+    - 19af38bc-4c75-4abe-8ec3-6e8e094d64e9: 73af71df-1936-4d35-9ee8-a5efb2d2f49d
+    - 1d24b013-3f81-4a31-a7b9-a66a1ad58bb0: 3eb4abf6-b770-4f24-9040-e05e6253db3d
+    - 1fad7c0f-2133-4c28-a933-b2a0095b8a61: cf851af2-1009-4c19-a391-9543df8434ef
+    - 21b42032-9385-4f53-9865-67f0ecd6f380: 3caab950-18e6-46c4-ac2a-7fb775a5dd19
+    - 2316a4fb-4afa-48ed-bbf3-18192efe2d5e: a200b1f2-74d1-43db-8c7e-a7d0d40016ad
+    - 243223f4-8d1b-4bdb-b27e-423e30730e32: 6ed65d0a-c90b-42e6-8ae4-ea1ee1427d53
+    - 2518d175-c405-493d-b169-c285729c4ed5: 134c3e54-f219-40fa-b4ce-64da421dc43f
+    - 2583f5fb-cc84-4ee5-8cb5-e1e289714aa0: f8c4c440-bb92-4fba-9d3c-b7d359db437a
+    - 27195676-608c-4e47-ab9c-eff358423be6: e1ed6821-49f4-43b0-8b0e-24e6a1519d13
+    - 283f0550-a5d6-469c-8fd9-92e3d58f64c8: 36b610fb-a809-42e6-864c-b91ec0017f13
+    - 29ebeee3-700f-4380-ba7b-d5b4b7dead1e: ed33fd0a-5c68-42d5-a70b-31816d7f1de7
+    - 2a033c3e-cdfa-430e-ad13-9e7b0b97e7bc: 1d1bbf8d-72c7-44dc-a70a-99a1b6d2098a
+    - 2b120672-467f-45b1-b3cc-f07446f7d375: 8d225c01-c1e0-4de2-969e-b836e8d8ab93
+    - 2b47b2d6-8130-4bfe-9366-405944a4810c: 8d81a448-ccfd-484a-9116-806b46387040
+    - 2bac86d1-b626-4739-ad81-9e6bc121971d: 59e8ff2d-d28a-401a-8e6d-47bd13a11d93
+    - 2d835ad0-0f43-4aa7-b4d0-15c3b2dc2252: f6fb0cb7-2ba4-485c-8c63-25ebe68118eb
+    - 2f95f266-58b5-40ed-8ffa-fbc2fd90a396: d94a91c9-c7a1-4097-8e55-08ca7226b050
+    - 304c0738-6ca5-4597-a7fa-e51f037f505a: 7b6d3c41-ca49-4818-ad5f-40b4528357bc
+    - 309d67cb-e89c-4867-8127-8de7cb30fa68: 5bca2f89-0c5b-4c30-b58a-dd1f115834c1
+    - 30ce628d-d674-4058-ba61-58a69ba1a9a2: ca0c6398-9ebb-4eb0-ad1d-0864ff34be8b
+    - 341ac950-c40d-4c9f-b260-dbe2cbbafd99: 099ff839-b7e1-4a5f-a95f-7e17c79fd839
+    - 3495feb4-7e5e-4636-b110-f746df109a5e: bb040eb5-01d2-4ad3-abd9-42c20b3a7770
+    - 34a6708d-d5a4-4b0c-8240-19284230672e: dbe2dce8-b3ee-4574-9745-696600bad162
+    - 3514197e-1047-4f07-b09b-87b34ebf0855: 416123e2-0723-464a-a0aa-3bdbd517909c
+    - 35661be7-2903-42ea-ba70-bf9e69073843: aef79dd1-09fd-4bac-bab7-b7735906b662
+    - 3ccd44ef-c64d-4546-a26a-3b628c2d3cb8: 70b8fd8b-28c4-4707-843a-6a7a474da87d
+    - 3d46bc51-1a9d-4ec6-9d6f-0bca4f768d32: f47f9fbb-010c-462a-bab5-0abe56b7455b
+    - 3d487b02-63fb-4493-9647-f508d2683a01: 5421d7fa-4440-453b-81c9-f54912f2e210
+    - 3db1833b-bc9f-4128-826a-5812bdf971f5: 90e5febe-dcea-4a42-ad69-bf24e6696e71
+    - 3e204a5a-c5c0-4655-9f21-1cf6d315a14e: 5a4cbf1c-e448-4029-9455-ea70745d7be3
+    - 401c99ae-e5e9-4e7a-a967-4f2ed003a5b3: 7523d523-a58b-4b81-ad65-c611f6554454
+    - 4132e98f-28ff-4a4a-87b7-ea33917c5e6e: e93e3f1f-9d74-42bd-b189-658c92d57010
+    - 41fe708c-eb04-44a3-a195-49f7ee19189d: 3e04f0e7-3497-4fd7-b7cc-b87f69d92de2
+    - 445f6826-d2a2-445f-86cb-f64ab4bb9929: ad0f68b2-66bf-40eb-91aa-d9ee54f6f6f7
+    - 45a42cc1-b690-4b53-b747-28a686838906: f2674748-e328-44cc-b5c6-574db574c45a
+    - 483774f7-2c4c-437e-b785-077df8a19bb3: f5fa3ef8-31cc-4c09-b4f2-a902b53d35f9
+    - 48deac7e-04b6-41e7-b2a5-fb7bcf7252b6: 313f53d7-d7ac-4b1f-8ac3-74910a7b0903
+    - 495e00b0-5107-4dae-96f5-59ef58a21660: 0caf7ddf-9db0-40e5-949e-7079af527705
+    - 4ad6d68b-6c1a-4b44-a3f6-c61bb6383615: 25124d33-38cf-47e8-be5a-39e395cc341b
+    - 4d32d38f-3bff-45d1-a805-0f027b9bc032: ca2da325-8f6a-49df-864b-3cd93b42fb95
+    - 50ecd0d7-3f37-4943-b1c4-64dfa34d0474: 97fee5d9-75ce-40c9-9a2f-f621be9f9125
+    - 53fb6a4c-e040-4108-bbad-767797fec11c: 8fadcc65-6ca8-4e5b-ad95-d2698d03511e
+    - 55c00539-5acd-4e32-8f6f-2c29836dd0a9: 20d6b90c-6cad-4da3-a15f-c823e430533e
+    - 56cfaaa5-6cad-4d95-97dc-b92655b1a022: ede82fde-cc39-420c-9036-e88a431ee6b9
+    - 58b55232-c100-4bfb-8ac8-b6cdd694f46c: 5b0a9f46-4a17-476f-8fa8-8864857a4e21
+    - 59b5e516-ccc6-4dbe-a5a1-47c5524a4159: b6a3cb42-844e-4fce-a351-c04a8ba5dc0a
+    - 5bd2e2d3-8077-475b-b493-1f51bb0682a8: 2ff2f0d6-fd48-4dd6-8bcd-0e031ca5eb70
+    - 5c84ca7c-670e-485d-8f22-1f9a5d28e56b: a41deb5c-a94a-4ccd-8e0d-449411b8bd81
+    - 5d5250b9-a5dd-4ebf-808c-3157f1823587: e01db635-1461-4e0d-9c11-9c7c80674027
+    - 60c3a9d8-90f4-4317-b1e2-6c74cdf798ae: 1ee04859-4e0f-4c32-90c5-a55a4b7e8823
+    - 6150a0e0-b18b-47e9-8160-c29707b5aa42: 0ba02f89-5c9d-4632-8427-28cf5ac6ba80
+    - 6226bc1f-1aac-47cd-8f18-b4dcd87e5b4d: a737b37b-8956-4081-b2c1-45512b7dd90d
+    - 650b40b6-841f-49de-99b1-66b5e5d19e59: 724419ad-01eb-45e2-b79f-41a3570af659
+    - 65a62a98-269c-4ed2-87d4-eb72fdb36ad8: 0fca6dd7-4c53-4608-99bf-e26a42849208
+    - 66ba8daf-2095-4e9a-9bf8-8cdd79fb0920: 3eee75cc-e38d-4efe-b5fe-018b6dc08e5e
+    - 69617be0-34be-47cc-9584-4c3b2d79b10f: ec1f8662-ec7a-4dc5-9bee-f9ba94ddf9f2
+    - 6b93bdde-749d-4ea8-91ff-ca99cacc58e5: 13b9fa1a-4e5a-4f94-bdfc-2240c028ac90
+    - 6c6697ac-9b8f-4f3a-842e-2b9a81d92b5c: 1d3f987f-675f-40f7-895f-47e7187b393e
+    - 6cbb630a-9a51-4495-99f5-dcd40a187734: 17d41435-46c5-41ec-92b7-a7866ae9276f
+    - 6db4f3d7-455e-44d4-82c1-4e86f27fda45: 236592fe-80d3-4e5b-92bd-69c494103916
+    - 6ddbdab8-bd24-4081-8a55-d21c88aa15b4: 4243959c-5316-45e7-8c8d-8d5cbd64ef3a
+    - 6e8f263f-e5a9-45ac-ae01-f3dc9ef0bb47: ed67a5b9-8d6b-453f-90ea-0889f4a2187e
+    - 6f191b7d-30b8-4917-a485-7033e7856538: 9c665def-9375-45a8-a922-02f4ac6e1729
+    - 6fb0c139-bcc8-4fb4-8511-7aeb9222d8e8: ad710bf0-50ba-4e5c-87fd-c99a5e317a9a
+    - 7091530a-86c7-40c4-a4b1-b17f72b35299: d57ad71c-3a37-4df0-b24f-cfda67c869a8
+    - 74536e0d-5099-41b9-9a34-fd1b159b1383: 1842c4cb-ddae-4a9f-b7dc-dcf3ecbdd923
+    - 76056f09-c75b-42ae-838b-57d2cd199fbd: 8b552460-a99d-4b36-bb95-51efc13e738f
+    - 7654f3f2-4427-4aea-a8f6-9c349f2e45f3: 6b78200b-a658-4057-8fb5-3a5f2742c91d
+    - 796dde9e-07fb-45c0-b1cd-86c0850fad3d: 268df0ce-39e0-4e90-afe9-81ffa3455200
+    - 7979034e-0956-4d10-9491-1a42c4ea6b9b: f74ec3cc-a55a-444d-9d11-7caaafb9042d
+    - 7cf62ea7-5374-4d0f-8903-a724c3515ff6: 6a2bf16c-6d70-4e06-afd6-0b17479b16ac
+    - 7d3ba341-af7b-42d6-b615-4117bdebe98a: 624c540e-54ce-4d6c-927c-ce55181914db
+    - 7e3a42e2-76cc-44e9-8dd2-a12d73d4b357: 6bfe0d87-cf84-4db8-a484-a21f21d9c6bb
+    - 7f18cb64-81a6-4734-a7f3-ee0f33ccc55b: d5602d13-de83-4e2b-89cc-429ddca8c2bf
+    - 7feba89d-508f-4592-a18a-2cb63e8e2e0f: 7ba1c5b6-ec6b-4133-9e78-916d6a8e5bea
+    - 82e838c9-d7d0-4d2f-9160-94db3cd842f7: 018554a3-b309-4daa-bd29-f1f0665933e7
+    - 8775697f-3996-414d-80ba-8b0014835549: 2e15c1bd-a567-4a35-ac7f-4f88e65a81e7
+    - 8e55f412-d1b9-44a3-ac54-9359ae595da4: bdb55189-7ebe-42ce-a7a7-4ba09420b645
+    - 8ee134d4-55a4-4fa6-aa40-229912112f46: 2c5fd76b-ada5-4b45-83ec-df89e22b9ad2
+    - 8fe1d7d2-0b62-477e-91d5-a287d79e6689: 01c68bd7-5724-4806-a66e-2144fde8e731
+    - 93516127-f111-4889-bead-d26831f1fdc2: e49036cb-e663-4d4c-9555-61f7eadabea7
+    - 935bfc05-ee5d-4eb4-89eb-41f4b776e50e: 26989f22-56b7-414e-b8ec-43613c189c86
+    - 9511e433-8f4f-448c-8c17-48c351248d97: 2dfd87e5-91c5-4cb3-b252-a4d3629dae1c
+    - 952f73f5-dcc3-4ffc-b0c6-e17b2fe80fd5: a8bf6772-4e42-468a-8e99-ecf7b5483b5d
+    - 96013a4e-c38d-4a0a-9bfb-fbb0ef818fff: 24158828-5bc1-4ff8-88ff-bd3a317e8793
+    - 963129b2-acb2-4b52-aab2-76886d59017a: 48d27d6d-ada0-4cf5-b14d-86f2319adcaa
+    - 9691a587-bb97-4f3d-93db-7b451ee44a7c: 8d9b7d9f-f1fa-440e-bd91-5c54062ed938
+    - 988523cb-1782-42e7-9801-e79299b3bda2: 8915d788-9555-44b7-affa-3e551258789a
+    - 9ba949e7-e8b6-41a6-a4cb-c44c75967077: 92433034-b1fb-4a84-bf93-1ba49fdbda57
+    - 9c0c0d8d-6d13-4f1f-bd7e-65bc74856e43: 64bd082a-269e-4575-a464-fa75fce13ab2
+    - 9c4984a3-9d00-4ecb-bf60-b5051fc98801: 786317b3-29ba-41c3-82a1-053fab482ac6
+    - 9f17ec63-4a8d-4b90-bb43-4425111f3275: 4cd86942-9a10-402e-acb9-6c40e4281973
+    - 9f215c8a-38c0-487c-9151-182963c1411e: c63da1fa-e1e3-452a-bc42-50e7980cb3fa
+    - a3d28b29-0196-4c5d-96d8-5985ac798031: 81c31199-5dbb-4289-9bd5-4700082ff130
+    - a76670f8-015d-40f7-9d84-0c082b0010b9: 2ea16ad9-2d97-4118-9412-f6b290fc0a40
+    - a81fe53a-2241-49c9-ba6b-042354515ae0: 804923a6-c99c-4e68-bc5a-987bece464ca
+    - a961804c-7866-42fb-a274-5ea13b5b28de: 2ebd6d46-d5f2-4de3-9093-5f6da60d2756
+    - aad1c91f-3286-4521-b128-f69de4f3ab26: ab52311a-91e3-45d2-b061-0e14d87b7560
+    - ab8a3d85-7d59-4a87-abc9-a5abc9340c76: 8718030d-d4b4-46e7-9098-b76f05d6da8f
+    - abcbd8d9-231d-4897-9a85-9901eb4727ac: f2e70ee6-5ada-4160-820a-fb641bb5d81a
+    - ad32e1d2-8b72-46b7-b170-5d5740f05529: df7af253-0083-4262-8e0e-a9260fe264b4
+    - adf87304-791a-44c7-ba9f-e1c970683fa4: 7f7ad2be-5fee-4f30-87e9-0d2c0524e54f
+    - ae3821aa-7b7f-489d-b685-5e714be6bc98: ff0fdb17-36fe-4897-be7d-f1a914c25c5e
+    - af4dd56a-a5ac-4d24-9e7b-2a7104e9fbe9: b023d6d5-b2c4-4278-9e3c-92b948efc2f9
+    - afb04dfd-3fed-4574-84bb-26143c9b8228: db5345f3-3870-43d4-b8b9-c6bcc4821cdb
+    - b0c501c3-9c39-4529-9f8f-5c6f861f8c07: 9d130aa6-6154-48ee-b56f-16078180e2f6
+    - b0dac0bf-253f-4ebe-9772-d1e3119af938: 5f5a23cb-096e-40b9-88a6-332aeaaa8343
+    - b162b964-0595-4cdf-afb4-7643507fedd9: cd1b63b1-93b9-4455-91fc-3e0cac8d3f5f
+    - b16b8a7d-6a72-465f-b29c-9f9c6f9a5b37: 2d27c9f5-4d72-461b-b272-4dfe99957197
+    - b174f136-6543-4439-bcc0-84580a14468e: d1a27f5f-6da4-4f47-aacb-51d8eb9c25c0
+    - b37568d1-670e-4fd1-ba56-733fd15d1a47: 75bfa322-537e-405d-9888-ef7f80f6f9fe
+    - b64bf796-7e59-4d61-9ed2-a3ea34058c8d: f4d99a8a-0d28-4f63-8a48-0b82617541a5
+    - b80cec03-90e1-44db-9187-1ea2a4e1d3ea: 9573f65c-5778-48e5-b606-e93481b98476
+    - bbbe4dc7-e7aa-44d7-82dc-a4ef3e69be44: 1001c019-b650-478b-854f-91b401e4927e
+    - bc5ecd05-d416-4f6c-9dda-45c232bc9b13: 96b925c4-ad67-49d0-b472-c7c71d3b8b56
+    - bc6ef924-7a67-429b-8668-413213b24265: 440f0e5b-9974-43d1-bf4c-20d9a07888a1
+    - bcfa4853-04b9-4820-899b-197fc559bbda: 1d596847-8a93-4b3e-98c6-028f8bee43a8
+    - bdbc746e-3696-41b9-b257-7bb9e9afd800: 0fb420b7-0781-44a2-9371-1f3789290103
+    - bfd6563e-7501-410a-936d-ef71ea565efe: 482c9109-3f99-4f92-90c6-a4fe5c6ec903
+    - c1a08d9a-f3b3-4d80-9940-f218e26ad695: d45ce709-7476-4572-98d4-27eece8873f4
+    - c285904d-268e-4faa-8e78-bf4dcf4dc063: c7deb03f-ab70-451d-a9ac-8a4603907cd1
+    - c5c62877-d6c6-49f8-8458-59b73f6f8d14: ec45fe21-71a2-4c84-aedd-07b572244bbf
+    - c715db01-5b73-4a7e-a161-1d83abfbbd01: 557c378a-d42a-4164-a035-0178ae60e37d
+    - c84dabab-6c65-44d7-955e-dfc6c0bf2a19: 2149c755-7261-4376-b8fd-7c86c18c2fe0
+    - c90d0ca9-b73c-4d48-904a-9d24a5fa2130: 0db10239-ad4a-4bb4-bb3c-de666cd907cd
+    - c98a933a-b3ca-4b1d-8744-2aad7cb63528: ee4db5cf-7524-48cc-a320-a817e13fa861
+    - c9d76acc-90e4-45cb-bd99-795565d385bc: 425acc57-2eb2-4f51-b84b-a177560e1a0f
+    - cc3cdd11-db1c-475d-aeaf-aa9057517d5c: 0c6e8354-2f09-4058-af59-3117780437eb
+    - cf526ac4-70e9-4455-a806-f68d1a7b9709: 9053028b-bcad-49fa-8bd8-178f896c3cf9
+    - cf9efdb9-4fb8-4451-b26d-5f7a6c267f42: 00476b7e-e1f4-46a5-8f72-d461c30bb13e
+    - d00de656-54cd-4903-9a20-a94e83ffa325: 6619101f-d81e-4d16-a1f3-7b22a8923a84
+    - d15358d6-13ae-4f92-a94d-0c1b99327ae5: 91dfcf3e-0f8b-4976-880d-c0dd566f3fc6
+    - d2b32b83-ca69-44da-91ba-e44451b8a5e5: 0c1fad79-2e14-4ce2-8754-34dd63c96d7d
+    - d2f83a31-56d5-4c33-8318-5ffd024b383d: 76c37815-2ea1-4ce2-aa08-dc181cc0d931
+    - d4297ba7-d037-47ea-9d93-0cbd5a3eb3b5: 33b264e1-fb0a-479f-85f3-9726f6a6fa79
+    - d61a996a-c755-46a2-a6ee-bcab670aa21a: f201997b-58ee-4c0e-99ba-8692954901dd
+    - d6b09b35-aa3a-45b9-82b3-81ee3dc7517f: f5220229-f487-4a6f-8722-ed639255d997
+    - d7c8b3ff-6f64-4f1f-8918-44425a38db31: a1f95e72-903e-4b9c-b41c-3f8fd83f3961
+    - dd0022c2-b0d9-4ab3-ab03-81ec584ec800: 7b366829-5a6a-415c-bcba-7a7088698484
+    - decf47e2-ebd6-4916-83f8-017e02419b6f: c59ab46f-0d5f-42be-821e-68394d40cea5
+    - e1b1be99-e592-4347-9d0f-2af2f8aeed65: cb8410f8-3f03-4a58-aa2b-807a8586dfac
+    - e1f68ab7-ae14-43fd-ae2e-d78e30d79d8f: 8d9f743d-ba2c-4060-ad08-8f6a424fb971
+    - e4dd8881-1f74-4d07-bf68-6d1a8e2776e3: a527475f-6689-45e7-a6be-dd6e637d4c1f
+    - e500f786-84e5-44d1-8c0d-ef6b6d0342b1: 712e3264-ccc1-49bb-bcb6-7a4297ce9f86
+    - e7b3b047-eaa4-44e4-ae7c-5c76e718b243: c70c880a-08d0-45cf-987c-763fad6cb2ba
+    - e87aca66-8e34-4369-90ef-71c83e8e7c5f: f52657a9-92bf-4f7c-85fd-35b9ae7ff3cd
+    - e89dcaf2-9a02-47ae-8cf1-c37379696adc: 35743be2-f6f9-4047-bfe9-f5bec0212255
+    - e8c51aae-7b12-4023-9b48-dd62e2430770: d2e72c74-1e85-4958-a8ea-88d8ed9e3a75
+    - e8ca1384-7bde-4979-b0ad-33e9a44439e3: 1464e7c7-4867-4a31-bca7-5412fafc6962
+    - e9163598-c891-4e74-8e50-05f0279bb94e: b31396a0-f003-42cc-a911-71fd9a515719
+    - eb63e6af-b57d-425c-a989-84297f25ecf7: 5c88c4e5-ba5e-4571-a829-8a39d0831ff6
+    - edec9f5d-29f5-4e52-85d0-d32029db2f65: b1ff3ba5-dd3e-4b04-b9ea-81ec138ca271
+    - ef517f4f-83cf-4015-9672-f05cacb444b7: 8b638eff-35ff-464f-9cb8-ce5fae73675e
+    - ef548665-c7ad-4956-93ab-7ce7e420849d: 482390d3-0782-4e26-ac2a-27cf4e241434
+    - ef5cfc39-16b8-40a9-9546-9c30e7cd3a0c: 786bfc65-56f4-40ad-8ac2-720cc04133f5
+    - f1f8a9c0-42dd-4d54-a265-e13b2b085617: 50503d0d-9c88-4dbf-b8ac-4d2bfa317b72
+    - f445cf16-9a22-4801-916f-33a31bcadc34: 6831856b-1e4c-44a8-ad4f-fb082559028a
+    - f467624a-217f-404f-9112-19f29830b29a: f7073797-6ebe-4e53-95be-a28ca93be02c
+    - f586277f-323f-42b9-b5aa-73f902d6b18a: d47b385e-d530-4d34-a312-8858c5404e75
+    - f65829fd-bc21-4134-a68f-3d655dd34aa5: 33e50ecc-81d8-4219-9bfa-2df52ee37b45
+    - f98f0c87-8860-4a59-960d-569867172d3d: 7d47aa7c-d7f2-4d82-86e7-4345338a0ba4
+    - f9ac99e6-e5ca-4603-a1cf-9a245a991194: c01e9ed8-1a0b-4ee6-9302-7b7e18196b00
+    - fc12de19-a378-4169-aa3a-ef062d476566: e15a9dfa-8fd9-4d47-8811-ac1de4140608
+    - fcd4b8fb-511b-438d-972f-45bb1725d0ad: f909a335-631b-4cec-b349-acc8bb52d277
+    - ff62b9d8-a699-49ea-b01b-dc7f806bd22c: c30f7618-1fd1-4fdc-a334-163948b2028b
   Name: CataloguePanel
   Enabled: true
   Layers: 1
@@ -8350,9 +8536,9 @@
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
       meshBlendShapeName: Pinch
-      meshIdleMaterial: !<reference.Material> 7b4b9cea-ed98-4be8-935a-5021c1011214
-      meshHoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
-      meshPinchedMaterial: !<reference.Material> d847673e-59e3-489d-9c87-292a4046be7f
+      meshIdleMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshHoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshPinchedMaterial: !<reference.Material> a84f16b2-a988-4298-8b20-4ad1c556ded4
       glowBlendShapeName: Pinch
       glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
       glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
@@ -8660,9 +8846,9 @@
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
       meshBlendShapeName: Pinch
-      meshIdleMaterial: !<reference.Material> 7b4b9cea-ed98-4be8-935a-5021c1011214
-      meshHoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
-      meshPinchedMaterial: !<reference.Material> d847673e-59e3-489d-9c87-292a4046be7f
+      meshIdleMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshHoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshPinchedMaterial: !<reference.Material> a84f16b2-a988-4298-8b20-4ad1c556ded4
       glowBlendShapeName: Pinch
       glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
       glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
@@ -8811,7 +8997,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
+    Scale: {x: 15.000000, y: 11.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -9011,7 +9197,7 @@
       itemCategoryText: !<reference.Text> eb63e6af-b57d-425c-a989-84297f25ecf7
       itemImage: !<reference.Image> fc12de19-a378-4169-aa3a-ef062d476566
       backgroundPanel: !<reference.SceneObject> ab8a3d85-7d59-4a87-abc9-a5abc9340c76
-      hoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
+      hoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
   ScriptTypes:
     "":
       {}
@@ -9060,7 +9246,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
+    - !<reference> fca59b6d-aba2-4434-a97e-775410a22f2a
   Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -9117,9 +9303,9 @@
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
       meshBlendShapeName: Pinch
-      meshIdleMaterial: !<reference.Material> 7b4b9cea-ed98-4be8-935a-5021c1011214
-      meshHoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
-      meshPinchedMaterial: !<reference.Material> d847673e-59e3-489d-9c87-292a4046be7f
+      meshIdleMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshHoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshPinchedMaterial: !<reference.Material> a84f16b2-a988-4298-8b20-4ad1c556ded4
       glowBlendShapeName: Pinch
       glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
       glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
@@ -9980,9 +10166,9 @@
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
       meshBlendShapeName: Pinch
-      meshIdleMaterial: !<reference.Material> 7b4b9cea-ed98-4be8-935a-5021c1011214
-      meshHoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
-      meshPinchedMaterial: !<reference.Material> d847673e-59e3-489d-9c87-292a4046be7f
+      meshIdleMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshHoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshPinchedMaterial: !<reference.Material> a84f16b2-a988-4298-8b20-4ad1c556ded4
       glowBlendShapeName: Pinch
       glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
       glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
@@ -10903,7 +11089,7 @@
       itemCategoryText: !<reference.Text> 1d24b013-3f81-4a31-a7b9-a66a1ad58bb0
       itemImage: !<reference.Image> bfd6563e-7501-410a-936d-ef71ea565efe
       backgroundPanel: !<reference.SceneObject> 55c00539-5acd-4e32-8f6f-2c29836dd0a9
-      hoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
+      hoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
   ScriptTypes:
     "":
       {}
@@ -11071,7 +11257,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
+    Scale: {x: 15.000000, y: 11.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -11112,9 +11298,9 @@
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
       meshBlendShapeName: Pinch
-      meshIdleMaterial: !<reference.Material> 7b4b9cea-ed98-4be8-935a-5021c1011214
-      meshHoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
-      meshPinchedMaterial: !<reference.Material> d847673e-59e3-489d-9c87-292a4046be7f
+      meshIdleMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshHoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshPinchedMaterial: !<reference.Material> a84f16b2-a988-4298-8b20-4ad1c556ded4
       glowBlendShapeName: Pinch
       glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
       glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
@@ -11148,7 +11334,7 @@
       itemCategoryText: !<reference.Text> 0bc063ff-3d71-47f8-860c-2f2df1ff9964
       itemImage: !<reference.Image> f9ac99e6-e5ca-4603-a1cf-9a245a991194
       backgroundPanel: !<reference.SceneObject> ef5cfc39-16b8-40a9-9546-9c30e7cd3a0c
-      hoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
+      hoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
   ScriptTypes:
     "":
       {}
@@ -11186,7 +11372,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -11317,7 +11503,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
+    Scale: {x: 15.000000, y: 11.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -11595,7 +11781,7 @@
       itemCategoryText: !<reference.Text> b162b964-0595-4cdf-afb4-7643507fedd9
       itemImage: !<reference.Image> 45a42cc1-b690-4b53-b747-28a686838906
       backgroundPanel: !<reference.SceneObject> 1fad7c0f-2133-4c28-a933-b2a0095b8a61
-      hoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
+      hoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
   ScriptTypes:
     "":
       {}
@@ -12206,7 +12392,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -12310,9 +12496,16 @@
     - !<own> 19af38bc-4c75-4abe-8ec3-6e8e094d64e9
 - !<SceneObject/e98b2a4f-f300-4094-a125-464834a4be87>
   PrefabRemaps:
-    []
+    - 33f8597e-1987-4ead-9d57-184180a88f6c: 0e4f59af-a89b-4521-a593-36a56b06a73d
+    - 5f291a0f-50e3-44f6-9f42-81b93d879867: ec57c5a1-a519-4d8e-9e2f-9b875cacd3e1
+    - 6c95386a-15e1-46d4-8203-4f799e5d03db: b36ffbfa-1f85-4154-9aed-9c404a6d572c
+    - ad63de5f-10ec-4e77-9e40-eb76a47fc387: ce08c5fa-6047-4338-af35-026e001a02b2
+    - bc78d816-aa50-44b4-ae84-f0390a2d14cc: 62b7dffc-b47f-4bdf-b37d-7a721af3a32f
+    - d2180f57-96f9-4629-940b-1c2278e23ea7: de79c09c-1caf-439f-bb8f-28865dab5982
+    - d3b51dd0-792d-4634-8174-bfdb79f88c94: 89e26eec-ee79-4950-a879-e0b1ca126e54
+    - e98b2a4f-f300-4094-a125-464834a4be87: 6f2fd98d-493f-4bc6-a358-eb9030a18af7
   Name: InternetAvailabilityPopUp
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: -12.177486}
@@ -12673,7 +12866,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
+    - !<reference> fca59b6d-aba2-4434-a97e-775410a22f2a
   Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -12689,7 +12882,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
+    Scale: {x: 15.000000, y: 11.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -13083,7 +13276,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
+    - !<reference> fca59b6d-aba2-4434-a97e-775410a22f2a
   Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -13431,7 +13624,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}

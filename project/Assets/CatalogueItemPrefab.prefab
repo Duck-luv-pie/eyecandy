@@ -32,7 +32,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 9.000000, y: 9.000000, z: 1.000000}
+    Scale: {x: 15.000000, y: 11.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -45,9 +45,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: -0.019124, y: 0.019261, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 0.001700, y: 0.001700, z: 0.000000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 0ff6d92a-f7fa-4635-87d8-3038d8823ed0
@@ -150,7 +150,7 @@
       itemCategoryText: !<reference.Text> e425f095-9fc8-44f6-ac6e-bdaec10b0bef
       itemImage: !<reference.Image> 0104b093-e17a-483a-a5f0-f62c1a072786
       backgroundPanel: !<reference.SceneObject> 0ff6d92a-f7fa-4635-87d8-3038d8823ed0
-      hoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
+      hoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
   ScriptTypes:
     "":
       {}
@@ -369,9 +369,9 @@
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
       meshBlendShapeName: Pinch
-      meshIdleMaterial: !<reference.Material> 7b4b9cea-ed98-4be8-935a-5021c1011214
-      meshHoverMaterial: !<reference.Material> 037f4a9b-253e-426f-bf75-d4676e341333
-      meshPinchedMaterial: !<reference.Material> d847673e-59e3-489d-9c87-292a4046be7f
+      meshIdleMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshHoverMaterial: !<reference.Material> fca59b6d-aba2-4434-a97e-775410a22f2a
+      meshPinchedMaterial: !<reference.Material> a84f16b2-a988-4298-8b20-4ad1c556ded4
       glowBlendShapeName: Pinch
       glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
       glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
@@ -413,7 +413,7 @@
   PrefabRemaps:
     []
   Name: ItemCategory
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000002, y: -3.794876, z: -0.000002}
@@ -455,7 +455,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 4ed3d6e9-3cb8-4485-b9e7-0ff7e47f5818
+    - !<reference> fca59b6d-aba2-4434-a97e-775410a22f2a
   Mesh: !<reference> e542623c-1432-4bfa-881d-a28905bd9e57
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true

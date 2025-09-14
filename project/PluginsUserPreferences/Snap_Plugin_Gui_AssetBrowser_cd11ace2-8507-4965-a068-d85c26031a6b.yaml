@@ -1,7 +1,7 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 735
+    size: 742
     values:
       - CatalogueItemPrefab.prefab
       - Empty.ss_graph
@@ -35,6 +35,8 @@ CollapsedEntities:
       - LSTween.lspkg/TweenJS/mainGroup.ts
       - LSTween.lspkg/package.native
       - Prefabs
+      - Prefabs/CataloguePanel.prefab
+      - Prefabs/InternetAvailabilityPopUp.prefab
       - Prefabs/Snap3DInteractable.prefab
       - Remote Service Gateway.lspkg
       - Remote Service Gateway.lspkg/Helpers
@@ -105,6 +107,7 @@ CollapsedEntities:
       - Render/Echopark.hdr/Specular
       - Render/Render Target.renderTarget
       - Scene.scene
+      - Scripts
       - Scripts/AIAssistantUIBridge.ts
       - Scripts/APIKeyHint.ts
       - Scripts/ASRQueryController.ts
@@ -120,6 +123,7 @@ CollapsedEntities:
       - Scripts/Snap3DInteractable.ts
       - Scripts/Snap3DInteractableFactory.ts
       - Scripts/SphereController.ts
+      - SpectaclesInteractionKit.lspkg
       - SpectaclesInteractionKit.lspkg/Assets/Audio
       - SpectaclesInteractionKit.lspkg/Assets/Audio/HoverAudioTrack.wav
       - SpectaclesInteractionKit.lspkg/Assets/Audio/TriggerEndAudioTrack.wav
@@ -696,7 +700,6 @@ CollapsedEntities:
       - Text3D.mat
       - UI Scroll View.lsc
       - Untitled TypeScript.ts
-      - Visuals
       - Visuals/AI Visual
       - Visuals/AI Visual/Animations
       - Visuals/AI Visual/Animations/BaseLayer.animationMixerLayer
@@ -719,6 +722,7 @@ CollapsedEntities:
       - Visuals/ActivityIndicator/ActivityIndicator.ss_graph
       - Visuals/IdleButton.mat
       - Visuals/Image.mat
+      - Visuals/ImageMaterial.mat
       - Visuals/Plane.mesh
       - Visuals/TeXGyreAdventor-Bold.ttf
       - Visuals/TeXGyreAdventor-BoldItalic.ttf
@@ -729,6 +733,9 @@ CollapsedEntities:
       - Visuals/Textures/Microphone.png
       - Visuals/Textures/NoInternetAlert.png
       - Visuals/Textures/NoInternetWarning.mat
+      - Visuals/UIBlock.png
+      - Visuals/White 2.mat
+      - Visuals/White 3.mat
       - Visuals/White.mat
       - Visuals/borderSquare 2.mat
       - Visuals/borderSquare.mat

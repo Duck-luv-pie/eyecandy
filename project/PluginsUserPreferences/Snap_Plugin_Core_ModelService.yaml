@@ -2,6 +2,7 @@ ExternalSources:
   type: "std::map<class Es::Uuid,class Es::Path,struct std::less<class Es::Uuid>,class std::allocator<struct std::pair<class Es::Uuid const ,class Es::Path> > >"
   value:
     - 00a772cb-8673-48c6-a4da-466dcc0f1f45: "C:/Program Files/Snap Inc/Lens Studio/JsPlugins/PresetsRegistry/Assets/TypeScript/Resources/Untitled TypeScript.ts"
+    - 13944e61-9d39-445f-825f-b7e6bce89a8d: "C:/Users/maxsu/Downloads/UIBlock.png"
     - 33d400c5-6425-4bee-9889-b214d3b945ee: "C:/Users/maxsu/Downloads/image.png"
     - 570a92ef-32c9-4eb9-b507-bc64e0aa6cb9: "C:/Users/maxsu/Downloads/utrg-fonts/fonts/TeXGyreAdventor-Regular.ttf"
     - 6513f88d-aa88-446e-bfd9-fc7b4a78a7df: "C:/Program Files/Snap Inc/Lens Studio/JsPlugins/PresetsRegistry/Assets/TypeScript/Resources/Untitled TypeScript.ts"

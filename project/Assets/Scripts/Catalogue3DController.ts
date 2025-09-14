@@ -511,17 +511,135 @@ export class Catalogue3DController extends BaseScriptComponent {
     }
 
     /**
+     * Public method to test delayed image loading for all catalogue items
+     * This will assign test data and trigger delayed image loading
+     */
+    public testDelayedImageLoading(): void {
+        print(`⏰ Testing delayed image loading for ${this.catalogueItems.length} catalogue items`);
+
+        // Test URLs (can be from actual Shopify products or test images)
+        const testImageUrls = [
+            "https://cdn.shopify.com/s/files/1/0702/5213/4550/files/red_sweater.png?v=1757798642",
+            "https://cdn.shopify.com/s/files/1/0702/5213/4550/files/bluesweater.png?v=1757814249",
+            "https://cdn.shopify.com/s/files/1/0702/5213/4550/files/christmas_sweater.png?v=1757830373",
+            "https://developers.snap.com/img/spectacles/spectacles-2024-hero.png",
+            "https://cdn.shopify.com/s/files/1/0702/5213/4550/files/red_sweater.png?v=1757798642",
+            "https://cdn.shopify.com/s/files/1/0702/5213/4550/files/bluesweater.png?v=1757814249"
+        ];
+
+        for (let i = 0; i < this.catalogueItems.length; i++) {
+            const catalogueItem = this.catalogueItems[i];
+            if (catalogueItem) {
+                // Activate the item
+                catalogueItem.getSceneObject().enabled = true;
+
+                // Set catalogue index
+                catalogueItem.setCatalogueIndex(i);
+
+                // Create test product data with actual image URLs
+                const testImageUrl = testImageUrls[i % testImageUrls.length];
+                const testProductData = {
+                    id: i + 100,
+                    name: `Test Product ${i + 1}`,
+                    description: `Test description for product ${i + 1}`,
+                    category: `Category ${i + 1}`,
+                    imageUrl: testImageUrl,
+                    price: {
+                        amount: `${(i + 1) * 10}.99`,
+                        currencyCode: 'USD'
+                    }
+                };
+
+                // This will automatically trigger delayed loading
+                catalogueItem.setProductDataWithDelay(testProductData, true);
+
+                print(`⏰ Item ${i}: Scheduled delayed load (${i * 500}ms) for "${testProductData.name}" from: ${testImageUrl}`);
+            }
+        }
+
+        print(`✅ Delayed image loading test initiated - images will load sequentially with 500ms intervals`);
+    }
+
+    /**
+     * Public method to force load images for all items immediately (for comparison)
+     */
+    public testImmediateImageLoading(): void {
+        print(`🚀 Testing immediate image loading for ${this.catalogueItems.length} catalogue items`);
+
+        // Same test URLs 
+        const testImageUrls = [
+            "https://cdn.shopify.com/s/files/1/0702/5213/4550/files/red_sweater.png?v=1757798642",
+            "https://cdn.shopify.com/s/files/1/0702/5213/4550/files/bluesweater.png?v=1757814249",
+            "https://cdn.shopify.com/s/files/1/0702/5213/4550/files/christmas_sweater.png?v=1757830373"
+        ];
+
+        for (let i = 0; i < this.catalogueItems.length; i++) {
+            const catalogueItem = this.catalogueItems[i];
+            if (catalogueItem) {
+                // Activate the item
+                catalogueItem.getSceneObject().enabled = true;
+
+                // Set catalogue index
+                catalogueItem.setCatalogueIndex(i);
+
+                // Create test product data
+                const testImageUrl = testImageUrls[i % testImageUrls.length];
+                const testProductData = {
+                    id: i + 200,
+                    name: `Immediate Test ${i + 1}`,
+                    description: `Immediate load test ${i + 1}`,
+                    category: `Category ${i + 1}`,
+                    imageUrl: testImageUrl,
+                    price: {
+                        amount: `${(i + 1) * 10}.99`,
+                        currencyCode: 'USD'
+                    }
+                };
+
+                // Set data but disable auto-loading
+                catalogueItem.setProductDataWithDelay(testProductData, false);
+
+                // Then manually trigger immediate load
+                catalogueItem.loadImageFromUrl(testImageUrl);
+
+                print(`🚀 Item ${i}: Immediate load triggered for "${testProductData.name}" from: ${testImageUrl}`);
+            }
+        }
+
+        print(`⚡ Immediate image loading test initiated - all images loading at once`);
+    }    /**
      * Debug method to check what textures are currently loaded
      */
     public debugTextureStatus(): void {
-        print("=== TEXTURE DEBUG STATUS ===");
+        print("=== DELAYED LOADING DEBUG STATUS ===");
+
+        // Check individual catalogue item textures and URLs
+        print("=== INDIVIDUAL CATALOGUE ITEM TEXTURES (DELAYED LOADING) ===");
+        for (let i = 0; i < this.catalogueItems.length; i++) {
+            const item = this.catalogueItems[i];
+            if (item && item.getSceneObject().enabled) {
+                const hasTexture = item.hasTexture();
+                const textureInfo = item.getTextureInfo();
+                const itemData = item.getItemData();
+                const currentImageUrl = item.getCurrentImageUrl();
+
+                print(`📸 Item ${i}: "${itemData?.name || 'Unknown'}"`);
+                print(`   ${textureInfo}`);
+                print(`   Has Texture: ${hasTexture}`);
+                print(`   Current URL: ${currentImageUrl || 'None'}`);
+                print(`   Expected delay: ${i * 500}ms`);
+            } else {
+                print(`❌ Item ${i}: Disabled or NULL`);
+            }
+        }        // Check old batch loading textures (for comparison - will be deprecated)
         if (this.httpImageLoader) {
+            print("=== DEPRECATED BATCH LOADING TEXTURES ===");
             const allTextures = this.httpImageLoader.getAllLoadedTextures();
-            print(`Total textures loaded: ${allTextures.length}`);
+            print(`Total batch textures loaded: ${allTextures.length}`);
 
             for (let i = 0; i < allTextures.length; i++) {
                 const textureData = allTextures[i];
-                print(`Texture ${i}: Index=${textureData.index}, URL=${textureData.url}`);
+                print(`Batch Texture ${i}: Index=${textureData.index}, URL=${textureData.url}`);
             }
         } else {
             print("No HTTP image loader found");
@@ -632,19 +750,19 @@ export class Catalogue3DController extends BaseScriptComponent {
     }
 
     /**
-     * Fill catalogue items with products, ensuring all array elements are handled
+     * Fill catalogue items with products using delayed sequential loading
      * @param products Array of ProductResult from Shopify search
      * @param topic The search topic for logging purposes
      */
     private fillCatalogueItemsWithProducts(products: ProductResult[], topic: string): void {
-        print(`Filling catalogue with ${products.length} products for topic "${topic}"`);
+        print(`📦 Filling catalogue with ${products.length} products using delayed sequential loading for topic "${topic}"`);
 
         const availableSlots = this.catalogueItems.length;
         const maxProductsToShow = Math.min(products.length, availableSlots);
 
         print(`Available slots: ${availableSlots}, Products to show: ${maxProductsToShow}`);
 
-        // First, set up all catalogue items with their data and placeholders
+        // Fill each catalogue item with product data and start delayed loading
         for (let i = 0; i < availableSlots; i++) {
             const catalogueItem = this.catalogueItems[i];
 
@@ -657,26 +775,16 @@ export class Catalogue3DController extends BaseScriptComponent {
                 // We have a product for this slot - activate and fill it
                 const product = products[i];
 
-                // Format price for display
-                const priceDisplay = this.formatPrice(product.price);
-
-                const itemData = {
-                    id: i + 2000, // Use high IDs to avoid conflicts
-                    name: product.name || "Unknown Product",
-                    description: `${topic} from Shopify`,
-                    category: priceDisplay // Use price as category
-                };
-
                 // Activate the catalogue item
                 catalogueItem.getSceneObject().enabled = true;
 
-                // Set the item data
-                catalogueItem.setItemData(itemData);
+                // Set the catalogue index for delayed loading
+                catalogueItem.setCatalogueIndex(i);
 
-                // Set placeholder initially
-                catalogueItem.setPlaceholderImage();
+                // Use the new delayed loading method
+                catalogueItem.setProductDataWithDelay(product, true);
 
-                print(`✅ Filled slot ${i}: ${product.name} (${priceDisplay}) (loading image...)`);
+                print(`✅ Filled slot ${i}: ${product.name} with delayed loading (${i * 500}ms delay)`);
 
             } else {
                 // No product for this slot - deactivate it
@@ -685,12 +793,7 @@ export class Catalogue3DController extends BaseScriptComponent {
             }
         }
 
-        // Now batch load all the images if HTTP image loader is available
-        if (this.httpImageLoader) {
-            this.loadAllProductImages(products.slice(0, maxProductsToShow));
-        }
-
-        print(`🎯 Catalogue filling completed for "${topic}": ${maxProductsToShow} items shown, ${availableSlots - maxProductsToShow} items hidden`);
+        print(`🎯 Catalogue filling completed for "${topic}" using delayed sequential loading: ${maxProductsToShow} items will load with staggered delays`);
     }
 
     /**
@@ -845,7 +948,7 @@ export class Catalogue3DController extends BaseScriptComponent {
     }
 
     private fillCatalogueItems(shopifyProducts: ProductResult[]) {
-        print(`Filling catalogue with ${shopifyProducts.length} Shopify products`);
+        print(`📦 Filling catalogue with ${shopifyProducts.length} Shopify products using delayed sequential loading`);
 
         // Get the number of available catalogue item slots
         const availableSlots = this.catalogueItems.length;
@@ -853,7 +956,7 @@ export class Catalogue3DController extends BaseScriptComponent {
 
         print(`Available slots: ${availableSlots}, Products to show: ${productsToShow}`);
 
-        // First, set up all catalogue items with their data and placeholders
+        // Fill each catalogue item with product data and start delayed loading
         for (let i = 0; i < availableSlots; i++) {
             const catalogueItem = this.catalogueItems[i];
 
@@ -866,38 +969,25 @@ export class Catalogue3DController extends BaseScriptComponent {
                 // Fill with Shopify product data
                 const product = shopifyProducts[i];
 
-                // Format price for display
-                const priceDisplay = this.formatPrice(product.price);
-
-                const itemData = {
-                    id: i + 1000, // Use high IDs for Shopify products
-                    name: product.name,
-                    description: "Available on Shopify",
-                    category: priceDisplay // Use price as category
-                };
-
                 // Activate and setup the catalogue item
                 catalogueItem.getSceneObject().enabled = true;
-                catalogueItem.setItemData(itemData);
 
-                // Set placeholder initially
-                catalogueItem.setPlaceholderImage();
+                // Set the catalogue index for delayed loading
+                catalogueItem.setCatalogueIndex(i);
 
-                print(`Filled slot ${i}: ${product.name} (${priceDisplay}) (loading image...)`);
+                // Use the new delayed loading method
+                catalogueItem.setProductDataWithDelay(product, true);
+
+                print(`✅ Filled slot ${i}: ${product.name} with delayed loading (${i * 500}ms delay)`);
 
             } else {
                 // Deactivate unused catalogue items
                 catalogueItem.getSceneObject().enabled = false;
-                print(`Deactivated slot ${i}`);
+                print(`❌ Deactivated slot ${i}`);
             }
         }
 
-        // Now batch load all the images if HTTP image loader is available
-        if (this.httpImageLoader) {
-            this.loadAllProductImages(shopifyProducts.slice(0, productsToShow));
-        }
-
-        print(`Catalogue filling completed. ${productsToShow} items shown, ${availableSlots - productsToShow} items hidden`);
+        print(`🎯 Catalogue filling completed using delayed sequential loading. ${productsToShow} items will load with staggered delays`);
     }
     private fillWithSampleData() {
         print("Filling catalogue with sample data");
