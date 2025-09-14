@@ -2,6 +2,10 @@ interface Product {
     id: string;
     title: string;
     imageUrl: string | null;
+    price?: {
+        amount: string;
+        currencyCode: string;
+    };
 }
 
 interface ProductResult {
@@ -9,6 +13,10 @@ interface ProductResult {
     imageTexture: Texture | null;
     imageUrl: string | null;
     id?: string;
+    price?: {
+        amount: string;
+        currencyCode: string;
+    };
 }
 
 interface SearchResponse {
@@ -91,15 +99,24 @@ export class SimpleProductSearch extends BaseScriptComponent {
                     name: product.title || "Unknown Product",
                     imageTexture: null, // Will be loaded separately if needed
                     imageUrl: product.imageUrl || null,
-                    id: product.id
+                    id: product.id,
+                    price: product.price
                 }));
 
-                // Log each product
+                // Log each product with price information
                 productResults.forEach((product, index) => {
                     const title = product.name || "none";
                     const imageUrl = product.imageUrl || "none";
+
+                    // Handle price information
+                    let priceText = "Price not available";
+                    if (product.price) {
+                        priceText = `${product.price.currencyCode} ${product.price.amount}`;
+                    }
+
                     print(`[SimpleSearch] Product ${index + 1}: ${title}`);
                     print(`[SimpleSearch] Image: ${imageUrl}`);
+                    print(`[SimpleSearch] Price: ${priceText}`);
                 });
 
                 // Call callback if provided

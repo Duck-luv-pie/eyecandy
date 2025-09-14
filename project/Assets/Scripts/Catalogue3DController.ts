@@ -14,6 +14,7 @@ interface ProductResult {
     name: string;
     imageTexture: Texture | null;
     imageUrl: string | null;
+    price?: { amount: string; currencyCode: string }; // Price object from Shopify API
     id?: string;
 }
 
@@ -509,6 +510,34 @@ export class Catalogue3DController extends BaseScriptComponent {
         this.searchAndFillCatalogue(topic);
     }
 
+    /**
+     * Debug method to check what textures are currently loaded
+     */
+    public debugTextureStatus(): void {
+        print("=== TEXTURE DEBUG STATUS ===");
+        if (this.httpImageLoader) {
+            const allTextures = this.httpImageLoader.getAllLoadedTextures();
+            print(`Total textures loaded: ${allTextures.length}`);
+
+            for (let i = 0; i < allTextures.length; i++) {
+                const textureData = allTextures[i];
+                print(`Texture ${i}: Index=${textureData.index}, URL=${textureData.url}`);
+            }
+        } else {
+            print("No HTTP image loader found");
+        }
+
+        print("=== CATALOGUE ITEM STATUS ===");
+        for (let i = 0; i < this.catalogueItems.length; i++) {
+            const item = this.catalogueItems[i];
+            if (item) {
+                print(`Catalogue item ${i}: enabled=${item.getSceneObject().enabled}`);
+            } else {
+                print(`Catalogue item ${i}: NULL`);
+            }
+        }
+    }
+
     // Update the setupCatalogueItem method to work with pre-made items:
     private setupCatalogueItem(itemObject: SceneObject, itemData: any): void {
         // This method is now replaced by direct CatalogueItem3D.setItemData() calls
@@ -534,6 +563,12 @@ export class Catalogue3DController extends BaseScriptComponent {
             print("No ShopifySearch component available - using sample data");
             this.fillWithSampleData();
             return;
+        }
+
+        // Clear any cached images to prevent using old cached textures
+        if (this.httpImageLoader) {
+            this.httpImageLoader.clearTextureCache();
+            print("🗑️ Cleared texture cache for fresh image loading");
         }
 
         print(`Initiating search for: ${topic}`);
@@ -573,6 +608,30 @@ export class Catalogue3DController extends BaseScriptComponent {
     }
 
     /**
+     * Format price for display
+     * @param price The price object from Shopify API
+     * @returns Formatted price string
+     */
+    private formatPrice(price?: { amount: string; currencyCode: string }): string {
+        if (!price) {
+            return "Price N/A";
+        }
+
+        // Format the price with currency symbol if possible
+        const currencySymbols: { [key: string]: string } = {
+            'USD': '$',
+            'EUR': '€',
+            'GBP': '£',
+            'CAD': 'C$',
+            'AUD': 'A$',
+            'JPY': '¥'
+        };
+
+        const symbol = currencySymbols[price.currencyCode] || price.currencyCode;
+        return `${symbol}${price.amount}`;
+    }
+
+    /**
      * Fill catalogue items with products, ensuring all array elements are handled
      * @param products Array of ProductResult from Shopify search
      * @param topic The search topic for logging purposes
@@ -585,7 +644,7 @@ export class Catalogue3DController extends BaseScriptComponent {
 
         print(`Available slots: ${availableSlots}, Products to show: ${maxProductsToShow}`);
 
-        // Fill or deactivate each catalogue item slot
+        // First, set up all catalogue items with their data and placeholders
         for (let i = 0; i < availableSlots; i++) {
             const catalogueItem = this.catalogueItems[i];
 
@@ -598,11 +657,14 @@ export class Catalogue3DController extends BaseScriptComponent {
                 // We have a product for this slot - activate and fill it
                 const product = products[i];
 
+                // Format price for display
+                const priceDisplay = this.formatPrice(product.price);
+
                 const itemData = {
                     id: i + 2000, // Use high IDs to avoid conflicts
                     name: product.name || "Unknown Product",
                     description: `${topic} from Shopify`,
-                    category: topic.charAt(0).toUpperCase() + topic.slice(1) // Capitalize topic
+                    category: priceDisplay // Use price as category
                 };
 
                 // Activate the catalogue item
@@ -611,10 +673,10 @@ export class Catalogue3DController extends BaseScriptComponent {
                 // Set the item data
                 catalogueItem.setItemData(itemData);
 
-                // Load product image using GetHttpImage component
-                this.loadProductImage(product, catalogueItem, i);
+                // Set placeholder initially
+                catalogueItem.setPlaceholderImage();
 
-                print(`✅ Filled slot ${i}: ${product.name}`);
+                print(`✅ Filled slot ${i}: ${product.name} (${priceDisplay}) (loading image...)`);
 
             } else {
                 // No product for this slot - deactivate it
@@ -623,10 +685,85 @@ export class Catalogue3DController extends BaseScriptComponent {
             }
         }
 
+        // Now batch load all the images if HTTP image loader is available
+        if (this.httpImageLoader) {
+            this.loadAllProductImages(products.slice(0, maxProductsToShow));
+        }
+
         print(`🎯 Catalogue filling completed for "${topic}": ${maxProductsToShow} items shown, ${availableSlots - maxProductsToShow} items hidden`);
     }
 
     /**
+     * Load all product images in batch and assign them to the correct catalogue items
+     * @param products Array of products to load images for
+     */
+    private loadAllProductImages(products: ProductResult[]): void {
+        print(`🖼️ Starting batch image load for ${products.length} products`);
+
+        // Debug: Log all image URLs first
+        print(`🔍 DEBUG: Checking all product image URLs:`);
+        for (let i = 0; i < products.length; i++) {
+            const product = products[i];
+            print(`🔍 Product ${i}: "${product.name}" -> URL: "${product.imageUrl}"`);
+        }
+
+        // Verify we have unique URLs
+        const urlSet = new Set();
+        let duplicateUrls = 0;
+        for (let i = 0; i < products.length; i++) {
+            if (products[i].imageUrl) {
+                if (urlSet.has(products[i].imageUrl)) {
+                    duplicateUrls++;
+                    print(`⚠️ WARNING: Duplicate URL found for product ${i}: ${products[i].imageUrl}`);
+                } else {
+                    urlSet.add(products[i].imageUrl);
+                }
+            }
+        }
+        print(`📊 URL Analysis: ${urlSet.size} unique URLs, ${duplicateUrls} duplicates found`);
+
+        // Additional debug: Store products array for comparison
+        print(`🔍 ASYNC DEBUG: Storing ${products.length} products for async comparison`);
+        for (let i = 0; i < products.length; i++) {
+            print(`🔍 PRE-ASYNC Product ${i}: "${products[i].name}" -> URL: "${products[i].imageUrl}"`);
+        }
+
+        // Use the new batch loading method
+        this.httpImageLoader.loadCatalogueImages(
+            products,
+            (texture: Texture, productIndex: number, product: any) => {
+                // Successfully loaded an image - assign it to the correct catalogue item
+                if (productIndex < this.catalogueItems.length && this.catalogueItems[productIndex]) {
+                    const catalogueItem = this.catalogueItems[productIndex];
+
+                    // Set both the texture and the image URL for tracking
+                    catalogueItem.setItemTexture(texture);
+                    if (product.imageUrl) {
+                        catalogueItem.setImageUrl(product.imageUrl);
+                    }
+
+                    print(`🖼️ ✅ Assigned unique texture to catalogue item ${productIndex}: ${product.name} from URL: ${product.imageUrl}`);
+                    print(`🔍 ASYNC DEBUG: ProductIndex=${productIndex}, ProductName=${product.name}, URL=${product.imageUrl}`);
+                } else {
+                    print(`⚠️ Cannot assign texture - invalid productIndex ${productIndex} or catalogueItem is null`);
+                }
+            },
+            (loadedCount: number, totalCount: number) => {
+                // All images processed
+                print(`🎉 Batch image loading complete: ${loadedCount}/${totalCount} images loaded successfully`);
+
+                // Verify each catalogue item has a unique texture
+                print(`🔍 Verifying catalogue item textures:`);
+                for (let i = 0; i < Math.min(products.length, this.catalogueItems.length); i++) {
+                    const catalogueItem = this.catalogueItems[i];
+                    if (catalogueItem) {
+                        const loadedTexture = this.httpImageLoader.getTextureByProductIndex(i);
+                        print(`📸 Catalogue item ${i}: texture loaded = ${loadedTexture ? 'YES' : 'NO'} for "${products[i]?.name || 'Unknown'}"`);
+                    }
+                }
+            }
+        );
+    }    /**
      * Load product image using GetHttpImage component
      * @param product The product with image data
      * @param catalogueItem The catalogue item component to update
@@ -647,8 +784,9 @@ export class Catalogue3DController extends BaseScriptComponent {
             this.httpImageLoader.loadImageFromUrl(
                 product.imageUrl,
                 (texture: Texture) => {
-                    // Success: Set the loaded texture
+                    // Success: Set the loaded texture and URL
                     catalogueItem.setItemTexture(texture);
+                    catalogueItem.setImageUrl(product.imageUrl);
                     print(`✅ Successfully loaded image for slot ${index}: ${product.name}`);
                 },
                 (error: string) => {
@@ -715,6 +853,7 @@ export class Catalogue3DController extends BaseScriptComponent {
 
         print(`Available slots: ${availableSlots}, Products to show: ${productsToShow}`);
 
+        // First, set up all catalogue items with their data and placeholders
         for (let i = 0; i < availableSlots; i++) {
             const catalogueItem = this.catalogueItems[i];
 
@@ -726,27 +865,36 @@ export class Catalogue3DController extends BaseScriptComponent {
             if (i < productsToShow) {
                 // Fill with Shopify product data
                 const product = shopifyProducts[i];
+
+                // Format price for display
+                const priceDisplay = this.formatPrice(product.price);
+
                 const itemData = {
                     id: i + 1000, // Use high IDs for Shopify products
                     name: product.name,
                     description: "Available on Shopify",
-                    category: "Shopify Products"
+                    category: priceDisplay // Use price as category
                 };
 
                 // Activate and setup the catalogue item
                 catalogueItem.getSceneObject().enabled = true;
                 catalogueItem.setItemData(itemData);
 
-                // Load product image using GetHttpImage component
-                this.loadProductImage(product, catalogueItem, i);
+                // Set placeholder initially
+                catalogueItem.setPlaceholderImage();
 
-                print(`Filled slot ${i}: ${product.name}`);
+                print(`Filled slot ${i}: ${product.name} (${priceDisplay}) (loading image...)`);
 
             } else {
                 // Deactivate unused catalogue items
                 catalogueItem.getSceneObject().enabled = false;
                 print(`Deactivated slot ${i}`);
             }
+        }
+
+        // Now batch load all the images if HTTP image loader is available
+        if (this.httpImageLoader) {
+            this.loadAllProductImages(shopifyProducts.slice(0, productsToShow));
         }
 
         print(`Catalogue filling completed. ${productsToShow} items shown, ${availableSlots - productsToShow} items hidden`);
