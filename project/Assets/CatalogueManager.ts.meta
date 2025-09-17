@@ -27,7 +27,8 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    activationButton: false
+    button: false
+    pinchButtonObject: false
     targetObject: false
   ScriptTypesHidden:
     {}
@@ -35,10 +36,12 @@
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
   DefaultScriptInputs:
     - targetObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      activationButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      button: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      pinchButtonObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - '// @input SceneObject targetObject {"hint":"Object to enable after 5 seconds"}'
-    - '// @input SceneObject activationButton {"hint":"Button to start the 5 second timer"}'
+    - '// @input AssignableType button {"hint":"PinchButton component to start the 5 second timer"}'
+    - // @input SceneObject pinchButtonObject

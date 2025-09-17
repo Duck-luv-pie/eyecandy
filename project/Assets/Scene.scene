@@ -6,9 +6,9 @@
     - !<own> 1b55a799-781e-4c9b-a064-753ddee7112d
     - !<own> 867a6806-8d0e-4a93-8b86-ef91522c708d
     - !<own> e98b2a4f-f300-4094-a125-464834a4be87
-    - !<own> c3dc25c7-5db6-4a03-b122-1ca2cab1bd05
     - !<own> 362d712d-3aa2-470c-8b9d-9b6467c32954
     - !<own> 3d48c674-2b21-41be-a113-46558757b53b
+    - !<own> b0a9369f-fd9e-43f8-bd21-2301d308f371
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -1474,17 +1474,15 @@
   Enabled: true
   ScriptAsset: !<reference> a54c5722-d3fb-4aa5-97ff-f7425978bc59
   ScriptInputsDefault:
-    editEventCallbacks: true
-    customFunctionForOnButtonPinched: true
-    onButtonPinchedFunctionNames: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      editEventCallbacks: false
-      customFunctionForOnButtonPinched: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      editEventCallbacks: true
+      customFunctionForOnButtonPinched: !<reference.ScriptComponent> c32e474a-2bb3-47c5-8618-7310e2aef170
       onButtonPinchedFunctionNames: !<string[]>
-        []
+        - startActivationTimer
   ScriptTypes:
     "":
       {}
@@ -2930,16 +2928,16 @@
 - !<SceneObject/37ef579c-bd01-45c8-add2-5415e5179969>
   PrefabRemaps:
     []
-  Name: MicButton 1
+  Name: Microphone
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -0.024981, y: -0.645181, z: -3.373726}
-    Rotation: {x: 0.000000, y: 0.000171, z: 0.000000}
-    Scale: {x: 0.040000, y: 0.040000, z: 0.040000}
+    Position: {x: 0.000000, y: -30.579872, z: -110.839066}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 2.800000, y: 2.800000, z: 0.040000}
     HasSegmentScaleCompensation: false
   Children:
-    []
+    - !<own> 91cf0e1c-087f-4256-8c24-9f66bfb4390e
   Components:
     - !<own> 929a0abc-7156-4165-be88-7f638916174a
     - !<own> dd6b3701-18b0-48f6-b5f3-485fe4525b3e
@@ -5513,7 +5511,7 @@
   PrefabRemaps:
     []
   Name: VoiceInput
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -0.024981, y: -0.645181, z: -3.373734}
@@ -7000,7 +6998,7 @@
   PrefabRemaps:
     []
   Name: Image Generator
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -40.000000, y: 0.000000, z: -100.000000}
@@ -7877,6 +7875,21 @@
     []
   Components:
     - !<own> 1cb4a1f8-6c5e-47f0-a010-eb1dcf8cb42a
+- !<SceneObject/91cf0e1c-087f-4256-8c24-9f66bfb4390e>
+  PrefabRemaps:
+    []
+  Name: Text
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 2.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c20cae97-d8ee-46fe-a2dc-1b98d1b2570b
 - !<ScriptComponent/9221f19e-818a-4fb1-aaeb-dba1b9713120>
   PrefabRemaps:
     []
@@ -7938,7 +7951,7 @@
     []
   Name: Render Mesh Visual
   Enabled: true
-  RenderOrder: 4
+  RenderOrder: 0
   StretchMode: Stretch
   VerticalAlignment: Center
   HorizontalAlignment: Center
@@ -9427,6 +9440,22 @@
     []
   Components:
     - !<own> 3bc4f56d-05e2-4ec4-9b53-d2232303cb7c
+- !<SceneObject/b0a9369f-fd9e-43f8-bd21-2301d308f371>
+  PrefabRemaps:
+    []
+  Name: Manager
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 37ef579c-bd01-45c8-add2-5415e5179969
+    - !<own> c3dc25c7-5db6-4a03-b122-1ca2cab1bd05
+  Components:
+    - !<own> c32e474a-2bb3-47c5-8618-7310e2aef170
 - !<SceneObject/b0c9b29d-ef8a-420f-9fab-0cf13054f584>
   PrefabRemaps:
     []
@@ -10345,6 +10374,82 @@
     []
   Components:
     []
+- !<Text/c20cae97-d8ee-46fe-a2dc-1b98d1b2570b>
+  PrefabRemaps:
+    []
+  Name: Text
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Text: Pinch and speak to search Shopify
+  Editable: false
+  ShowEditingPreview: true
+  TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
+  SizeToFit: false
+  FontSize: 48
+  Font: !<reference> 00000000-0000-0000-0000-000000000000
+  LayoutRect:
+    left: -7.500000
+    bottom: -2.250000
+    right: 7.500000
+    top: 2.250000
+  OverflowVertical: Overflow
+  OverflowHorizontal: Overflow
+  Fill: !<TextFill>
+    Mode: Solid
+    Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    Texture: !<reference> 00000000-0000-0000-0000-000000000000
+    TileCount: 5.000000
+    TileZone: Rect
+    TextureStretch: FitWidth
+  Outline: !<OutlineSettings>
+    Enabled: false
+    Fill: !<TextFill>
+      Mode: Solid
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    Size: 0.250000
+  Dropshadow: !<DropshadowSettings>
+    Enabled: false
+    Fill: !<TextFill>
+      Mode: Solid
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    OffsetX: 0.250000
+    OffsetY: 0.250000
+  Background: !<BackgroundSettings>
+    Enabled: false
+    Fill: !<TextFill>
+      Mode: Solid
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Texture: !<reference> 00000000-0000-0000-0000-000000000000
+      TileCount: 5.000000
+      TileZone: Rect
+      TextureStretch: FitWidth
+    Margins:
+      left: 0.000000
+      bottom: 0.000000
+      right: 0.000000
+      top: 0.000000
+    CornerRadius: 0.000000
+  AdvancedLayout: !<TextAdvancedLayout>
+    ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+    LetterSpacing: 0.000000
+    LineSpacing: 1.000000
+    CapitalizationOverride: None
+  DepthTest: false
+  TwoSided: false
 - !<SceneObject/c2a3f250-ea25-4d54-a533-abe839f9bceb>
   PrefabRemaps:
     []
@@ -10395,6 +10500,24 @@
     []
   Components:
     - !<own> 40cf5075-6f65-47d7-a30b-45e114b350c9
+- !<ScriptComponent/c32e474a-2bb3-47c5-8618-7310e2aef170>
+  PrefabRemaps:
+    []
+  Name: CatalogueManager
+  Enabled: true
+  ScriptAsset: !<reference> 8f1a9a39-3fd4-41a7-bbc6-4f9db6615fab
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      targetObject: !<reference.SceneObject> c3dc25c7-5db6-4a03-b122-1ca2cab1bd05
+      button: !<MappingBased.AssignableType> 1b580758-5937-4230-8cd5-308411f4523e
+      pinchButtonObject: !<reference.SceneObject> 37ef579c-bd01-45c8-add2-5415e5179969
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/c379df8f-498c-4c54-a558-bb0a021b9dad>
   PrefabRemaps:
     []
@@ -10639,7 +10762,7 @@
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 45.206600, y: -28.023857, z: -94.701309}
-    Rotation: {x: 0.000000, y: -45.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 70.000000, y: 70.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
@@ -10650,7 +10773,6 @@
     - !<own> 973c0047-3a7b-4b94-b639-5f42be9c8cd2
     - !<own> 98c96275-687b-438f-9726-c0732129108f
     - !<own> a5c8f6e5-0ee5-4408-8512-03010eb16bb5
-    - !<own> 37ef579c-bd01-45c8-add2-5415e5179969
     - !<own> 5eea59d5-bb69-4ad3-8f9d-cbf61cb75660
   Components:
     - !<own> 23a88d8b-59ac-42b2-975c-fa291803f6f1
