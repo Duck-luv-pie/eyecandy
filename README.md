@@ -1,14 +1,4 @@
-# Eye Candy - AR Shopping Experience## Challenges We Faced  
-- **Data Access**: Initially we tried scraping Shopify, but it was unreliable and against ToS. Learning to use the Storefront API was key.  
-- **3D Quality**: Generating wearable meshes from just one image was tough — some products reconstructed better than others.  
-- **Performance**: Getting meshes small enough for smooth playback on Spectacles without losing too much detail was a balancing act.  
-- **Anchoring Fit**: Aligning jackets and accessories to body trackers wasn't trivial — scale and occlusion had to be tuned manually.
-
-## � Achievement
-**Runner Up Prize Winner** at Snap's AR competition - recognized for innovation in AR commerce and seamless integration of Shopify with Spectacles AR technology.
-
----
-
+# Eye Candy - AR Shopping Experience
 **Built with:** Snap Spectacles, Lens Studio, Shopify Storefront API, Snap3D API, Upper Body Tracking 3D, Voice ML🏆 **Winner of Snap's Runner Up Prize** 🏆
 
 **Eye Candy** reimagines online shopping by blending **commerce and augmented reality**. Transform any Shopify product image into an immersive AR try-on experience using Snap Spectacles.
